@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/all.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2010-12-05T19:30:00-08:00</updated><entry><title>My super title</title><link href="http://csmojo.com/my-super-post.html" rel="alternate"></link><published>2010-12-05T19:30:00-08:00</published><author><name>David</name></author><id>tag:csmojo.com,2010-12-03:my-super-post.html</id><summary type="html">&lt;p&gt;This is the content of my super blog post.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/_test.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/a.jpg" /&gt;&lt;/p&gt;
 &lt;h1&gt;H1&lt;/h1&gt;
 &lt;h2&gt;H2&lt;/h2&gt;
 &lt;h3&gt;H3&lt;/h3&gt;
