@@ -2,13 +2,18 @@
 <html lang="en">
 
 <head>
-    <title>csmojo</title>
+      <title>csmojo</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/theme/css/w3.css"/>
     <link rel="stylesheet" type="text/css" href="/theme/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="/theme/font-awesome-4.6.3/css/font-awesome.min.css">
     
+
+    <meta name="description" content="Change Status:" />
+
+    <meta name="keywords" content="Other" />
+
 </head>
 
 
@@ -52,7 +57,7 @@
                 
                 
                         <h4><b>Posts</b></h4>
-                            <li><a href="/category/other.html">Other</a></li>
+                            <li class="active"><a href="/category/other.html">Other</a></li>
                 
               
             </ul>
@@ -85,33 +90,10 @@
         </div> 
         <div id="my-main" class="w3-container" >
 
-         <a href="/" class="my-no-dec"><h2>What is up</h2></a>
+         <a href="/" class="my-no-dec"><h2>Home</h2></a>
         <section id="content">
-    <div id="post-list">
+    <div id="post-one">
 <article class="hentry w3-container w3-card-8 w3-padding-large w3-margin">
-    <header> <h2 class="entry-title"><a class="my-no-dec" href="/posts/hello-new-world-.html" rel="bookmark" title="Permalink to Hello New World !"><b>Hello New World !</b></a></h2></header>
-  
-     
-    <div class="w3-medium">
-        <div>
-            Category: <a href="/category/other.html">Other</a>
-            &nbsp;
-            Tag:
-                <a href="/tag/other-web.html">Other Web</a>
-        </div> 
-        <span>By
-                <a class="url fn" href="/author/david.html">David</a>
-        </span>
-        &nbsp;
-        On 
-        <span class="published" datetime="2016-07-01T20:42:23-07:00"> Fri 01 July 2016 </span>
-        &nbsp;
-        Pageviews: 0
-    </div>
-    
-    <div class="entry-content"> Moving from Blogger to Pelican<br/>
-It is a brave new world ! </div>
-<p class="continue"><a href="/posts/hello-new-world-.html">Continue reading &raquo;</a></p></article><article class="hentry w3-container w3-card-8 w3-padding-large w3-margin">
     <header> <h2 class="entry-title"><a class="my-no-dec" href="/posts/a-example.html" rel="bookmark" title="Permalink to A Example"><b>A Example</b></a></h2></header>
   
      
@@ -132,9 +114,89 @@ It is a brave new world ! </div>
         Pageviews: 0
     </div>
     
-    <div class="entry-content"> Change Status: </div>
-<p class="continue"><a href="/posts/a-example.html">Continue reading &raquo;</a></p></article>    </div><!-- /#posts-list -->
-
+    <div class="entry-content"> <p>Change Status:</p>
+<ul>
+<li>published</li>
+<li>draft</li>
+</ul>
+<h1>H1</h1>
+<h2>H2</h2>
+<h3>H3</h3>
+<h4>H4</h4>
+<h5>H5</h5>
+<h6>H6</h6>
+<p>Alternatively, for H1 and H2, an underline-ish style:</p>
+<h1>Alt-H1</h1>
+<h2>Alt-H2</h2>
+<p>first line than two spaces and press Enter for second line<br/>
+haha there we go</p>
+<p><img alt="Alt Text" src="/images/img0.png" style="width: 512px; height: auto; max-width: 100%;"/></p>
+<p>Emphasis, aka italics, with <em>asterisks</em> or <em>underscores</em>.</p>
+<p>Strong emphasis, aka bold, with <strong>asterisks</strong> or <strong>underscores</strong>.</p>
+<p>Combined emphasis with <strong>asterisks and <em>underscores</em></strong>.</p>
+<p>Strikethrough uses two tildes. ~~Scratch this.~~</p>
+<ol>
+<li>First ordered list item</li>
+<li>Another item
+⋅⋅* Unordered sub-list. </li>
+<li>Actual numbers don't matter, just that it's a number
+⋅⋅1. Ordered sub-list</li>
+<li>And another item.</li>
+</ol>
+<p>⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).</p>
+<p>⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
+⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
+⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)</p>
+<ul>
+<li>Unordered list can use asterisks</li>
+<li>Or minuses</li>
+<li>Or pluses</li>
+</ul>
+<p><a href="https://www.google.com">I'm an inline-style link</a></p>
+<p>Inline <code>code</code> has <code>back-ticks around</code> it.</p>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">"JavaScript syntax highlighting"</span><span class="p">;</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+</pre></div>
+<div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">"Python syntax highlighting"</span>
+<span class="k">print</span> <span class="n">s</span>
+</pre></div>
+<table>
+<thead>
+<tr>
+<th>Markdown</th>
+<th>Less</th>
+<th>Pretty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Still</em></td>
+<td><code>renders</code></td>
+<td><strong>nicely</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Blockquotes are very handy in email to emulate reply text.
+This line is part of the same quote.</p>
+</blockquote>
+<p>Quote break.</p>
+<blockquote>
+<p>This is a very long line that will still be quoted properly when i</p>
+</blockquote>
+<p>Three or more...</p>
+<hr/>
+<p>Hyphens</p>
+<hr/>
+<p>Asterisks</p>
+<hr/>
+<p>Underscores</p> </div></article>    </div><!-- /#posts-list -->    
+   
 
         </section><!-- /#content -->
         
