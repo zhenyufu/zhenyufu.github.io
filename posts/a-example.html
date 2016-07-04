@@ -14,7 +14,7 @@
     <link href="http://csmojo.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Full Atom Feed" />
     <link href="http://csmojo.com/feeds/other.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
 
-        <meta name="description" content="Change Status:" />
+        <meta name="description" content="My Short cheat sheet for Markdown  " />
         <meta name="keywords" content="Other" />
 </head>
 
@@ -97,94 +97,55 @@
             &nbsp;&nbsp;&nbsp;On:
             <span datetime="2016-07-01T20:41:15-07:00"> Fri 01 July 2016 </span>
             &nbsp;&nbsp;&nbsp;
-            Pageviews: 29
+            Pageviews: 35
         </div>
     </div>
     
-    <div> <p>Change Status:</p>
-<ul>
-<li>published</li>
-<li>draft</li>
-</ul>
+    <div> <p>My Short cheat sheet for Markdown  </p>
+<h1>Headers</h1>
 <h1>H1</h1>
 <h2>H2</h2>
 <h3>H3</h3>
 <h4>H4</h4>
 <h5>H5</h5>
 <h6>H6</h6>
-<p>Alternatively, for H1 and H2, an underline-ish style:</p>
-<h1>Alt-H1</h1>
-<h2>Alt-H2</h2>
-<p>first line than two spaces and press Enter for second line<br/>
-haha there we go</p>
-<p><img alt="Alt Text" src="http://csmojo.com/images/img0.png" style="width: 512px; height: auto; max-width: 100%;"/></p>
-<p>Emphasis, aka italics, with <em>asterisks</em> or <em>underscores</em>.</p>
-<p>Strong emphasis, aka bold, with <strong>asterisks</strong> or <strong>underscores</strong>.</p>
-<p>Combined emphasis with <strong>asterisks and <em>underscores</em></strong>.</p>
-<p>Strikethrough uses two tildes. ~~Scratch this.~~</p>
-<ol>
-<li>First ordered list item</li>
-<li>Another item
-⋅⋅* Unordered sub-list. </li>
-<li>Actual numbers don't matter, just that it's a number
-⋅⋅1. Ordered sub-list</li>
-<li>And another item.</li>
-</ol>
-<p>⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).</p>
-<p>⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
-⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
-⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)</p>
+<h1>List</h1>
+<h3>Unordered list</h3>
 <ul>
-<li>Unordered list can use asterisks</li>
-<li>Or minuses</li>
-<li>Or pluses</li>
+<li>list<ul>
+<li>sub-list</li>
+<li>sub again<ul>
+<li>sub sub<ul>
+<li>subbb</li>
 </ul>
-<p><a href="https://www.google.com">I'm an inline-style link</a></p>
-<p>Inline <code>code</code> has <code>back-ticks around</code> it.</p>
-<div class="highlight"><pre>```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
-</pre></div>
-<div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">"Python syntax highlighting"</span>
-<span class="k">print</span> <span class="n">s</span>
-</pre></div>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"The triple-colon syntax will *not* show line numbers."</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s">"Python syntax highlighting"</span>
-<span class="k">print</span> <span class="n">s</span>
-</pre></div>
-<p>There are two ways to specify the identifier:</p>
-<div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"The triple-colon syntax will *not* show line numbers."</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s">"Python syntax highlighting"</span>
-<span class="k">print</span> <span class="n">s</span>
-</pre></div>
-<h2>Do not Use line numbers cause don't wrap</h2>
-<p>To display line numbers, use a path-less shebang instead of colons:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">"The path-less shebang syntax *will* show line numbers."</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"The path-less shebang syntax *will* show line numbers.ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"</span><span class="p">)</span>
-<span class="n">ee</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="k">if</span> <span class="n">ee</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">ee</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
-<p>ggggggggggggggggg  </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>asterisks  </li>
+</ul>
+<h3>ordered list</h3>
+<ol>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+<li>four</li>
+</ol>
+<h1>Table</h1>
 <table>
 <thead>
 <tr>
-<th>Markdown</th>
-<th>Less</th>
-<th>Pretty</th>
+<th>a</th>
+<th>b</th>
+<th>c</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Still</em></td>
-<td><code>renders</code></td>
-<td><strong>nicely</strong></td>
+<td>easy</td>
+<td>too</td>
+<td>write</td>
 </tr>
 <tr>
 <td>1</td>
@@ -192,58 +153,98 @@ alert(s);
 <td>3</td>
 </tr>
 <tr>
-<td><em>Still</em></td>
-<td><code>renders</code></td>
-<td><strong>nicely</strong></td>
-</tr>
-<tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-</tr>
-<tr>
-<td><em>Still</em></td>
-<td><code>renders</code></td>
-<td><strong>nicely</strong></td>
-</tr>
-<tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-</tr>
-<tr>
-<td><em>Still</em></td>
-<td><code>renders</code></td>
-<td><strong>nicely</strong></td>
-</tr>
-<tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Blockquotes are very handy in email to emulate reply text.
-This line is part of the same quote.</p>
-</blockquote>
-<p>Quote break.</p>
-<blockquote>
-<p>This is a very long line that will still be quoted properly when i</p>
-</blockquote>
-<p>Three or more...</p>
-<hr/>
-<p>Hyphens</p>
-<hr/>
-<p>Asterisks</p>
-<hr/>
-<p>Underscores</p> </div></div>            </section><!-- /#content -->
+<h1>Writing</h1>
+<p>Post/Page Change Status:</p>
+<ul>
+<li>published</li>
+<li>draft</li>
+</ul>
+<p>two spaces and Enter for second line<br/>
+haha there we go for the image:</p>
+<p><img alt="Alt Text" src="http://csmojo.com/images/img0.png" style="width: 512px; height: auto; max-width: 100%;"/></p>
+<ul>
+<li><em>italics</em></li>
+<li><strong>bold</strong></li>
+<li><strong><em>Combined</em></strong>.</li>
+</ul>
+<h1>Link</h1>
+<p><a href="http://csmojo.com">link to home page</a></p>
+<h1>Pygments Code highlighter</h1>
+<p><a href="http://pygments.org/languages/">Pygments supported languages</a></p>
+<div class="highlight"><pre><span class="k">print</span> <span class="s">"Hello World"</span>
+</pre></div>
+<div class="highlight"><pre><span class="n">My</span> <span class="n">simple</span> <span class="n">Markdown</span> <span class="n">cheat</span> <span class="n">sheet</span>   
+
+
+<span class="cp"># Headers</span>
+<span class="cp"># H1</span>
+<span class="cp">## H2</span>
+<span class="cp">### H3</span>
+<span class="cp">#### H4</span>
+<span class="cp">##### H5</span>
+<span class="cp">###### H6</span>
+
+
+<span class="cp"># List</span>
+<span class="cp">### Unordered list</span>
+<span class="o">*</span> <span class="n">list</span>
+    <span class="o">*</span> <span class="n">sub</span><span class="o">-</span><span class="n">list</span>
+    <span class="o">*</span> <span class="n">sub</span> <span class="n">again</span>
+        <span class="o">*</span> <span class="n">sub</span> <span class="n">sub</span>
+            <span class="o">*</span> <span class="n">subbb</span>
+<span class="o">*</span> <span class="n">asterisks</span>  
+
+<span class="cp">### ordered list  </span>
+<span class="mf">1.</span> <span class="n">one</span>
+<span class="mf">2.</span> <span class="n">two</span>
+<span class="mf">3.</span> <span class="n">three</span>
+<span class="mf">4.</span> <span class="n">four</span>
+
+
+<span class="cp"># Table</span>
+
+<span class="n">a</span> <span class="o">|</span> <span class="n">b</span> <span class="o">|</span> <span class="n">c</span>
+<span class="o">---</span> <span class="o">|</span> <span class="o">---</span> <span class="o">|</span> <span class="o">---</span>
+<span class="n">easy</span> <span class="o">|</span> <span class="n">too</span> <span class="o">|</span> <span class="n">write</span>
+<span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">3</span>
+<span class="mi">4</span> <span class="o">|</span> <span class="mi">5</span> <span class="o">|</span> <span class="mi">6</span>
+
+
+<span class="cp"># Writing</span>
+<span class="n">Post</span><span class="o">/</span><span class="n">Page</span> <span class="n">Change</span> <span class="nl">Status</span><span class="p">:</span>
+
+<span class="o">*</span> <span class="n">published</span>
+<span class="o">*</span> <span class="n">draft</span>
+
+<span class="n">two</span> <span class="n">spaces</span> <span class="n">and</span> <span class="n">Enter</span> <span class="k">for</span> <span class="n">second</span> <span class="n">line</span>  
+<span class="n">haha</span> <span class="n">there</span> <span class="n">we</span> <span class="n">go</span> <span class="k">for</span> <span class="n">the</span> <span class="nl">image</span><span class="p">:</span>
+
+<span class="o">!</span><span class="p">[</span><span class="n">Alt</span> <span class="n">Text</span><span class="p">]({</span><span class="n">filename</span><span class="p">}</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">img0</span><span class="p">.</span><span class="n">png</span><span class="p">)</span>
+
+<span class="o">*</span> <span class="o">*</span><span class="n">italics</span><span class="o">*</span>
+<span class="o">*</span> <span class="o">**</span><span class="n">bold</span><span class="o">**</span>
+<span class="o">*</span> <span class="o">**</span><span class="n">_Combined_</span><span class="o">**</span><span class="p">.</span>
+
+
+<span class="cp"># Link</span>
+<span class="p">[</span><span class="n">link</span> <span class="n">to</span> <span class="n">home</span> <span class="n">page</span><span class="p">](</span><span class="nl">http</span><span class="p">:</span><span class="c1">//csmojo.com)</span>
+
+
+<span class="cp"># Pygments Code highlighter</span>
+<span class="p">[</span><span class="n">Pygments</span> <span class="n">supported</span> <span class="n">languages</span><span class="p">](</span><span class="nl">http</span><span class="p">:</span><span class="c1">//pygments.org/languages/)</span>
+</pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 
         <footer id="my-footer" class="w3-container w3-padding-8 w3-grey w3-medium" >
             &copy; <script>document.write(new Date().getFullYear());</script> csmojo.com&nbsp;&nbsp;
-            Powered by <a href="http://getpelican.com/">Pelican</a> <a href="https://pages.github.com/">Github Pages</a> <a href="http://www.w3schools.com/w3css/">w3.css</a> <a href="https://analytics.google.com/analytics/web/">Google Analytics</a>
+            Powered by <a href="http://getpelican.com/">Pelican</a> <a href="https://pages.github.com/">Github Pages</a> <a href="http://www.w3schools.com/w3css/">w3.css</a> <a href="https://analytics.google.com/analytics/web/">Google Analytics</a> <a href="http://pygments.org/">pygments</a>
         </footer><!-- /#contentinfo -->
     </div><!-- end of my-all -->
 
