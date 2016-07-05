@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/gdal.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2015-08-06T20:58:19-07:00</updated><entry><title>How to use GDAL Python to transform geotiff pixels to lat lon real-word coordinates</title><link href="http://csmojo.com/posts/how-to-use-gdal-python-to-transform-geotiff-pixels-to-lat-lon-real-word-coordinates.html" rel="alternate"></link><published>2015-08-06T20:58:19-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-08-06:posts/how-to-use-gdal-python-to-transform-geotiff-pixels-to-lat-lon-real-word-coordinates.html</id><summary type="html">&lt;p&gt;GDAL gdaltransform is a easy way to transform a pixel of a tiff image to its corresponding lat/lon coordinate.&lt;/p&gt;
+&lt;h3&gt;Software&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.python.org/download/releases/2.7/"&gt;Python 2.7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.gdal.org/"&gt;GDAL 1.11.1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.gdal.org/gdaltransform.html"&gt;GDAL: gdaltransform&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1. In terminal&lt;/h3&gt;
+&lt;p&gt;Running the following in the terminal will give you the (lon, lat) coordinate of (12, 6) pixel (12th column and 6th row) of "myImage.tiff" :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;gdaltransform myImage.tiff
+12 6
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;this returns (lon, lat, z value) :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;85.1234567890123 27.1234567890123 0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;2. In Python Script&lt;/h3&gt;
+&lt;p&gt;To achieve this through a python script and therefore transform an lot of pixels at once, you will have to first write the pixels to a file "pix.txt" and then run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"gdaltransform "&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;imagePath&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;" &amp;lt;pix.txt "&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;"&amp;gt;cor.txt"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will produce "cor.txt" containing the (lon, lat, z value)&lt;/p&gt;
+&lt;p&gt;Example "pix.txt" and "cor.txt":
+pix.txt:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;12 6
+24 9
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;cor.txt:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;85.1234567890123 27.1234567890123 0
+86.3234565432233 26.9876543345677 0
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="GDAL"></category><category term="Linux"></category><category term="Python"></category></entry></feed>

@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/bbbbug.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-07-01T20:42:23-07:00</updated><entry><title>Hello New World</title><link href="http://csmojo.com/posts/hello-new-world.html" rel="alternate"></link><published>2016-07-01T20:42:23-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-01:posts/hello-new-world.html</id><summary type="html">&lt;p&gt;Moving from Blogger to Pelican&lt;br/&gt;
-It is a brave new world !  &lt;/p&gt;</summary><category term="ok"></category><category term="Web"></category></entry></feed>

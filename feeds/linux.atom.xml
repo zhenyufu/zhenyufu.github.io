@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/linux.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2015-08-03T20:39:18-07:00</updated><entry><title>How to install i3 on Debian 8 in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html" rel="alternate"></link><published>2015-08-03T20:39:18-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-08-03:posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Forget about fancy desktop environments and do a clean install of the awesome windows manager i3 on Debian 8.&lt;br/&gt;
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150040.png" style="width: 1829px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;Software&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.virtualbox.org/wiki/Downloads"&gt;VirtualBox 4.3.28&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.debian.org/distrib/"&gt;Debian 8.1.0 amd64&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://i3wm.org/"&gt;i3 4.8&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://forums.virtualbox.org/viewtopic.php?f=2&amp;amp;t=18377"&gt;Xorg screen resolution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html"&gt;.bash_profile vs .bashrc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Prerequisites&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;0.1 &lt;a href="http://csmojo.com/posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html"&gt;How to minimally install Debian 8 in VM VirtualBox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1. Install i3 and xorg&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;apt-get install i3
+apt-get install xorg
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;2. Create xorg config file&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Xorg -configure
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;(X is upper case)
+if you get hardware errors, it may be VirtualBox specific and can be ignored&lt;br/&gt;
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150034.png" style="width: 529px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;move it to the right place:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;cp xorg.conf.new /etc/X11/xorg.conf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Set "startx" to run after login
+in root do&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;ls -a
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150035.png" style="width: 497px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;and there is a ".profile" file, nano open it and add to the end:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="x"&gt;if [ -z "&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;DISPLAY&lt;/span&gt;&lt;span class="x"&gt;" ] &amp;amp;&amp;amp; [ &lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="err"&gt;tty&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt; == /dev/tty1 ]; then&lt;/span&gt;
+&lt;span class="x"&gt;  startx&lt;/span&gt;
+&lt;span class="x"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Some people suggest adding the above commands to ".bashrc" instead, the difference between the two: &lt;a href="http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html"&gt;.bash_profile vs .bashrc&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;4. Change xorg screen resolution (solution from &lt;a href="https://forums.virtualbox.org/viewtopic.php?f=2&amp;amp;t=18377"&gt;VirtualBo's Forum&lt;/a&gt;)&lt;/h3&gt;
+&lt;p&gt;For this example, we will be setting the resolution to "1920x1080"
+4.1. edit /etc/X11/xorg.conf
+In section "Monitor" add&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;HorizSync 31-80   
+VertRefresh 30-100
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150036.png" style="width: 384px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;In section "Screen" add&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;DefaultDepth 16
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150039.png" style="width: 285px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;Scroll down to "Display" with Depth 16 and add&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Modes "1920x1080"
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150038.png" style="width: 252px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;4.2. Power off the virtual machine and in your host machine use "VBoxManager" to run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;VBoxManage setextradata Debian CustomVideoMode1 1920x1080x16
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;where Debian is the name of the guest machine&lt;br/&gt;
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150037.png" style="width: 810px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;5. Restart the virtual machine and enjoy i3 on Debian&lt;/h3&gt;</summary><category term="Debian"></category><category term="i3"></category><category term="Linux"></category><category term="VirtualBox"></category></entry><entry><title>How to install Debian Guest Additions in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-install-debian-guest-additions-in-vm-virtualbox.html" rel="alternate"></link><published>2015-07-29T20:12:47-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-07-29:posts/how-to-install-debian-guest-additions-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Install Guest Additions for Debian to enable full screen display and more.&lt;/p&gt;
+&lt;h3&gt;Software&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.virtualbox.org/wiki/Downloads"&gt;VM VirtualBox 4.3.30&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.debian.org/distrib/"&gt;Debian 8.1.0 amd64&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.virtualbox.org/manual/ch04.html#idp96235792"&gt;Guest Additions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1. Install dkms&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;apt-get install dkms
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;2. Insert Guest Additions CD image&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150021.png" style="width: 403px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;3. cd to location of the CD image in /media&lt;/h3&gt;
+&lt;p&gt;run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sh ./VBoxLinuxAdditions.run
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If the above fails, check you have the following packages installed:
+&lt;em&gt; make
+&lt;/em&gt; gcc
+* linux-headers (run "uname -a" to check kernel version)&lt;/p&gt;</summary><category term="Debian"></category><category term="Linux"></category><category term="VirtualBox"></category></entry><entry><title>How to fix Cinnamon running without video hardware acceleration issue in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-fix-cinnamon-running-without-video-hardware-acceleration-issue-in-vm-virtualbox.html" rel="alternate"></link><published>2015-07-29T20:00:00-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-07-29:posts/how-to-fix-cinnamon-running-without-video-hardware-acceleration-issue-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Upon initial installation of Cinnamon in VM VirtualBox, 
+you might encounter the pop up window "Cinnamon running without video hardware acceleration"&lt;br/&gt;
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150016.png" style="width: 447px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;To fix this, simply check "Enable 3D Acceleration" in the VM settings&lt;br/&gt;
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150017.png" style="width: 675px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;</summary><category term="Linux"></category><category term="VirtualBox"></category></entry><entry><title>How to fully enable Xfce windows snapping</title><link href="http://csmojo.com/posts/how-to-fully-enable-xfce-windows-snapping.html" rel="alternate"></link><published>2015-07-29T20:00:00-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-07-29:posts/how-to-fully-enable-xfce-windows-snapping.html</id><summary type="html">&lt;p&gt;For any excessively tidy people, windows snapping is a must; Xfce is a great desktop environment that provides such features. 
+By default though, it seems that only horizontal snapping works and you'd have to tweak the settings a bit to make vertical snapping function as well.&lt;br/&gt;
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150018.png" style="width: 1826px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;Software&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.xfce.org/"&gt;Xfce 4.10&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Setting&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Go to Settings &amp;gt; Window Manager &amp;gt; Advanced
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150019.png" style="width: 551px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;and uncheck "Wrap workspaces when dragging a window off the screen"
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150020.png" style="width: 607px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happy snapping!&lt;/p&gt;</summary><category term="Linux"></category><category term="Xfce"></category></entry><entry><title>How to search in nano editor</title><link href="http://csmojo.com/posts/how-to-search-in-nano-editor.html" rel="alternate"></link><published>2015-07-28T20:00:00-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-07-28:posts/how-to-search-in-nano-editor.html</id><summary type="html">&lt;p&gt;nano's search uses Ctrl + w which acts like Ctrl + f in other common editors&lt;br/&gt;
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150007.png" style="width: 156px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;Software&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.nano-editor.org/"&gt;GNU nano version 2.2.6&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://wiki.gentoo.org/wiki/Nano/Basics_Guide"&gt;Nano/Basics Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Search&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Search a string:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Ctrl + w
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150008.png" style="width: 1042px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Search the next string:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Alt + w
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="GNU"></category><category term="Nano"></category></entry><entry><title>What Debian standard system utilities include</title><link href="http://csmojo.com/posts/what-debian-standard-system-utilities-include.html" rel="alternate"></link><published>2015-07-28T20:00:00-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-07-28:posts/what-debian-standard-system-utilities-include.html</id><summary type="html">&lt;p&gt;When installing Debian 8, there is a software selection page where "standard system utilities" is preselected for you. Ever wondered what that package includes? Use tasksel to find out.&lt;br/&gt;
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150009.png" style="width: 755px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;Software&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.debian.org/distrib/"&gt;Debian 8.1.0 amd64&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://wiki.debian.org/tasksel"&gt;tasksel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;In Debian terminal, run&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;tasksel --task-packages standard
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This command seems to only work if  "standard system utilities" was not installed during Debian installation. It will list what is included in "standard system utilities":&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;apt-listchanges&lt;/li&gt;
+&lt;li&gt;lsof&lt;/li&gt;
+&lt;li&gt;mlocate&lt;/li&gt;
+&lt;li&gt;w3m&lt;/li&gt;
+&lt;li&gt;at&lt;/li&gt;
+&lt;li&gt;libswitch-perl&lt;/li&gt;
+&lt;li&gt;xz-utils&lt;/li&gt;
+&lt;li&gt;telnet&lt;/li&gt;
+&lt;li&gt;dc&lt;/li&gt;
+&lt;li&gt;bsd-mailx&lt;/li&gt;
+&lt;li&gt;file&lt;/li&gt;
+&lt;li&gt;exim4-config&lt;/li&gt;
+&lt;li&gt;m4&lt;/li&gt;
+&lt;li&gt;bc&lt;/li&gt;
+&lt;li&gt;dnsutils&lt;/li&gt;
+&lt;li&gt;exim4&lt;/li&gt;
+&lt;li&gt;python2.7&lt;/li&gt;
+&lt;li&gt;openssh-client&lt;/li&gt;
+&lt;li&gt;aptitude&lt;/li&gt;
+&lt;li&gt;bash-completion&lt;/li&gt;
+&lt;li&gt;python&lt;/li&gt;
+&lt;li&gt;host&lt;/li&gt;
+&lt;li&gt;install-info&lt;/li&gt;
+&lt;li&gt;bzip2&lt;/li&gt;
+&lt;li&gt;reportbug&lt;/li&gt;
+&lt;li&gt;krb5-locales&lt;/li&gt;
+&lt;li&gt;bind9-host&lt;/li&gt;
+&lt;li&gt;time&lt;/li&gt;
+&lt;li&gt;info&lt;/li&gt;
+&lt;li&gt;liblockfile-bin&lt;/li&gt;
+&lt;li&gt;whois&lt;/li&gt;
+&lt;li&gt;aptitude-common&lt;/li&gt;
+&lt;li&gt;patch&lt;/li&gt;
+&lt;li&gt;ncurses-term&lt;/li&gt;
+&lt;li&gt;mutt&lt;/li&gt;
+&lt;li&gt;mime-support&lt;/li&gt;
+&lt;li&gt;exim4-daemon-light&lt;/li&gt;
+&lt;li&gt;ftp&lt;/li&gt;
+&lt;li&gt;nfs-common&lt;/li&gt;
+&lt;li&gt;python-reportbug&lt;/li&gt;
+&lt;li&gt;rpcbind&lt;/li&gt;
+&lt;li&gt;texinfo&lt;/li&gt;
+&lt;li&gt;python-minimal&lt;/li&gt;
+&lt;li&gt;procmail&lt;/li&gt;
+&lt;li&gt;libclass-isa-perl&lt;/li&gt;
+&lt;li&gt;python-apt&lt;/li&gt;
+&lt;li&gt;python-support&lt;/li&gt;
+&lt;li&gt;exim4-base&lt;/li&gt;
+&lt;li&gt;debian-faq&lt;/li&gt;
+&lt;li&gt;doc-debian&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="Debian"></category><category term="Linux"></category><category term="Linux Command"></category></entry><entry><title>How to minimally install Debian 8 in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html" rel="alternate"></link><published>2015-07-27T20:00:00-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-07-27:posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Debian without a desktop environment is simple, clean and full of potential.
+It is the ideal set up for installing your own choice of desktop environment that doesn't come with the Debian installer, or for setting up a Debian server.&lt;br/&gt;
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150001.png" style="width: 641px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;Software&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.virtualbox.org/wiki/Downloads"&gt;VM VirtualBox 4.3.30&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.debian.org/distrib/"&gt;Debian 8.1.0 amd64&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.debian.org/releases/stable/amd64/"&gt;Debian GNU/Linux Installation Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Prerequisites&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;0.1 Comfortable using Linux without a desktop environment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1. Start the virtual machine&lt;/h3&gt;
+&lt;p&gt;Create a new virtual machine for Debian and start it with the Debian .iso&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150002.png" style="width: 497px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;2. Choose Install&lt;/h3&gt;
+&lt;p&gt;Install and Graphical install is pretty much the same&lt;/p&gt;
+&lt;h3&gt;3. Configure settings to your liking&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;language&lt;/li&gt;
+&lt;li&gt;location&lt;/li&gt;
+&lt;li&gt;keyboard&lt;/li&gt;
+&lt;li&gt;hostname&lt;/li&gt;
+&lt;li&gt;domain name (leave it blank if you don't have one)&lt;/li&gt;
+&lt;li&gt;Users&lt;/li&gt;
+&lt;li&gt;Time zone&lt;/li&gt;
+&lt;li&gt;Partition disks (strongly recommend partitioning if it will be used as a server )&lt;/li&gt;
+&lt;li&gt;mirror (you can leave the proxy setting blank)&lt;/li&gt;
+&lt;li&gt;package usage survey&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4. Software selection&lt;/h3&gt;
+&lt;p&gt;First Thing to note is that if you regret not installing anything here, later after Debian is installed and running, you can always run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;tasksel
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;to install or uninstall anything you missed (except "standard system utilities" is replace by "laptop"; they are not the same; read more: &lt;a href="https://wiki.debian.org/tasksel"&gt;tasksel&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150006.png" style="width: 634px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;What each package includes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;web server: Apache2&lt;/li&gt;
+&lt;li&gt;print server: CUPS (you can deselect it if printing is not needed)&lt;/li&gt;
+&lt;li&gt;SSH server: openssh&lt;/li&gt;
+&lt;li&gt;standard system utilities: What Debian's "standard system utilities" include&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;4.1. For a bare bone installation with only Debian core:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Don't check anything&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;4.2. For a minimal installation (Recommended):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;standard system utilities (as this provides Python, whois, ftp, telnet, aptitude and other goodies)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;4.3. For a server:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH server&lt;/li&gt;
+&lt;li&gt;standard system utilities &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150003.png" style="width: 758px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;5. Grub&lt;/h3&gt;
+&lt;p&gt;Select /dev/sda&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150004.png" style="width: 760px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;6. Finish the installation and reboot&lt;/h3&gt;
+&lt;p&gt;VirtualBox will remove the installation .iso for you&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150005.png" style="width: 744px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;7. Update and upgrade&lt;/h3&gt;
+&lt;p&gt;After logging in, update your package list:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;apt-get update
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;upgrade the packages:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;apt-get upgrade
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Fully utilize VirtualBox's snapshots to save whatever you are doing&lt;/p&gt;</summary><category term="Debian"></category><category term="Linux"></category><category term="VirtualBox"></category></entry><entry><title>How to create a symbolic link in Linux</title><link href="http://csmojo.com/posts/how-to-create-a-symbolic-link-in-linux.html" rel="alternate"></link><published>2015-07-03T20:36:16-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-07-03:posts/how-to-create-a-symbolic-link-in-linux.html</id><summary type="html">&lt;p&gt;Symbolic link or Symlink is a file that contains a link to another actual file path. It acts as a pointer and will always point to the "actualFilepath".&lt;/p&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://man7.org/linux/man-pages/man1/ln.1.html"&gt;man-pages:ln&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Symbolic_link"&gt;Wikipedia: symbolic link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;run&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;ln -s actualFilePath linkFilePath
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;A Symbolic link links to wherever actualFilePath is; if the original actualFile is deleted and a new file is created with the same name, the Symlink will link to the new file as it still has the same path&lt;/li&gt;
+&lt;li&gt;In "Properties" of the linkFile you can see where it is linked to; if the actualFile does not exist it will show broken link&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="Linux"></category><category term="Linux Command"></category></entry></feed>
