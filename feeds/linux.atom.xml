@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/linux.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2015-08-03T20:39:18-07:00</updated><entry><title>How to install i3 on Debian 8 in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html" rel="alternate"></link><published>2015-08-03T20:39:18-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-08-03:posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Forget about fancy desktop environments and do a clean install of the awesome windows manager i3 on Debian 8.&lt;br/&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/linux.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-07-09T20:22:01-07:00</updated><entry><title>How to show file size in Linux terminal</title><link href="http://csmojo.com/posts/how-to-show-file-size-in-linux-terminal.html" rel="alternate"></link><published>2016-07-09T20:22:01-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-09:posts/how-to-show-file-size-in-linux-terminal.html</id><summary type="html">&lt;p&gt;To list the file size of all the files in the current directory, use the &lt;code&gt;du&lt;/code&gt; command&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;du -sh *
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-s&lt;/code&gt; is for summarize so it gives a total size for a directory &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-h&lt;/code&gt; is for human readable format with units &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*&lt;/code&gt; is for all files. One can change it to a filename to see the size of only that file&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="Linux"></category><category term="Linux Command"></category></entry><entry><title>How to install i3 on Debian 8 in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html" rel="alternate"></link><published>2015-08-03T20:39:18-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-08-03:posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Forget about fancy desktop environments and do a clean install of the awesome windows manager i3 on Debian 8.&lt;br/&gt;
 &lt;img alt="Alt Text" src="http://csmojo.com/images/img20150040.png" style="width: 1829px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;Software&lt;/h3&gt;
 &lt;ul&gt;

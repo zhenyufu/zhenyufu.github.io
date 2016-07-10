@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/web.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-07-09T21:09:01-07:00</updated><entry><title>My pelican setup</title><link href="http://csmojo.com/posts/my-pelican-setup.html" rel="alternate"></link><published>2016-07-09T21:09:01-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-09:posts/my-pelican-setup.html</id><summary type="html">&lt;p&gt;Document some of the useful changes that I made to my pelican setup.
+Might be helpful for newcomers ;)&lt;/p&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/getpelican/pelican/wiki/Tips-n-Tricks"&gt;Tips n Tricks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/3.6.3/tips.html"&gt;Tips — Pelican 3.6.3 documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Useful Pelican commands with make&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;make serve&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make publish&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make newpost NAME="post name"&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make newpage NAME="page name"&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Linking favicon.ico robots.txt&lt;/h3&gt;
+&lt;p&gt;See &lt;a href="http://docs.getpelican.com/en/3.6.3/tips.html"&gt;Tips — Pelican 3.6.3 documentation&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Clear content and Github hosting&lt;/h3&gt;
+&lt;p&gt;Setting &lt;code&gt;DELETE_OUTPUT_DIRECTORY = True&lt;/code&gt; helps clean the folder of any old unused posts or images,
+but if the output folder is a git repo, add &lt;code&gt;".git"&lt;/code&gt; to &lt;code&gt;OUTPUT_RETENTION&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;DELETE_OUTPUT_DIRECTORY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;OUTPUT_RETENTION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;".git"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"CNAME"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"README.md"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"favicon.ico"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"robots.txt"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Makfile&lt;/h3&gt;
+&lt;p&gt;Slight modifications from &lt;a href="https://github.com/getpelican/pelican/wiki/Tips-n-Tricks"&gt;Tips n Tricks&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Seperated post and page directory&lt;/li&gt;
+&lt;li&gt;Removed edit post / page&lt;/li&gt;
+&lt;li&gt;Added an if statement to check if file exits and abort if it exists&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# my add stuff #######&lt;/span&gt;
+&lt;span class="nv"&gt;POSTSDIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;INPUTDIR&lt;span class="k"&gt;)&lt;/span&gt;/posts
+&lt;span class="nv"&gt;PAGESDIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;INPUTDIR&lt;span class="k"&gt;)&lt;/span&gt;/pages
+&lt;span class="nv"&gt;DATE&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;shell date +&lt;span class="s1"&gt;'%Y-%m-%d %H:%M:%S'&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;SLUG&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;shell &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;'${NAME}'&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed -e &lt;span class="s1"&gt;'s/[^[:alnum:]]/-/g'&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tr -s &lt;span class="s1"&gt;'-'&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; tr A-Z a-z&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;EXT&lt;/span&gt; &lt;span class="o"&gt;:=&lt;/span&gt; md
+&lt;span class="nv"&gt;EDITOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; medit 
+
+&lt;span class="nf"&gt;newpost&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="cp"&gt;ifeq ($(wildcard $(POSTSDIR)/$(SLUG).$(EXT)),) &lt;/span&gt;
+&lt;span class="cp"&gt;else&lt;/span&gt;
+    @echo &lt;span class="s1"&gt;'File exists'&lt;/span&gt;
+    &lt;span class="nb"&gt;exit &lt;/span&gt;1&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="cp"&gt;endif&lt;/span&gt;
+&lt;span class="cp"&gt;ifdef NAME&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Title: &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;NAME&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &amp;gt;  &lt;span class="k"&gt;$(&lt;/span&gt;POSTSDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Slug: &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;POSTSDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Status: published"&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;POSTSDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Date: &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;DATE&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;POSTSDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Category: "&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;POSTSDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Tags: "&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;POSTSDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Author: David"&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;POSTSDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt;              &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;POSTSDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt;              &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;POSTSDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;EDITOR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt; &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;POSTSDIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;SLUG&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;EXT&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;span class="cp"&gt;else&lt;/span&gt;
+    @echo &lt;span class="s1"&gt;'Variable NAME is not defined.'&lt;/span&gt;
+    @echo &lt;span class="s1"&gt;'Do make newpost NAME='&lt;/span&gt;&lt;span class="s2"&gt;"'"&lt;/span&gt;&lt;span class="s1"&gt;'Post Name'&lt;/span&gt;&lt;span class="s2"&gt;"'"&lt;/span&gt;
+&lt;span class="cp"&gt;endif&lt;/span&gt;
+
+
+&lt;span class="nf"&gt;newpage&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="cp"&gt;ifeq ($(wildcard $(PAGESDIR)/$(SLUG).$(EXT)),) &lt;/span&gt;
+&lt;span class="cp"&gt;else&lt;/span&gt;
+    @echo &lt;span class="s1"&gt;'File exists'&lt;/span&gt;
+    &lt;span class="nb"&gt;exit &lt;/span&gt;1&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="cp"&gt;endif&lt;/span&gt;
+&lt;span class="cp"&gt;ifdef NAME&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Title: &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;NAME&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &amp;gt;  &lt;span class="k"&gt;$(&lt;/span&gt;PAGESDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Slug: &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;PAGESDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Status: published"&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;PAGESDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Date: &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;DATE&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;PAGESDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Tags: "&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;PAGESDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Author: David"&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;PAGESDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt;              &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;PAGESDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt;              &amp;gt;&amp;gt; &lt;span class="k"&gt;$(&lt;/span&gt;PAGESDIR&lt;span class="k"&gt;)&lt;/span&gt;/&lt;span class="k"&gt;$(&lt;/span&gt;SLUG&lt;span class="k"&gt;)&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;EDITOR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt; &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PAGESDIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;SLUG&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.&lt;span class="k"&gt;$(&lt;/span&gt;EXT&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="cp"&gt;else&lt;/span&gt;
+    @echo &lt;span class="s1"&gt;'Variable NAME is not defined.'&lt;/span&gt;
+    @echo &lt;span class="s1"&gt;'Do make newpage NAME='&lt;/span&gt;&lt;span class="s2"&gt;"'"&lt;/span&gt;&lt;span class="s1"&gt;'Page Name'&lt;/span&gt;&lt;span class="s2"&gt;"'"&lt;/span&gt;
+&lt;span class="cp"&gt;endif&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;TEMPLATE_PAGES&lt;/h3&gt;
+&lt;p&gt;For the comment page and the 404 page, I created them based on the base template and wanted them to be copied over to output&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;TEMPLATE_PAGES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;'inc/comments.html'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;'pages/comments.html'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'inc/404.html'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;'404.html'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Plugins&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Left the plugins that don't effect the preview out of &lt;code&gt;pelicanconf.py&lt;/code&gt;. This increased &lt;code&gt;make html&lt;/code&gt; speed. 
+In my case 'yuicompressor' and 'ga_page_view'&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Created a GOOGLE_ANALYTICS_BOOL to be only enabled in &lt;code&gt;publishconf.py&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;{% if GOOGLE_ANALYTICS_BOOL %}
+    &lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;"text/javascript"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="c"&gt;&amp;lt;!--&lt;/span&gt; &lt;span class="nx"&gt;tracking&lt;/span&gt; &lt;span class="nx"&gt;code&lt;/span&gt; &lt;span class="o"&gt;--&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+{% endif %}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;for &lt;code&gt;pelicanconf.py&lt;/code&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'summary'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'better_figures_and_images'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'pelican_javascript'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;SUMMARY_USE_FIRST_PARAGRAPH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;RESPONSIVE_IMAGES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;GOOGLE_ANALYTICS_BOOL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt; &lt;span class="c"&gt;# True in publish&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;for &lt;code&gt;publishconf.py&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'yuicompressor'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'ga_page_view'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;GOOGLE_ANALYTICS_BOOL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;ga_page_view Plugin&lt;/h4&gt;
+&lt;p&gt;First and foremost - Great plugin ! Some notes below:&lt;br/&gt;
+* The plugin does the same thing as &lt;code&gt;HelloAnalytics.py&lt;/code&gt; from Google Analytics 
+and only reads the first view from the first property of the first account, 
+so you should make sure this is the one you want&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The plugin does not have Google Analytics tracking script built in so add that yourself &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Following the tutorials from the plugin here : &lt;a href="https://github.com/jhshi/pelican.plugins.ga_page_view/tree/f09eaaefd666f6cfd6e2c271778d5a25e3b9ab28"&gt;Page View using Google Analytics&lt;/a&gt;, 
+and from Google Analytics &lt;a href="https://developers.google.com/analytics/devguides/reporting/core/v3/quickstart/service-py"&gt;Hello Analytics API: Python quickstart for service accounts&lt;/a&gt;
+I recieved two errors due to requiring different oauth versions.
+Both are solved by switching the oauth2client version:  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For error &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+  &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s"&gt;"HelloAnalytics.py"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;oauth2client.service_account&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ServiceAccountCredentials&lt;/span&gt;
+&lt;span class="ne"&gt;ImportError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;cannot&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;name&lt;/span&gt; &lt;span class="nn"&gt;ServiceAccountCredentials&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pip install oauth2client==2.2.0
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;For error &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ERROR&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Cannot&lt;/span&gt; &lt;span class="n"&gt;load&lt;/span&gt; &lt;span class="n"&gt;plugin&lt;/span&gt; &lt;span class="sb"&gt;`ga_page_view`&lt;/span&gt;
+  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="ne"&gt;ImportError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;cannot&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;name&lt;/span&gt; &lt;span class="nn"&gt;SignedJwtAssertionCredentials&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pip install oauth2client==1.5.2
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Pelican"></category><category term="Python"></category></entry></feed>
