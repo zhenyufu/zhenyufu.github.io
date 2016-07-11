@@ -6,7 +6,7 @@
 &lt;li&gt;&lt;code&gt;-s&lt;/code&gt; is for summarize so it gives a total size for a directory &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-h&lt;/code&gt; is for human readable format with units &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;*&lt;/code&gt; is for all files. One can change it to a filename to see the size of only that file&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="Linux"></category><category term="Linux Command"></category></entry><entry><title>How to install i3 on Debian 8 in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html" rel="alternate"></link><published>2015-08-03T20:39:18-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-08-03:posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Forget about fancy desktop environments and do a clean install of the awesome windows manager i3 on Debian 8.&lt;br/&gt;
+&lt;/ul&gt;</summary><category term="Linux"></category><category term="Commands"></category></entry><entry><title>How to install i3 on Debian 8 in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html" rel="alternate"></link><published>2015-08-03T20:39:18-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-08-03:posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Forget about fancy desktop environments and do a clean install of the awesome windows manager i3 on Debian 8.&lt;br/&gt;
 &lt;img alt="Alt Text" src="http://csmojo.com/images/img20150040.png" style="width: 1829px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;Software&lt;/h3&gt;
 &lt;ul&gt;
@@ -179,7 +179,7 @@ the server:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Use "mysqli_" as "mysql_" functions are deprecated.
 This will test the connection with the MySQL server, and show "connection ok" if connected successfully:&lt;br/&gt;
-&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150032.png" style="width: 1829px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;</summary><category term="Debian"></category><category term="Linux"></category><category term="Linux Command"></category><category term="MySQL"></category><category term="Network"></category><category term="Nginx"></category><category term="PHP"></category><category term="Server"></category><category term="VirtualBox"></category></entry><entry><title>How to install Debian Guest Additions in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-install-debian-guest-additions-in-vm-virtualbox.html" rel="alternate"></link><published>2015-07-29T20:12:47-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-07-29:posts/how-to-install-debian-guest-additions-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Install Guest Additions for Debian to enable full screen display and more.&lt;/p&gt;
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150032.png" style="width: 1829px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;</summary><category term="Debian"></category><category term="Linux"></category><category term="Commands"></category><category term="MySQL"></category><category term="Network"></category><category term="Nginx"></category><category term="PHP"></category><category term="Server"></category><category term="VirtualBox"></category></entry><entry><title>How to install Debian Guest Additions in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-install-debian-guest-additions-in-vm-virtualbox.html" rel="alternate"></link><published>2015-07-29T20:12:47-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-07-29:posts/how-to-install-debian-guest-additions-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Install Guest Additions for Debian to enable full screen display and more.&lt;/p&gt;
 &lt;h3&gt;Software&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.virtualbox.org/wiki/Downloads"&gt;VM VirtualBox 4.3.30&lt;/a&gt;&lt;/li&gt;
@@ -309,7 +309,7 @@ By default though, it seems that only horizontal snapping works and you'd have t
 &lt;li&gt;exim4-base&lt;/li&gt;
 &lt;li&gt;debian-faq&lt;/li&gt;
 &lt;li&gt;doc-debian&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="Debian"></category><category term="Linux"></category><category term="Linux Command"></category></entry><entry><title>How to minimally install Debian 8 in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html" rel="alternate"></link><published>2015-07-27T20:00:00-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-07-27:posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Debian without a desktop environment is simple, clean and full of potential.
+&lt;/ul&gt;</summary><category term="Debian"></category><category term="Linux"></category><category term="Commands"></category></entry><entry><title>How to minimally install Debian 8 in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html" rel="alternate"></link><published>2015-07-27T20:00:00-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-07-27:posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Debian without a desktop environment is simple, clean and full of potential.
 It is the ideal set up for installing your own choice of desktop environment that doesn't come with the Debian installer, or for setting up a Debian server.&lt;br/&gt;
 &lt;img alt="Alt Text" src="http://csmojo.com/images/img20150001.png" style="width: 641px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;Software&lt;/h3&gt;
@@ -396,4 +396,4 @@ It is the ideal set up for installing your own choice of desktop environment tha
 &lt;ul&gt;
 &lt;li&gt;A Symbolic link links to wherever actualFilePath is; if the original actualFile is deleted and a new file is created with the same name, the Symlink will link to the new file as it still has the same path&lt;/li&gt;
 &lt;li&gt;In "Properties" of the linkFile you can see where it is linked to; if the actualFile does not exist it will show broken link&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="Linux"></category><category term="Linux Command"></category></entry></feed>
+&lt;/ul&gt;</summary><category term="Linux"></category><category term="Commands"></category></entry></feed>
