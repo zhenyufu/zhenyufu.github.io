@@ -149,4 +149,146 @@ Both are solved by switching the oauth2client version:  &lt;/p&gt;
   &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="ne"&gt;ImportError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;cannot&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;name&lt;/span&gt; &lt;span class="nn"&gt;SignedJwtAssertionCredentials&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;pip install oauth2client==1.5.2
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="Pelican"></category><category term="Python"></category></entry></feed>
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Pelican"></category><category term="Python"></category></entry><entry><title>How to add Google Map Embed API for websites</title><link href="http://csmojo.com/posts/how-to-add-google-map-embed-api-for-websites.html" rel="alternate"></link><published>2015-09-06T22:11:47-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-09-06:posts/how-to-add-google-map-embed-api-for-websites.html</id><summary type="html">&lt;p&gt;Embed and set up a Google maps window into your website or blog post which comes with unlimited free usage&lt;/p&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://developers.google.com/maps/documentation/embed/guide#api_key"&gt;Google Maps Embed API&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1. The code from Google Maps Embed API&lt;/h3&gt;
+&lt;p&gt;The simplest form of Google Maps:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;iframe&lt;/span&gt;
+  &lt;span class="na"&gt;width=&lt;/span&gt;&lt;span class="s"&gt;"600"&lt;/span&gt;
+  &lt;span class="na"&gt;height=&lt;/span&gt;&lt;span class="s"&gt;"450"&lt;/span&gt;
+  &lt;span class="na"&gt;frameborder=&lt;/span&gt;&lt;span class="s"&gt;"0"&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;"border:0"&lt;/span&gt;
+  &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;"https://www.google.com/maps/embed/v1/place?key=API_KEY&lt;/span&gt;
+&lt;span class="s"&gt;    &amp;amp;q=Space+Needle,Seattle+WA"&lt;/span&gt; &lt;span class="err"&gt;allowfullscreen&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/iframe&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;width height: map size&lt;/li&gt;
+&lt;li&gt;key: get it in step 2&lt;/li&gt;
+&lt;li&gt;q: search query&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. The API key and credentials&lt;/h3&gt;
+&lt;p&gt;2.1 Go to Google Developer Console  and create a project&lt;br/&gt;
+2.2 API Library &amp;gt; Google Maps Embed API&lt;br/&gt;
+2.3 Credentials &amp;gt; Add credentials &amp;gt; API key &amp;gt; Browser key&lt;br/&gt;
+2.4 Give the key a suitable name and in "Accept requests from these HTTP referrers" add the websites that this key will be used on&lt;br/&gt;
+2.5 Copy the key into your code replacing API_KEY  &lt;/p&gt;
+&lt;h3&gt;3. The result&lt;/h3&gt;
+&lt;iframe allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed/v1/place?key=API_KEY
+    &amp;amp;q=Space+Needle,Seattle+WA" style="border:0" width="600"&gt;
+&lt;/iframe&gt;</summary><category term="HTML"></category><category term="Mapping"></category><category term="Web"></category></entry><entry><title>How to increase Blogger post text font size</title><link href="http://csmojo.com/posts/how-to-increase-blogger-post-text-font-size.html" rel="alternate"></link><published>2015-08-29T21:41:24-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-08-29:posts/how-to-increase-blogger-post-text-font-size.html</id><summary type="html">&lt;p&gt;Blogger's default html font size for posts is a bit small. To increase the size of the body of  your posts, the most intuitive way for many is to change the text size in the tool bar when writing a post. This comes with many inconveniences. A better approach is to add a CSS rule.&lt;/p&gt;
+&lt;h3&gt;Inconveniences with tool bar edit:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Blogger adds a span tag around everything in order to change font size. This is messy and error-prone &lt;/li&gt;
+&lt;li&gt;You will need to do it for every post&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Better approach to add CSS rule:&lt;/h3&gt;
+&lt;p&gt;Go to Settings &amp;gt; Customize &amp;gt; Advanced &amp;gt; Add CSS
+and add the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nc"&gt;.post-body&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="k"&gt;large&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can of course further customize it however you want&lt;/p&gt;</summary><category term="Blogger"></category><category term="CSS"></category></entry><entry><title>How to use MathJax to format HTML math expressions</title><link href="http://csmojo.com/posts/how-to-use-mathjax-to-format-html-math-expressions.html" rel="alternate"></link><published>2015-08-27T21:16:24-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-08-27:posts/how-to-use-mathjax-to-format-html-math-expressions.html</id><summary type="html">&lt;p&gt;formatting math expressions with HTML and CSS alone is possible yet pretty frustrating, 
+a simpler and more beautiful alternative is to use MathJax, which is a JS display engine.&lt;/p&gt;
+&lt;h3&gt;Software&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.mathjax.org/"&gt;MathJax&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://docs.mathjax.org/en/latest/start.html"&gt;MathJax-Getting Started&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference"&gt;MathJax basic tutorial and quick reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1. Include MathJax&lt;/h3&gt;
+&lt;p&gt;To start using MathJax, simple include the following code in head or body tag:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;"text/javascript"&lt;/span&gt;
+  &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;2. Formatting&lt;/h3&gt;
+&lt;p&gt;MathJax allows the 3 following notations:  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TeX and LaTeX&lt;/li&gt;
+&lt;li&gt;MathML&lt;/li&gt;
+&lt;li&gt;AsciiMath&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The examples will be shown using TeX and LaTeX notation with delimiters for:&lt;br/&gt;
+center display  mathematics:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;$$...$$
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;inline mathematics:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;\(...\)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;3. Examples:&lt;/h3&gt;
+&lt;p&gt;Superscript:&lt;br/&gt;
+\(x^2\)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;\(x^2\)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Subscript:&lt;br/&gt;
+\({xy}_0\) &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;\({xy}_0\)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Fraction:&lt;br/&gt;
+\(a \over c\)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;\(a \over c\)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Square root:&lt;br/&gt;
+\(\sqrt{a + b}\)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;\(\sqrt{a + b}\)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Not equal to:&lt;br/&gt;
+\(a \ne 0\)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;\(a \ne 0\)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Summation:&lt;br/&gt;
+\(\sum_0^n\)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;\(\sum_0^n\)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Integral:&lt;br/&gt;
+\(\int_0^n\)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;\(\int_0^n\)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Space:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;\quad
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Insert text:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;\text{...}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Display mathematics:
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;$$&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="x"&gt; = &lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="x"&gt;-b \pm \sqrt&lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="x"&gt;b^2-4ac} \over 2a}&lt;/span&gt;&lt;span class="p"&gt;$$&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="HTML"></category><category term="MathJax"></category><category term="Web design"></category></entry><entry><title>How to easily create HTML floating clouds using marquee</title><link href="http://csmojo.com/posts/how-to-easily-create-html-floating-clouds-using-marquee.html" rel="alternate"></link><published>2015-08-20T21:09:35-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-08-20:posts/how-to-easily-create-html-floating-clouds-using-marquee.html</id><summary type="html">&lt;p&gt;The easiest way to create floating clouds is simple using HTMLs marquee tag and a cloud icon from font awesome. 
+No complicated animation needed.&lt;br/&gt;
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150050.png" style="width: 656px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;Software&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://fortawesome.github.io/Font-Awesome/"&gt;Font Awesome&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.quackit.com/html/codes/html_marquee_code.cfm"&gt;HTML marquee&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;link&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;"http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"&lt;/span&gt; &lt;span class="na"&gt;rel=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;"my-clouds"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;marquee&lt;/span&gt; &lt;span class="na"&gt;behavior=&lt;/span&gt;&lt;span class="s"&gt;"scroll"&lt;/span&gt; &lt;span class="na"&gt;direction=&lt;/span&gt;&lt;span class="s"&gt;"right"&lt;/span&gt; &lt;span class="na"&gt;scrollamount=&lt;/span&gt;&lt;span class="s"&gt;"15"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;i&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;"fa fa-cloud"&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;"color:white;font-size:40px"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/marquee&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;marquee&lt;/span&gt; &lt;span class="na"&gt;behavior=&lt;/span&gt;&lt;span class="s"&gt;"scroll"&lt;/span&gt; &lt;span class="na"&gt;direction=&lt;/span&gt;&lt;span class="s"&gt;"left"&lt;/span&gt; &lt;span class="na"&gt;scrollamount=&lt;/span&gt;&lt;span class="s"&gt;"10"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;i&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;"fa fa-cloud"&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;"color:white;font-size:60px"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/marquee&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;marquee&lt;/span&gt; &lt;span class="na"&gt;behavior=&lt;/span&gt;&lt;span class="s"&gt;"scroll"&lt;/span&gt; &lt;span class="na"&gt;direction=&lt;/span&gt;&lt;span class="s"&gt;"right"&lt;/span&gt; &lt;span class="na"&gt;scrollamount=&lt;/span&gt;&lt;span class="s"&gt;"5"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="nt"&gt;&amp;lt;i&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;"fa fa-cloud"&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;"color:grey;font-size:90px"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/marquee&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;tweak cloud with:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;direction: "direction"&lt;/li&gt;
+&lt;li&gt;speed: "scrollamount"&lt;/li&gt;
+&lt;li&gt;color: CSS "color"&lt;/li&gt;
+&lt;li&gt;size: CSS "font-size"&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="HTML"></category><category term="Web design"></category></entry></feed>
