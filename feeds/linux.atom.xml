@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/linux.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-07-09T20:22:01-07:00</updated><entry><title>How to show file size in Linux terminal</title><link href="http://csmojo.com/posts/how-to-show-file-size-in-linux-terminal.html" rel="alternate"></link><published>2016-07-09T20:22:01-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-09:posts/how-to-show-file-size-in-linux-terminal.html</id><summary type="html">&lt;p&gt;To list the file size of all the files in the current directory, use the &lt;code&gt;du&lt;/code&gt; command&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/linux.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-07-12T13:27:35-07:00</updated><entry><title>How to enable extra monitors for Debian xfce in VirtualBox</title><link href="http://csmojo.com/posts/how-to-enable-extra-monitors-for-debian-xfce-in-virtualbox.html" rel="alternate"></link><published>2016-07-12T13:27:35-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-12:posts/how-to-enable-extra-monitors-for-debian-xfce-in-virtualbox.html</id><summary type="html">&lt;p&gt;Enable extra monitors or dual screens for Debian xfce in VirtualBox&lt;/p&gt;
+&lt;h3&gt;1. Enable extra monitors in VirtualBox settings&lt;/h3&gt;
+&lt;p&gt;Change the monitor count  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20160008.png" style="width: 519px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;2. Enable Virtual Screen&lt;/h3&gt;
+&lt;p&gt;After running the vitural machine, enable the second screen  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20160009.png" style="width: 498px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;3. Enalbe xfce display settings&lt;/h3&gt;
+&lt;p&gt;Go to display and click "Use this output"  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img20160010.png" style="width: 494px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;h3&gt;4. Change duplicate to extend using xrandr&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The defualt is duplicate screens&lt;/li&gt;
+&lt;li&gt;To change to extend, run &lt;code&gt;xrandr&lt;/code&gt; to list the two monitors&lt;/li&gt;
+&lt;li&gt;Run the following with the monitor names and position flag&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;xrandr --output VGA-0 --left-of VGA-1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Position flags from &lt;code&gt;man xrandr&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;--left-of, --right-of, --above, --below, --same-as another-output
+      Use one of these options to position the output relative to the  position  of
+      another  output.  This allows convenient tiling of outputs within the screen.
+      The position is always computed relative to the new  position  of  the  other
+      output, so it is not valid to say --output a --left-of b --output b --left-of
+      a.
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Linux"></category><category term="xfce"></category><category term="VirtualBox"></category><category term="xrandr"></category></entry><entry><title>How to show file size in Linux terminal</title><link href="http://csmojo.com/posts/how-to-show-file-size-in-linux-terminal.html" rel="alternate"></link><published>2016-07-09T20:22:01-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-09:posts/how-to-show-file-size-in-linux-terminal.html</id><summary type="html">&lt;p&gt;To list the file size of all the files in the current directory, use the &lt;code&gt;du&lt;/code&gt; command&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;du -sh *
 &lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;-s&lt;/code&gt; is for summarize so it gives a total size for a directory &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-h&lt;/code&gt; is for human readable format with units &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;*&lt;/code&gt; is for all files. One can change it to a filename to see the size of only that file&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="Linux"></category><category term="Commands"></category></entry><entry><title>How to install i3 on Debian 8 in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html" rel="alternate"></link><published>2015-08-03T20:39:18-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-08-03:posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Forget about fancy desktop environments and do a clean install of the awesome windows manager i3 on Debian 8.&lt;br/&gt;
+&lt;/ul&gt;</summary><category term="Linux"></category><category term="Commands"></category></entry><entry><title>How to solve Chrome flickering in VirtualBox</title><link href="http://csmojo.com/posts/how-to-solve-chrome-flickering-in-virtualbox.html" rel="alternate"></link><published>2015-08-06T20:50:17-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-08-06:posts/how-to-solve-chrome-flickering-in-virtualbox.html</id><summary type="html">&lt;p&gt;If you enabled 3D acceleration for a VirtualBox guest, and Chrome starts flickering in that guest.
+Go into Chrome's Advanced settings and disable "Use hardware acceleration when available" to solve the problem&lt;br/&gt;
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20150041.png" style="width: 534px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;</summary><category term="VirtualBox"></category><category term="Chrome"></category><category term="Errors"></category></entry><entry><title>How to install i3 on Debian 8 in VM VirtualBox</title><link href="http://csmojo.com/posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html" rel="alternate"></link><published>2015-08-03T20:39:18-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2015-08-03:posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html</id><summary type="html">&lt;p&gt;Forget about fancy desktop environments and do a clean install of the awesome windows manager i3 on Debian 8.&lt;br/&gt;
 &lt;img alt="Alt Text" src="http://csmojo.com/images/img20150040.png" style="width: 1829px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;Software&lt;/h3&gt;
 &lt;ul&gt;
