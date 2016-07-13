@@ -19,4 +19,4 @@
     &lt;span class="n"&gt;nowY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;pageY&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;offsetTop&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
 &lt;span class="o"&gt;}&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;After changing to "e.targetTouches[0].pageX", Android Chrome takes the code happily.&lt;/p&gt;</summary><category term="Android"></category><category term="JavaScript"></category><category term="Web"></category></entry></feed>
+&lt;p&gt;After changing to "e.targetTouches[0].pageX", Android Chrome takes the code happily.&lt;/p&gt;</summary><category term="Android"></category><category term="JavaScript"></category><category term="Web"></category><category term="Mobile"></category></entry></feed>
