@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/all.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-07-21T20:20:12-07:00</updated><entry><title>R writeBin() lookout for data type</title><link href="http://csmojo.com/posts/r-writebin-lookout-for-data-type.html" rel="alternate"></link><published>2016-07-21T20:20:12-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-21:posts/r-writebin-lookout-for-data-type.html</id><summary type="html">&lt;p&gt;R uses "Numeric" as it's default type for numbers. 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/all.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-07-22T15:16:41-07:00</updated><entry><title>How to turn existing folder into Git repo</title><link href="http://csmojo.com/posts/how-to-turn-existing-folder-into-git-repo.html" rel="alternate"></link><published>2016-07-22T15:16:41-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-22:posts/how-to-turn-existing-folder-into-git-repo.html</id><summary type="html">&lt;p&gt;Have a directory that you want to be linked to a Git repo ?&lt;/p&gt;
+&lt;h3&gt;Code&lt;/h3&gt;
+&lt;p&gt;Replace &lt;code&gt;https://github.com/zhenyufu/zhenyufu.github.io.git&lt;/code&gt; with your repo url:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git init
+git remote add origin https://github.com/zhenyufu/zhenyufu.github.io.git
+git pull origin master
+
+git add .
+git commit -m 'added files'
+git push origin master
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Git"></category></entry><entry><title>R writeBin() lookout for data type</title><link href="http://csmojo.com/posts/r-writebin-lookout-for-data-type.html" rel="alternate"></link><published>2016-07-21T20:20:12-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-21:posts/r-writebin-lookout-for-data-type.html</id><summary type="html">&lt;p&gt;R uses "Numeric" as it's default type for numbers. 
 This can sometimes lead to confusion and errors when a specific type is needed.
 In this example the writeBin() function is used to write data to binary.&lt;/p&gt;
 &lt;h3&gt;Reading&lt;/h3&gt;

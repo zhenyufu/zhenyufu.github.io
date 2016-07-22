@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>csmojo</title>
+        <title>csmojo</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/theme/css/w3.css"/>
@@ -14,6 +14,9 @@
     
     <link href="http://csmojo.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Full Atom Feed" />
     <link href="http://csmojo.com/feeds/git.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
+
+        <meta name="description" content="Have a directory that you want to be linked to a Git repo ?" />
+        <meta name="keywords" content="Git" />
 </head>
 
 
@@ -90,7 +93,7 @@
 
        
         <div id="my-main" class="w3-container" >
-            <h2>Posts in the Git category</h2>
+            <h2>Post</h2>
             <section id="content">
 <div class="w3-container w3-card-8 w3-padding-large w3-margin">
     <header>
@@ -113,32 +116,17 @@
         </div>
     </div>
     
-    <div class="my-margin-18"> Have a directory that you want to be linked to a Git repo ? </div> <!-- 18 margin to match geerated post margin -->
-<p><a href="http://csmojo.com/posts/how-to-turn-existing-folder-into-git-repo.html">Continue reading &raquo;</a></p></div><div class="w3-container w3-card-8 w3-padding-large w3-margin">
-    <header>
-        <h2><a class="my-no-dec" href="http://csmojo.com/posts/how-to-host-project-website-on-github-pages.html" rel="bookmark" title="Permalink to How to host Project Website on GitHub Pages"><b>How to host Project Website on GitHub Pages</b></a></h2>
-    </header>
-  
-    <div class="w3-medium">
-        <div>
-            Category: <a href="http://csmojo.com/category/git.html">Git</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;Tag:
-                <a href="http://csmojo.com/tag/github.html">GitHub</a>&nbsp;&nbsp;
-                <a href="http://csmojo.com/tag/web.html">Web</a>&nbsp;&nbsp;
-        </div>
-        <div> 
-            By:
-                <a href="http://csmojo.com/author/david.html">David</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;On:
-            <span datetime="2015-09-07T22:17:11-07:00"> Mon 07 September 2015 </span>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            Pageviews: 1
-        </div>
-    </div>
-    
-    <div class="my-margin-18"> You can host static websites freely on GitHub Pages. They are awesome! </div> <!-- 18 margin to match geerated post margin -->
-<p><a href="http://csmojo.com/posts/how-to-host-project-website-on-github-pages.html">Continue reading &raquo;</a></p></div>
-            </section><!-- /#content -->
+    <div> <p>Have a directory that you want to be linked to a Git repo ?</p>
+<h3>Code</h3>
+<p>Replace <code>https://github.com/zhenyufu/zhenyufu.github.io.git</code> with your repo url:</p>
+<div class="highlight"><pre>git init
+git remote add origin https://github.com/zhenyufu/zhenyufu.github.io.git
+git pull origin master
+
+git add .
+git commit -m 'added files'
+git push origin master
+</pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 
