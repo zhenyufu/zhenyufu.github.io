@@ -15,8 +15,9 @@
     <link href="http://csmojo.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Full Atom Feed" />
     <link href="http://csmojo.com/feeds/r.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
 
-        <meta name="description" content="Encountered configure: error: X11 not found but required while trying to install R rgl package, managed to fix it with: apt-get install xorg-dev" />
+        <meta name="description" content="R uses "Numeric" as it's default type for numbers. This can sometimes lead to confusion and errors when a specific type is needed. In this example the writeBin() function is used to write data to binary." />
         <meta name="keywords" content="R" />
+        <meta name="keywords" content="Math" />
         <meta name="keywords" content="Errors" />
 </head>
 
@@ -98,7 +99,7 @@
             <section id="content">
 <div class="w3-container w3-card-8 w3-padding-large w3-margin">
     <header>
-        <h2><a class="my-no-dec" href="http://csmojo.com/posts/how-to-fix-r-package-error-x11-not-found-but-required.html" rel="bookmark" title="Permalink to How to fix R package error X11 not found but required"><b>How to fix R package error X11 not found but required</b></a></h2>
+        <h2><a class="my-no-dec" href="http://csmojo.com/posts/r-writebin-lookout-for-data-type.html" rel="bookmark" title="Permalink to R writeBin() lookout for data type"><b>R writeBin() lookout for data type</b></a></h2>
     </header>
   
     <div class="w3-medium">
@@ -106,20 +107,79 @@
             Category: <a href="http://csmojo.com/category/r.html">R</a>
             &nbsp;&nbsp;&nbsp;&nbsp;Tag:
                 <a href="http://csmojo.com/tag/r.html">R</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/math.html">Math</a>&nbsp;&nbsp;
                 <a href="http://csmojo.com/tag/errors.html">Errors</a>&nbsp;&nbsp;
         </div>
         <div> 
             By:
                 <a href="http://csmojo.com/author/david.html">David</a>
             &nbsp;&nbsp;&nbsp;&nbsp;On:
-            <span datetime="2016-07-09T20:44:47-07:00"> Sat 09 July 2016 </span>
+            <span datetime="2016-07-21T20:20:12-07:00"> Thu 21 July 2016 </span>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            Pageviews: 3
+            Pageviews: 0
         </div>
     </div>
     
-    <div> <p>Encountered <code>configure: error: X11 not found but required</code> while trying to install R rgl package,
-managed to fix it with: <code>apt-get install xorg-dev</code></p> </div></div>            </section><!-- /#content -->
+    <div> <p>R uses "Numeric" as it's default type for numbers. 
+This can sometimes lead to confusion and errors when a specific type is needed.
+In this example the writeBin() function is used to write data to binary.</p>
+<h3>Reading</h3>
+<ul>
+<li><a href="http://www.inside-r.org/r-doc/base/as.numeric">R numeric</a></li>
+<li><a href="http://www.inside-r.org/r-doc/base/double">R double</a></li>
+<li><a href="https://docs.python.org/2/library/stdtypes.html#numeric-types-int-float-long-complex">Python Numeric Types</a></li>
+</ul>
+<h3>Numeric</h3>
+<p>Unlike python, which has "four distinct  numeric types: plain integers, long integers, floating point numbers, and complex numbers", 
+R uses "Numeric" as it's default type for numbers, which has double-precision. 
+This can bring surprises. From inside-r.org <a href="http://www.inside-r.org/r-doc/base/as.numeric">R numeric</a> : 
+"is.numeric returns TRUE if its argument is of mode "numeric" (type "double" or type "integer") and not a factor" : </p>
+<div class="highlight"><pre><span class="o">&gt;</span> a <span class="o">=</span> <span class="m">3</span>
+<span class="o">&gt;</span> <span class="kp">class</span><span class="p">(</span>a<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">"numeric"</span>
+<span class="o">&gt;</span> <span class="kp">mode</span><span class="p">(</span>a<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">"numeric"</span>
+<span class="o">&gt;</span> <span class="kp">is.numeric</span><span class="p">(</span>a<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">TRUE</span>
+<span class="o">&gt;</span> <span class="kp">is.double</span><span class="p">(</span>a<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">TRUE</span>
+<span class="o">&gt;</span> <span class="kp">is.integer</span><span class="p">(</span>a<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">FALSE</span>
+<span class="o">&gt;</span> a <span class="o">=</span> <span class="kp">as.integer</span><span class="p">(</span>a<span class="p">)</span> 
+<span class="o">&gt;</span> <span class="kp">is.numeric</span><span class="p">(</span>a<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">TRUE</span>
+<span class="o">&gt;</span> <span class="kp">is.double</span><span class="p">(</span>a<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">FALSE</span>
+<span class="o">&gt;</span> <span class="kp">is.integer</span><span class="p">(</span>a<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">TRUE</span>
+</pre></div>
+<h3>writeBin()</h3>
+<p>The type of the number is important when using the function writeBin() to write data to binary, 
+and passing that file to a different program or programming language. 
+One should be careful to convert the data to the wanted type before running writeBin(): </p>
+<div class="highlight"><pre>x <span class="o">=</span> <span class="kp">as.integer</span><span class="p">(</span>x<span class="p">)</span>
+con <span class="o">=</span> <span class="kp">file</span><span class="p">(</span><span class="s">"a"</span><span class="p">,</span><span class="s">"wb"</span><span class="p">)</span>
+<span class="kp">writeBin</span><span class="p">(</span>x<span class="p">,</span> con<span class="p">)</span>
+<span class="kp">close</span><span class="p">(</span>con<span class="p">)</span>
+</pre></div>
+<p>As writBin() does not have a parameter to specify the type you want (setting <code>size = 4</code> for integer will not convert the type): </p>
+<div class="highlight"><pre><span class="c1">#yes : gives [1] 1 2 3</span>
+x <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+x <span class="o">=</span> <span class="kp">as.integer</span><span class="p">(</span>x<span class="p">)</span>
+con <span class="o">=</span> <span class="kp">file</span><span class="p">(</span><span class="s">"x"</span><span class="p">,</span><span class="s">"wb"</span><span class="p">)</span>
+<span class="kp">writeBin</span><span class="p">(</span>x<span class="p">,</span> con<span class="p">)</span>
+<span class="kp">close</span><span class="p">(</span>con<span class="p">)</span>
+<span class="kp">readBin</span><span class="p">(</span><span class="s">"x"</span><span class="p">,</span> what <span class="o">=</span> <span class="s">"integer"</span><span class="p">,</span> n <span class="o">=</span><span class="m">3</span><span class="p">)</span>
+<span class="c1"># nope : gives [1] 1065353216</span>
+x <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+con <span class="o">=</span> <span class="kp">file</span><span class="p">(</span><span class="s">"x"</span><span class="p">,</span><span class="s">"wb"</span><span class="p">)</span>
+<span class="kp">writeBin</span><span class="p">(</span>x<span class="p">,</span> con<span class="p">,</span> size <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+<span class="kp">close</span><span class="p">(</span>con<span class="p">)</span>
+<span class="kp">readBin</span><span class="p">(</span><span class="s">"x"</span><span class="p">,</span> what <span class="o">=</span> <span class="s">"integer"</span><span class="p">)</span>
+</pre></div>
+<p>You also need to specify the correct type when calling readBin() to read the data back into R</p>
+<div class="highlight"><pre><span class="kp">print</span><span class="p">(</span><span class="kp">readBin</span><span class="p">(</span><span class="kp">file</span><span class="p">(</span><span class="s">"x"</span><span class="p">,</span> <span class="s">"rb"</span><span class="p">),</span> what <span class="o">=</span> <span class="s">"integer"</span><span class="p">,</span> n<span class="o">=</span><span class="m">10</span><span class="p">))</span>
+</pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 

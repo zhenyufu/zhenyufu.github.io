@@ -1,4 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/r.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-07-09T20:52:38-07:00</updated><entry><title>How to fix R package error missing required header GL/glu.h</title><link href="http://csmojo.com/posts/how-to-fix-r-package-error-missing-required-header-gl-glu-h.html" rel="alternate"></link><published>2016-07-09T20:52:38-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-09:posts/how-to-fix-r-package-error-missing-required-header-gl-glu-h.html</id><summary type="html">&lt;p&gt;Encountered &lt;code&gt;configure: error: missing required header GL/glu.h&lt;/code&gt; while trying to install R packages
+<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/r.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-07-21T20:20:12-07:00</updated><entry><title>R writeBin() lookout for data type</title><link href="http://csmojo.com/posts/r-writebin-lookout-for-data-type.html" rel="alternate"></link><published>2016-07-21T20:20:12-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-21:posts/r-writebin-lookout-for-data-type.html</id><summary type="html">&lt;p&gt;R uses "Numeric" as it's default type for numbers. 
+This can sometimes lead to confusion and errors when a specific type is needed.
+In this example the writeBin() function is used to write data to binary.&lt;/p&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.inside-r.org/r-doc/base/as.numeric"&gt;R numeric&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.inside-r.org/r-doc/base/double"&gt;R double&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.python.org/2/library/stdtypes.html#numeric-types-int-float-long-complex"&gt;Python Numeric Types&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Numeric&lt;/h3&gt;
+&lt;p&gt;Unlike python, which has "four distinct  numeric types: plain integers, long integers, floating point numbers, and complex numbers", 
+R uses "Numeric" as it's default type for numbers, which has double-precision. 
+This can bring surprises. From inside-r.org &lt;a href="http://www.inside-r.org/r-doc/base/as.numeric"&gt;R numeric&lt;/a&gt; : 
+"is.numeric returns TRUE if its argument is of mode "numeric" (type "double" or type "integer") and not a factor" : &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; a &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="kp"&gt;class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;a&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="s"&gt;"numeric"&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="kp"&gt;mode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;a&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="s"&gt;"numeric"&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="kp"&gt;is.numeric&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;a&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kc"&gt;TRUE&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="kp"&gt;is.double&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;a&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kc"&gt;TRUE&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="kp"&gt;is.integer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;a&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kc"&gt;FALSE&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; a &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;as.integer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;a&lt;span class="p"&gt;)&lt;/span&gt; 
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="kp"&gt;is.numeric&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;a&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kc"&gt;TRUE&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="kp"&gt;is.double&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;a&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kc"&gt;FALSE&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="kp"&gt;is.integer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;a&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="kc"&gt;TRUE&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;writeBin()&lt;/h3&gt;
+&lt;p&gt;The type of the number is important when using the function writeBin() to write data to binary, 
+and passing that file to a different program or programming language. 
+One should be careful to convert the data to the wanted type before running writeBin(): &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;x &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;as.integer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;x&lt;span class="p"&gt;)&lt;/span&gt;
+con &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"a"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"wb"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kp"&gt;writeBin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;x&lt;span class="p"&gt;,&lt;/span&gt; con&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kp"&gt;close&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;con&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As writBin() does not have a parameter to specify the type you want (setting &lt;code&gt;size = 4&lt;/code&gt; for integer will not convert the type): &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#yes : gives [1] 1 2 3&lt;/span&gt;
+x &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+x &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;as.integer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;x&lt;span class="p"&gt;)&lt;/span&gt;
+con &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"x"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"wb"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kp"&gt;writeBin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;x&lt;span class="p"&gt;,&lt;/span&gt; con&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kp"&gt;close&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;con&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kp"&gt;readBin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"x"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; what &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"integer"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; n &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;# nope : gives [1] 1065353216&lt;/span&gt;
+x &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+con &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"x"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;"wb"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kp"&gt;writeBin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;x&lt;span class="p"&gt;,&lt;/span&gt; con&lt;span class="p"&gt;,&lt;/span&gt; size &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kp"&gt;close&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;con&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kp"&gt;readBin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"x"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; what &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"integer"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You also need to specify the correct type when calling readBin() to read the data back into R&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kp"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;readBin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kp"&gt;file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"x"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;"rb"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; what &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;"integer"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; n&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="R"></category><category term="Math"></category><category term="Errors"></category></entry><entry><title>How to fix R package error missing required header GL/glu.h</title><link href="http://csmojo.com/posts/how-to-fix-r-package-error-missing-required-header-gl-glu-h.html" rel="alternate"></link><published>2016-07-09T20:52:38-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-09:posts/how-to-fix-r-package-error-missing-required-header-gl-glu-h.html</id><summary type="html">&lt;p&gt;Encountered &lt;code&gt;configure: error: missing required header GL/glu.h&lt;/code&gt; while trying to install R packages
 managed to fix it with: &lt;code&gt;apt-get install libglu1-mesa-dev&lt;/code&gt;&lt;/p&gt;</summary><category term="R"></category><category term="Errors"></category></entry><entry><title>How to fix R package error X11 not found but required</title><link href="http://csmojo.com/posts/how-to-fix-r-package-error-x11-not-found-but-required.html" rel="alternate"></link><published>2016-07-09T20:44:47-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-09:posts/how-to-fix-r-package-error-x11-not-found-but-required.html</id><summary type="html">&lt;p&gt;Encountered &lt;code&gt;configure: error: X11 not found but required&lt;/code&gt; while trying to install R rgl package,
 managed to fix it with: &lt;code&gt;apt-get install xorg-dev&lt;/code&gt;&lt;/p&gt;</summary><category term="R"></category><category term="Errors"></category></entry></feed>
