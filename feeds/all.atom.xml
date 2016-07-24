@@ -261,7 +261,7 @@ It is a brave new world !  &lt;/p&gt;
 &lt;li&gt;&lt;code&gt;make serve&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make html&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make publish&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="Pelican"></category><category term="Blogger"></category></entry><entry><title>A Example</title><link href="http://csmojo.com/posts/a-example.html" rel="alternate"></link><published>2016-07-01T20:41:15-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-01:posts/a-example.html</id><summary type="html">&lt;p&gt;My Short cheat sheet for Markdown  &lt;/p&gt;
+&lt;/ul&gt;</summary><category term="Misc"></category><category term="Pelican"></category><category term="Blogger"></category></entry><entry><title>A Example</title><link href="http://csmojo.com/posts/a-example.html" rel="alternate"></link><published>2016-07-01T20:41:15-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-01:posts/a-example.html</id><summary type="html">&lt;p&gt;My Short cheat sheet for Markdown  &lt;/p&gt;
 &lt;h3&gt;Headers&lt;/h3&gt;
 &lt;h1&gt;H1&lt;/h1&gt;
 &lt;h2&gt;H2&lt;/h2&gt;
