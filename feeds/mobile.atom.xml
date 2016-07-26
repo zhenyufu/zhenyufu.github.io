@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/mobile.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-07-24T19:11:29-07:00</updated><entry><title>How to install Node.js and Ionic in Debian</title><link href="http://csmojo.com/posts/how-to-install-node-js-and-ionic-in-debian.html" rel="alternate"></link><published>2016-07-24T19:11:29-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-24:posts/how-to-install-node-js-and-ionic-in-debian.html</id><summary type="html">&lt;p&gt;apt only provides a really old ersion of node. Use nvm to install and manage different versions of node.js !&lt;/p&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://ionicframework.com/getting-started/"&gt;Start building with Ionic!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/creationix/nvm"&gt;nvm Github&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nodejs.org/en/"&gt;Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Install Node.js with nvm&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install some necessary packages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;apt-get install build-essential libssl-dev curl
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;nvm global install&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.3/install.sh | NVM_DIR=/usr/local/nvm bash
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;To enable it for all user: cut and paste the following from &lt;code&gt;~/.bashrc&lt;/code&gt; to &lt;code&gt;/etc/bash.bashrc&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="x"&gt;export NVM_DIR="/usr/local/nvm"&lt;/span&gt;
+&lt;span class="x"&gt;[ -s "&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;NVM_DIR&lt;/span&gt;&lt;span class="x"&gt;/nvm.sh" ] &amp;amp;&amp;amp; . "&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;NVM_DIR&lt;/span&gt;&lt;span class="x"&gt;/nvm.sh"  &lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="x"&gt; This loads nvm&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;nvm install latest node.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;nvm install node
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;nvm install node.js 4.4.7&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;nvm install 4.4.7
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Install cordova and ionic&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;npm install -g cordova ionic
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Ionic"></category><category term="Cordova"></category><category term="Linux"></category></entry></feed>

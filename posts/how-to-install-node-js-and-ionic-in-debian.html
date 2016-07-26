@@ -16,12 +16,12 @@
         
     
     <link href="http://csmojo.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Full Atom Feed" />
-    <link href="http://csmojo.com/feeds/linux.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
+    <link href="http://csmojo.com/feeds/mobile.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
 
-        <meta name="description" content="Debian without a desktop environment is simple, clean and full of potential. It is the ideal set up for installing your own choice of desktop environment that doesn't come with the Debian installer, or for setting up a Debian server." />
-        <meta name="keywords" content="Debian" />
+        <meta name="description" content="apt only provides a really old ersion of node. Use nvm to install and manage different versions of node.js !" />
+        <meta name="keywords" content="Ionic" />
+        <meta name="keywords" content="Cordova" />
         <meta name="keywords" content="Linux" />
-        <meta name="keywords" content="VirtualBox" />
 </head>
 
 
@@ -64,9 +64,9 @@
                     <li><a href="http://csmojo.com/category/cloud.html">Cloud</a></li>
                     <li><a href="http://csmojo.com/category/gdal.html">GDAL</a></li>
                     <li><a href="http://csmojo.com/category/git.html">Git</a></li>
-                    <li class="active"><a href="http://csmojo.com/category/linux.html">Linux</a></li>
+                    <li><a href="http://csmojo.com/category/linux.html">Linux</a></li>
                     <li><a href="http://csmojo.com/category/math.html">Math</a></li>
-                    <li><a href="http://csmojo.com/category/mobile.html">Mobile</a></li>
+                    <li class="active"><a href="http://csmojo.com/category/mobile.html">Mobile</a></li>
                     <li><a href="http://csmojo.com/category/network.html">Network</a></li>
                     <li><a href="http://csmojo.com/category/pelican.html">Pelican</a></li>
                     <li><a href="http://csmojo.com/category/python.html">Python</a></li>
@@ -103,103 +103,64 @@
             <section id="content">
 <div class="w3-container w3-card-8 w3-padding-large w3-margin">
     <header>
-        <h2><a class="my-no-dec" href="http://csmojo.com/posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html" rel="bookmark" title="Permalink to How to minimally install Debian 8 in VM VirtualBox"><b>How to minimally install Debian 8 in VM VirtualBox</b></a></h2>
+        <h2><a class="my-no-dec" href="http://csmojo.com/posts/how-to-install-node-js-and-ionic-in-debian.html" rel="bookmark" title="Permalink to How to install Node.js and Ionic in Debian"><b>How to install Node.js and Ionic in Debian</b></a></h2>
     </header>
   
     <div class="w3-medium">
         <div>
-            Category: <a href="http://csmojo.com/category/linux.html">Linux</a>
+            Category: <a href="http://csmojo.com/category/mobile.html">Mobile</a>
             &nbsp;&nbsp;&nbsp;&nbsp;Tag:
-                <a href="http://csmojo.com/tag/debian.html">Debian</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/ionic.html">Ionic</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/cordova.html">Cordova</a>&nbsp;&nbsp;
                 <a href="http://csmojo.com/tag/linux.html">Linux</a>&nbsp;&nbsp;
-                <a href="http://csmojo.com/tag/virtualbox.html">VirtualBox</a>&nbsp;&nbsp;
         </div>
         <div> 
             By:
                 <a href="http://csmojo.com/author/david.html">David</a>
             &nbsp;&nbsp;&nbsp;&nbsp;On:
-            <span datetime="2015-07-27T20:00:00-07:00"> Mon 27 July 2015 </span>
+            <span datetime="2016-07-24T19:11:29-07:00"> Sun 24 July 2016 </span>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            Pageviews: 1
+            Pageviews: 0
         </div>
     </div>
     
-    <div> <p>Debian without a desktop environment is simple, clean and full of potential.
-It is the ideal set up for installing your own choice of desktop environment that doesn't come with the Debian installer, or for setting up a Debian server.<br/>
-<img alt="Alt Text" src="http://csmojo.com/images/img20150001.png" style="width: 641px; height: auto; max-width: 100%;"/></p>
-<h3>Software</h3>
-<ul>
-<li><a href="https://www.virtualbox.org/wiki/Downloads">VM VirtualBox 4.3.30</a></li>
-<li><a href="https://www.debian.org/distrib/">Debian 8.1.0 amd64</a></li>
-</ul>
+    <div> <p>apt only provides a really old ersion of node. Use nvm to install and manage different versions of node.js !</p>
 <h3>Reading</h3>
 <ul>
-<li><a href="https://www.debian.org/releases/stable/amd64/">Debian GNU/Linux Installation Guide</a></li>
+<li><a href="http://ionicframework.com/getting-started/">Start building with Ionic!</a></li>
+<li><a href="https://github.com/creationix/nvm">nvm Github</a> </li>
+<li><a href="https://nodejs.org/en/">Node.js</a></li>
 </ul>
-<h3>Prerequisites</h3>
+<h3>Install Node.js with nvm</h3>
 <ul>
-<li>0.1 Comfortable using Linux without a desktop environment</li>
+<li>Install some necessary packages</li>
 </ul>
-<h3>1. Start the virtual machine</h3>
-<p>Create a new virtual machine for Debian and start it with the Debian .iso</p>
-<p><img alt="Alt Text" src="http://csmojo.com/images/img20150002.png" style="width: 497px; height: auto; max-width: 100%;"/></p>
-<h3>2. Choose Install</h3>
-<p>Install and Graphical install is pretty much the same</p>
-<h3>3. Configure settings to your liking</h3>
-<ul>
-<li>language</li>
-<li>location</li>
-<li>keyboard</li>
-<li>hostname</li>
-<li>domain name (leave it blank if you don't have one)</li>
-<li>Users</li>
-<li>Time zone</li>
-<li>Partition disks (strongly recommend partitioning if it will be used as a server )</li>
-<li>mirror (you can leave the proxy setting blank)</li>
-<li>package usage survey</li>
-</ul>
-<h3>4. Software selection</h3>
-<p>First Thing to note is that if you regret not installing anything here, later after Debian is installed and running, you can always run:</p>
-<div class="highlight"><pre>tasksel
+<div class="highlight"><pre>apt-get install build-essential libssl-dev curl
 </pre></div>
-<p>to install or uninstall anything you missed (except "standard system utilities" is replace by "laptop"; they are not the same; read more: <a href="https://wiki.debian.org/tasksel">tasksel</a>)</p>
-<p><img alt="Alt Text" src="http://csmojo.com/images/img20150006.png" style="width: 634px; height: auto; max-width: 100%;"/></p>
-<p>What each package includes:</p>
 <ul>
-<li>web server: Apache2</li>
-<li>print server: CUPS (you can deselect it if printing is not needed)</li>
-<li>SSH server: openssh</li>
-<li>standard system utilities: What Debian's "standard system utilities" include</li>
+<li>nvm global install</li>
 </ul>
-<p>4.1. For a bare bone installation with only Debian core:</p>
-<ul>
-<li>Don't check anything</li>
-</ul>
-<p>4.2. For a minimal installation (Recommended):</p>
-<ul>
-<li>standard system utilities (as this provides Python, whois, ftp, telnet, aptitude and other goodies)</li>
-</ul>
-<p>4.3. For a server:</p>
-<ul>
-<li>SSH server</li>
-<li>standard system utilities </li>
-</ul>
-<p><img alt="Alt Text" src="http://csmojo.com/images/img20150003.png" style="width: 758px; height: auto; max-width: 100%;"/></p>
-<h3>5. Grub</h3>
-<p>Select /dev/sda</p>
-<p><img alt="Alt Text" src="http://csmojo.com/images/img20150004.png" style="width: 760px; height: auto; max-width: 100%;"/></p>
-<h3>6. Finish the installation and reboot</h3>
-<p>VirtualBox will remove the installation .iso for you</p>
-<p><img alt="Alt Text" src="http://csmojo.com/images/img20150005.png" style="width: 744px; height: auto; max-width: 100%;"/></p>
-<h3>7. Update and upgrade</h3>
-<p>After logging in, update your package list:</p>
-<div class="highlight"><pre>apt-get update
+<div class="highlight"><pre>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.3/install.sh | NVM_DIR=/usr/local/nvm bash
 </pre></div>
-<p>upgrade the packages:</p>
-<div class="highlight"><pre>apt-get upgrade
+<ul>
+<li>To enable it for all user: cut and paste the following from <code>~/.bashrc</code> to <code>/etc/bash.bashrc</code></li>
+</ul>
+<div class="highlight"><pre><span class="x">export NVM_DIR="/usr/local/nvm"</span>
+<span class="x">[ -s "</span><span class="p">$</span><span class="nv">NVM_DIR</span><span class="x">/nvm.sh" ] &amp;&amp; . "</span><span class="p">$</span><span class="nv">NVM_DIR</span><span class="x">/nvm.sh"  </span><span class="err">#</span><span class="x"> This loads nvm</span>
 </pre></div>
-<h3>Conclusion</h3>
-<p>Fully utilize VirtualBox's snapshots to save whatever you are doing</p> </div></div>            </section><!-- /#content -->
+<ul>
+<li>nvm install latest node.js</li>
+</ul>
+<div class="highlight"><pre>nvm install node
+</pre></div>
+<ul>
+<li>nvm install node.js 4.4.7</li>
+</ul>
+<div class="highlight"><pre>nvm install 4.4.7
+</pre></div>
+<h3>Install cordova and ionic</h3>
+<div class="highlight"><pre>npm install -g cordova ionic
+</pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 
