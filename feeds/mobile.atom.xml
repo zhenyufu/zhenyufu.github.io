@@ -35,4 +35,9 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Install cordova and ionic&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;npm install -g cordova ionic
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Set default node.js version for terminal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;nvm alias default 4.4.7
 &lt;/pre&gt;&lt;/div&gt;</summary><category term="Ionic"></category><category term="Cordova"></category><category term="Linux"></category></entry></feed>
