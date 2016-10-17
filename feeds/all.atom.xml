@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/all.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-07-24T19:11:29-07:00</updated><entry><title>How to install Node.js and Ionic in Debian</title><link href="http://csmojo.com/posts/how-to-install-node-js-and-ionic-in-debian.html" rel="alternate"></link><published>2016-07-24T19:11:29-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-24:posts/how-to-install-node-js-and-ionic-in-debian.html</id><summary type="html">&lt;p&gt;apt only provides a really old ersion of node. Use nvm to install and manage different versions of node.js !&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/all.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-10-17T10:42:01-07:00</updated><entry><title>How to use single page pagination in Wordpress</title><link href="http://csmojo.com/posts/how-to-use-single-page-pagination-in-wordpress.html" rel="alternate"></link><published>2016-10-17T10:42:01-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-10-17:posts/how-to-use-single-page-pagination-in-wordpress.html</id><summary type="html">&lt;p&gt;Wordpress has a simple pagination system built in.&lt;/p&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://codex.wordpress.org/Function_Reference/wp_link_pages"&gt;wp_link_pages()&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1. In the page or post&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;use the tag &lt;code&gt;&amp;lt;!--nextpage--&amp;gt;&lt;/code&gt; to seperate pages &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;first page stuff
+&lt;span class="c"&gt;&amp;lt;!--nextpage--&amp;gt;&lt;/span&gt;
+next page stuff
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;2. Define the pagination in the page template&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Have one at the start and at the end of the page &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt; &lt;span class="nx"&gt;wp_link_pages&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt; &lt;span class="nx"&gt;the_content&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt; &lt;span class="nx"&gt;wp_link_pages&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>How to install Node.js and Ionic in Debian</title><link href="http://csmojo.com/posts/how-to-install-node-js-and-ionic-in-debian.html" rel="alternate"></link><published>2016-07-24T19:11:29-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-24:posts/how-to-install-node-js-and-ionic-in-debian.html</id><summary type="html">&lt;p&gt;apt only provides a really old ersion of node. Use nvm to install and manage different versions of node.js !&lt;/p&gt;
 &lt;h3&gt;Reading&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://ionicframework.com/getting-started/"&gt;Start building with Ionic!&lt;/a&gt;&lt;/li&gt;
