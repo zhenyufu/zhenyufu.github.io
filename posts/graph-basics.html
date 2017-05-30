@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>csmojo</title>
+        <title>csmojo</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/theme/css/w3.css"/>
@@ -16,6 +16,11 @@
         
     
     <link href="http://csmojo.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Full Atom Feed" />
+    <link href="http://csmojo.com/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
+
+        <meta name="description" content="Some basic concept on graphs" />
+        <meta name="keywords" content="Algorithm" />
+        <meta name="keywords" content="Discrete Math" />
 </head>
 
 
@@ -64,7 +69,7 @@
                     <li><a href="http://csmojo.com/category/mobile.html">Mobile</a></li>
                     <li><a href="http://csmojo.com/category/network.html">Network</a></li>
                     <li><a href="http://csmojo.com/category/pelican.html">Pelican</a></li>
-                    <li><a href="http://csmojo.com/category/posts.html">posts</a></li>
+                    <li class="active"><a href="http://csmojo.com/category/posts.html">posts</a></li>
                     <li><a href="http://csmojo.com/category/python.html">Python</a></li>
                     <li><a href="http://csmojo.com/category/r.html">R</a></li>
                     <li><a href="http://csmojo.com/category/web.html">Web</a></li>
@@ -95,33 +100,63 @@
 
        
         <div id="my-main" class="w3-container" >
-            <h2>Tag: GDAL</h2>
+            <h2>Post</h2>
             <section id="content">
 <div class="w3-container w3-card-8 w3-padding-large w3-margin">
     <header>
-        <h2><a class="my-no-dec" href="http://csmojo.com/posts/how-to-use-gdal-python-to-transform-geotiff-pixels-to-lat-lon-real-word-coordinates.html" rel="bookmark" title="Permalink to How to use GDAL Python to transform geotiff pixels to lat lon real-word coordinates"><b>How to use GDAL Python to transform geotiff pixels to lat lon real-word coordinates</b></a></h2>
+        <h2><a class="my-no-dec" href="http://csmojo.com/posts/graph-basics.html" rel="bookmark" title="Permalink to Graph Basics"><b>Graph Basics</b></a></h2>
     </header>
   
     <div class="w3-medium">
         <div>
-            Category: <a href="http://csmojo.com/category/gdal.html">GDAL</a>
+            Category: <a href="http://csmojo.com/category/posts.html">posts</a>
             &nbsp;&nbsp;&nbsp;&nbsp;Tag:
-                <a href="http://csmojo.com/tag/gdal.html">GDAL</a>&nbsp;&nbsp;
-                <a href="http://csmojo.com/tag/linux.html">Linux</a>&nbsp;&nbsp;
-                <a href="http://csmojo.com/tag/python.html">Python</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/algorithm.html">Algorithm</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/discrete-math.html">Discrete Math</a>&nbsp;&nbsp;
         </div>
         <div> 
             By:
                 <a href="http://csmojo.com/author/david.html">David</a>
             &nbsp;&nbsp;&nbsp;&nbsp;On:
-            <span datetime="2015-08-06T20:58:19-07:00"> Thu 06 August 2015 </span>
+            <span datetime="2017-05-29T17:13:54-07:00"> Mon 29 May 2017 </span>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            Pageviews: 182
+            Pageviews: 0
         </div>
     </div>
     
-    <div class="my-margin-18"> GDAL gdaltransform is a easy way to transform a pixel of a tiff image to its corresponding lat/lon coordinate. </div> <!-- 18 margin to match geerated post margin -->
-<p><a href="http://csmojo.com/posts/how-to-use-gdal-python-to-transform-geotiff-pixels-to-lat-lon-real-word-coordinates.html">Continue reading &raquo;</a></p></div>            </section><!-- /#content -->
+    <div> <p>Some basic concept on graphs</p>
+<h3>Stuff</h3>
+<ul>
+<li>Graph G<ul>
+<li>G = (V, E) vertices/ nodes and edges </li>
+<li>n = |V|, m = |E|</li>
+</ul>
+</li>
+<li>Simple Graph: unweighted, undirected, no self loops, no multi-edges</li>
+<li>Simple Cycle: Has a path that starts and ends at the same node</li>
+<li>When is an undirected graph a tree (any two implies the third): <ul>
+<li>no cycles</li>
+<li>is connected</li>
+<li>m = n - 1</li>
+</ul>
+</li>
+<li>Find path between two nodes: BFS, DFS ( \(\theta (m + n)\) ) </li>
+<li>Bipartite graph: nodes can be divided into two different sets with no vertices connecting within a set<ul>
+<li>is not bipartite &lt;=&gt; contains a cycle with an odd number of nodes </li>
+</ul>
+</li>
+<li>Directed graph connectivity<ul>
+<li>strongly connected: every pair of nodes can reach each other </li>
+<li>connected: for every pair of nodes, one can reach the other </li>
+<li>weakly connected: every pair of nodes can reach each other if one ignores edge directions</li>
+</ul>
+</li>
+<li>Directed acyclic graph (DAG)<ul>
+<li>is a directed graph with no directed cycles</li>
+<li>Topological ordering: for all the nodes are ordered that a earlier nodes goes to a later node</li>
+</ul>
+</li>
+</ul> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 
@@ -134,6 +169,7 @@
         
     </div><!-- end of my-all -->
 
+                <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script src="/theme/js/script.js"></script>
     <script type="text/javascript">
