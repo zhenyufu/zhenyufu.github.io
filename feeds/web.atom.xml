@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/web.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-07-09T21:09:01-07:00</updated><entry><title>My pelican setup</title><link href="http://csmojo.com/posts/my-pelican-setup.html" rel="alternate"></link><published>2016-07-09T21:09:01-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-09:posts/my-pelican-setup.html</id><summary type="html">&lt;p&gt;Document some of the useful changes that I made to my pelican setup.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/web.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-10-17T10:42:01-07:00</updated><entry><title>How to use single page pagination in Wordpress</title><link href="http://csmojo.com/posts/how-to-use-single-page-pagination-in-wordpress.html" rel="alternate"></link><published>2016-10-17T10:42:01-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-10-17:posts/how-to-use-single-page-pagination-in-wordpress.html</id><summary type="html">&lt;p&gt;Wordpress has a simple pagination system built in.&lt;/p&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://codex.wordpress.org/Function_Reference/wp_link_pages"&gt;wp_link_pages()&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;1. In the page or post&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;use the tag &lt;code&gt;&amp;lt;!--nextpage--&amp;gt;&lt;/code&gt; to seperate pages &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;first page stuff
+&lt;span class="c"&gt;&amp;lt;!--nextpage--&amp;gt;&lt;/span&gt;
+next page stuff
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;2. Define the pagination in the page template&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Have one at the start and at the end of the page &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt; &lt;span class="nx"&gt;wp_link_pages&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt; &lt;span class="nx"&gt;the_content&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt; &lt;span class="nx"&gt;wp_link_pages&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="WordPress"></category></entry><entry><title>My pelican setup</title><link href="http://csmojo.com/posts/my-pelican-setup.html" rel="alternate"></link><published>2016-07-09T21:09:01-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-09:posts/my-pelican-setup.html</id><summary type="html">&lt;p&gt;Document some of the useful changes that I made to my pelican setup.
 Might be helpful for newcomers ;)&lt;/p&gt;
 &lt;h3&gt;Reading&lt;/h3&gt;
 &lt;ul&gt;
@@ -271,6 +291,7 @@ No complicated animation needed.&lt;br/&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.quackit.com/html/codes/html_marquee_code.cfm"&gt;HTML marquee&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3&gt;Code&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;link&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;"http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"&lt;/span&gt; &lt;span class="na"&gt;rel=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
 
 &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;"my-clouds"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;

@@ -51,7 +51,7 @@ next page stuff
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt; &lt;span class="nx"&gt;wp_link_pages&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt; &lt;span class="nx"&gt;the_content&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt; &lt;span class="nx"&gt;wp_link_pages&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>How to install Node.js and Ionic in Debian</title><link href="http://csmojo.com/posts/how-to-install-node-js-and-ionic-in-debian.html" rel="alternate"></link><published>2016-07-24T19:11:29-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-24:posts/how-to-install-node-js-and-ionic-in-debian.html</id><summary type="html">&lt;p&gt;apt only provides a really old ersion of node. Use nvm to install and manage different versions of node.js !&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="WordPress"></category></entry><entry><title>How to install Node.js and Ionic in Debian</title><link href="http://csmojo.com/posts/how-to-install-node-js-and-ionic-in-debian.html" rel="alternate"></link><published>2016-07-24T19:11:29-07:00</published><author><name>David</name></author><id>tag:csmojo.com,2016-07-24:posts/how-to-install-node-js-and-ionic-in-debian.html</id><summary type="html">&lt;p&gt;apt only provides a really old ersion of node. Use nvm to install and manage different versions of node.js !&lt;/p&gt;
 &lt;h3&gt;Reading&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://ionicframework.com/getting-started/"&gt;Start building with Ionic!&lt;/a&gt;&lt;/li&gt;
@@ -1009,6 +1009,7 @@ No complicated animation needed.&lt;br/&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.quackit.com/html/codes/html_marquee_code.cfm"&gt;HTML marquee&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3&gt;Code&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;link&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;"http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"&lt;/span&gt; &lt;span class="na"&gt;rel=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
 
 &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;id=&lt;/span&gt;&lt;span class="s"&gt;"my-clouds"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
