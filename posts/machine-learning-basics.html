@@ -16,13 +16,11 @@
         
     
     <link href="http://csmojo.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Full Atom Feed" />
-    <link href="http://csmojo.com/feeds/linux.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
+    <link href="http://csmojo.com/feeds/machine-learning.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
 
-        <meta name="description" content="Enable extra monitors or dual screens for Debian xfce in VirtualBox" />
-        <meta name="keywords" content="Linux" />
-        <meta name="keywords" content="xfce" />
-        <meta name="keywords" content="VirtualBox" />
-        <meta name="keywords" content="xrandr" />
+        <meta name="description" content="Some Machine Learning Basics" />
+        <meta name="keywords" content="Machine Learning" />
+        <meta name="keywords" content="Algorithm" />
 </head>
 
 
@@ -66,8 +64,8 @@
                     <li><a href="http://csmojo.com/category/cloud.html">Cloud</a></li>
                     <li><a href="http://csmojo.com/category/gdal.html">GDAL</a></li>
                     <li><a href="http://csmojo.com/category/git.html">Git</a></li>
-                    <li class="active"><a href="http://csmojo.com/category/linux.html">Linux</a></li>
-                    <li><a href="http://csmojo.com/category/machine-learning.html">Machine Learning</a></li>
+                    <li><a href="http://csmojo.com/category/linux.html">Linux</a></li>
+                    <li class="active"><a href="http://csmojo.com/category/machine-learning.html">Machine Learning</a></li>
                     <li><a href="http://csmojo.com/category/math.html">Math</a></li>
                     <li><a href="http://csmojo.com/category/mobile.html">Mobile</a></li>
                     <li><a href="http://csmojo.com/category/network.html">Network</a></li>
@@ -106,56 +104,70 @@
             <section id="content">
 <div class="w3-container w3-card-8 w3-padding-large w3-margin">
     <header>
-        <h2><a class="my-no-dec" href="http://csmojo.com/posts/how-to-enable-extra-monitors-for-debian-xfce-in-virtualbox.html" rel="bookmark" title="Permalink to How to enable extra monitors for Debian xfce in VirtualBox"><b>How to enable extra monitors for Debian xfce in VirtualBox</b></a></h2>
+        <h2><a class="my-no-dec" href="http://csmojo.com/posts/machine-learning-basics.html" rel="bookmark" title="Permalink to Machine Learning Basics"><b>Machine Learning Basics</b></a></h2>
     </header>
   
     <div class="w3-medium">
         <div>
-            Category: <a href="http://csmojo.com/category/linux.html">Linux</a>
+            Category: <a href="http://csmojo.com/category/machine-learning.html">Machine Learning</a>
             &nbsp;&nbsp;&nbsp;&nbsp;Tag:
-                <a href="http://csmojo.com/tag/linux.html">Linux</a>&nbsp;&nbsp;
-                <a href="http://csmojo.com/tag/xfce.html">xfce</a>&nbsp;&nbsp;
-                <a href="http://csmojo.com/tag/virtualbox.html">VirtualBox</a>&nbsp;&nbsp;
-                <a href="http://csmojo.com/tag/xrandr.html">xrandr</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/machine-learning.html">Machine Learning</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/algorithm.html">Algorithm</a>&nbsp;&nbsp;
         </div>
         <div> 
             By:
                 <a href="http://csmojo.com/author/david.html">David</a>
             &nbsp;&nbsp;&nbsp;&nbsp;On:
-            <span datetime="2016-07-12T13:27:35-07:00"> Tue 12 July 2016 </span>
+            <span datetime="2018-03-04T13:14:22-08:00"> Sun 04 March 2018 </span>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            Pageviews: 32
+            Pageviews: 0
         </div>
     </div>
     
-    <div> <p>Enable extra monitors or dual screens for Debian xfce in VirtualBox</p>
-<h3>1. Enable extra monitors in VirtualBox settings</h3>
-<p>Change the monitor count  </p>
-<p><img alt="Alt Text" src="http://csmojo.com/images/img20160008.png" style="width: 519px; height: auto; max-width: 100%;"/></p>
-<h3>2. Enable Virtual Screen</h3>
-<p>After running the vitural machine, enable the second screen  </p>
-<p><img alt="Alt Text" src="http://csmojo.com/images/img20160009.png" style="width: 498px; height: auto; max-width: 100%;"/></p>
-<h3>3. Enalbe xfce display settings</h3>
-<p>Go to display and click "Use this output"  </p>
-<p><img alt="Alt Text" src="http://csmojo.com/images/img20160010.png" style="width: 494px; height: auto; max-width: 100%;"/></p>
-<h3>4. Change duplicate to extend using xrandr</h3>
+    <div> <p>Some Machine Learning Basics</p>
+<h3>Algorithms</h3>
 <ul>
-<li>The defualt is duplicate screens</li>
-<li>To change to extend, run <code>xrandr</code> to list the two monitors</li>
-<li>Run the following with the monitor names and position flag</li>
+<li>Supervised Learning (for predictions)<ul>
+<li>Classification<ul>
+<li>Kernel Methods  and SVM </li>
+<li>Nearest Neighbor classification </li>
+<li>multi-class classification </li>
+<li>neural networks: DNN, CNN, RNN, and LSTM </li>
+<li>Decision Trees <ul>
+<li>Random Forests</li>
+<li>Boosting</li>
 </ul>
-<div class="highlight"><pre>xrandr --output VGA-0 --left-of VGA-1
-</pre></div>
-<ul>
-<li>Position flags from <code>man xrandr</code>:</li>
+</li>
 </ul>
-<div class="highlight"><pre>--left-of, --right-of, --above, --below, --same-as another-output
-      Use one of these options to position the output relative to the  position  of
-      another  output.  This allows convenient tiling of outputs within the screen.
-      The position is always computed relative to the new  position  of  the  other
-      output, so it is not valid to say --output a --left-of b --output b --left-of
-      a.
-</pre></div> </div></div>            </section><!-- /#content -->
+</li>
+<li>Regression <ul>
+<li>Linear Regression </li>
+<li>Perceptron </li>
+<li>Logistic regression</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Unsupervised learning (for discovering patterns)<ul>
+<li>Clustering <ul>
+<li>K means </li>
+<li>GMM mixture models</li>
+<li>EM</li>
+</ul>
+</li>
+<li>Generative models<ul>
+<li>Naive Bayes </li>
+<li>Density Estimation</li>
+<li>Hidden Markov models </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reinforcement Learning<ul>
+<li>recommender systems</li>
+</ul>
+</li>
+</ul> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 
