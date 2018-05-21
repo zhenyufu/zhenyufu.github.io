@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>csmojo - Authors</title>
+        <title>csmojo</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/theme/css/w3.css"/>
@@ -16,6 +16,10 @@
         
     
     <link href="http://csmojo.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Full Atom Feed" />
+    <link href="http://csmojo.com/feeds/web.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
+
+        <meta name="description" content="By default, Wordpress adds in an emoji script and it's versioning into wp_head, one may want to remove these for simplicity and security. The admin bar too can also be removed." />
+        <meta name="keywords" content="WordPress" />
 </head>
 
 
@@ -66,7 +70,7 @@
                     <li><a href="http://csmojo.com/category/pelican.html">Pelican</a></li>
                     <li><a href="http://csmojo.com/category/python.html">Python</a></li>
                     <li><a href="http://csmojo.com/category/r.html">R</a></li>
-                    <li><a href="http://csmojo.com/category/web.html">Web</a></li>
+                    <li class="active"><a href="http://csmojo.com/category/web.html">Web</a></li>
             </ul>
     </nav>
 
@@ -94,13 +98,54 @@
 
        
         <div id="my-main" class="w3-container" >
-            <h2></h2>
+            <h2>Post</h2>
             <section id="content">
-    <h1>Authors on csmojo</h1>
+<div class="w3-container w3-card-8 w3-padding-large w3-margin">
+    <header>
+        <h2><a class="my-no-dec" href="http://csmojo.com/posts/how-to-remove-wordpress-versioning-emoji-scripts-admin-bar.html" rel="bookmark" title="Permalink to How to remove Wordpress versioning, emoji scripts, admin bar"><b>How to remove Wordpress versioning, emoji scripts, admin bar</b></a></h2>
+    </header>
+  
+    <div class="w3-medium">
+        <div>
+            Category: <a href="http://csmojo.com/category/web.html">Web</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;Tag:
+                <a href="http://csmojo.com/tag/wordpress.html">WordPress</a>&nbsp;&nbsp;
+        </div>
+        <div> 
+            By:
+                <a href="http://csmojo.com/author/david.html">David</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;On:
+            <span datetime="2018-01-20T19:43:51-08:00"> Sat 20 January 2018 </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Pageviews: 0
+        </div>
+    </div>
+    
+    <div> <p>By default, Wordpress adds in an emoji script and it's versioning into wp_head, one may want to remove these for simplicity and security. The admin bar too can also be removed.</p>
+<h3>Software</h3>
+<ul>
+<li>Wordpress 4.9.x </li>
+</ul>
+<h3>Source Code</h3>
+<p>In theme's functions.php:</p>
+<div class="highlight"><pre><span class="x">function mytheme_cleanup(){</span>
+<span class="x">    // remove header emoji</span>
+<span class="x">    remove_action('wp_head', 'print_emoji_detection_script', 7);</span>
+<span class="x">    remove_action('wp_print_styles', 'print_emoji_styles');</span>
+<span class="x">    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );</span>
+<span class="x">    remove_action( 'admin_print_styles', 'print_emoji_styles' );</span>
 
-    <ul>        <li><a href="http://csmojo.com/author/david.html">David</a> (37)</li>
-    </ul>
-            </section><!-- /#content -->
+<span class="x">    // remove wp version and unecessary</span>
+<span class="x">    remove_action( 'wp_head', 'wp_generator');</span>
+<span class="x">    remove_action( 'wp_head', 'wlwmanifest_link');</span>
+<span class="x">    remove_action( 'wp_head', 'rsd_link');</span>
+<span class="x">    remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0);</span>
+
+<span class="x">    // remove admin bar</span>
+<span class="x">    add_filter('show_admin_bar','__return_false'); </span>
+<span class="x">}</span>
+<span class="x">add_action('after_setup_theme', 'mytheme_cleanup');</span>
+</pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 
