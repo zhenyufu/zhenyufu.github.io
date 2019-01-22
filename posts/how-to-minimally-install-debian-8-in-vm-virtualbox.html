@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+        <title>csmojo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/theme/css/w3.css"/>
+    <link rel="stylesheet" type="text/css" href="/theme/font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css"/>
+    <!--
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css"/>
+    -->
+    <link rel="stylesheet" type="text/css" href="/theme/css/style.css"/>
+        
+    
+    <link href="http://csmojo.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Full Atom Feed" />
+    <link href="http://csmojo.com/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
+
+        <meta name="description" content="Debian without a desktop environment is simple, clean and full of potential. It is the ideal set up for installing your own choice of desktop environment that doesn't come with the Debian installer, or for setting up a Debian server." />
+        <meta name="keywords" content="Debian" />
+        <meta name="keywords" content="Linux" />
+        <meta name="keywords" content="VirtualBox" />
+</head>
+
+
+<body id="index">
+    <nav class="w3-sidenav w3-collapse w3-light-grey w3-card-2" id="my-side-text">
+        <div class="w3-center">
+            <a class="my-norm" href="http://csmojo.com/"><img id="my-avatar" src="http://csmojo.com/images/img00000000.png"></a>
+            <a class="my-norm" href="mailto:david@csmojo.com"><i class="fa fa-envelope-o w3-xxlarge"></i></a>
+            <a class="my-norm" href="https://github.com/zhenyufu"><i class="fa fa-github w3-xxlarge"></i></a>
+            <a class="my-norm" href="https://play.google.com/store/apps/developer?id=csmojo"><i class="fa fa-android w3-xxlarge"></i></a>
+        </div>
+        
+        <ul>
+                <h4><b>Pages</b></h4>
+                <li><a href="http://csmojo.com/">Home</a></li>
+                <li><a href="http://csmojo.com/pages/about.html">About</a></li>
+                <li><a href="http://csmojo.com/pages/comments.html">Comments</a></li>
+                <h4><b><a href="http://csmojo.com/pages/projects.html" class="my-no-pad">Projects</a></b></h4>
+                    <div class="w3-accordion"> 
+                        <a onclick="myAccordion('accordion-a')" href="javascript:void(0)">Web <i class="fa fa-caret-down"></i></a>
+                        <div id="accordion-a" class="w3-accordion-content w3-animate-left w3-padding">
+                                    <li><a href="http://csmojo.com/pages/learn-huge.html">Learn Huge</a></li>
+                                    <li><a href="http://csmojo.com/pages/libto.html">LibTo</a></li>
+                                    <li><a href="http://csmojo.com/pages/pentesting-lab.html">Pentesting Lab</a></li>
+                        </div>
+                    </div>
+                    <div class="w3-accordion">
+                        <a onclick="myAccordion('accordion-b')" href="javascript:void(0)">Mobile <i class="fa fa-caret-down"></i></a>
+                        <div id="accordion-b" class="w3-accordion-content w3-animate-left w3-padding">
+                                    <li><a href="http://csmojo.com/pages/move-tiles.html">Move Tiles</a></li>
+                                    <li><a href="http://csmojo.com/pages/velocity-ruler.html">Velocity Ruler</a></li>
+                                    <li><a href="http://csmojo.com/pages/workaholic.html">Workaholic</a></li>
+                                    <li><a href="http://csmojo.com/pages/zombie-crush.html">Zombie Crush</a></li>
+                        </div>
+                    </div>
+
+                    
+                <h4><b>Categories</b></h4>
+                    <li><a href="http://csmojo.com/category/algorithm.html">Algorithm</a></li>
+                    <li><a href="http://csmojo.com/category/android.html">Android</a></li>
+                    <li><a href="http://csmojo.com/category/cloud.html">Cloud</a></li>
+                    <li><a href="http://csmojo.com/category/gdal.html">GDAL</a></li>
+                    <li><a href="http://csmojo.com/category/git.html">Git</a></li>
+                    <li class="active"><a href="http://csmojo.com/category/linux.html">Linux</a></li>
+                    <li><a href="http://csmojo.com/category/machine-learning.html">Machine Learning</a></li>
+                    <li><a href="http://csmojo.com/category/math.html">Math</a></li>
+                    <li><a href="http://csmojo.com/category/mobile.html">Mobile</a></li>
+                    <li><a href="http://csmojo.com/category/network.html">Network</a></li>
+                    <li><a href="http://csmojo.com/category/pelican.html">Pelican</a></li>
+                    <li><a href="http://csmojo.com/category/python.html">Python</a></li>
+                    <li><a href="http://csmojo.com/category/r.html">R</a></li>
+                    <li><a href="http://csmojo.com/category/web.html">Web</a></li>
+            </ul>
+    </nav>
+
+
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" id="my-overlay"></div>
+
+
+    <div id="my-all" class="w3-main">
+        <div id="my-top" class="w3-top w3-container w3-padding-16 w3-theme w3-large">
+            <i id="my-side-button" class="fa fa-bars w3-opennav w3-hide-large w3-xxlarge w3-container w3-card-4 w3-light-blue" onclick="w3_open()"></i>
+        </div>
+
+        <div class="w3-container w3-padding-32 my-light-blue my-padleft-32">
+            <h1 class="w3-xxxlarge w3-padding-16 "><b>Computer Science Mojo</b></h1>
+            <span class="w3-medium w3-text-grey"><b>  ~ David's Notes on coding, software and computer science</b></span> 
+        </div>
+
+        <a href="/">
+            <span id="my-clouds">     
+                <marquee behavior="scroll" direction="right" scrollamount="10"><i class="fa fa-cloud w3-animate-top w3-text-white w3-xxlarge"></i></marquee>
+                <br><br><br><br>
+                <marquee behavior="scroll" direction="right" scrollamount="5"><i class="fa fa-cloud w3-animate-top w3-text-white w3-xxxlarge"></i></marquee>
+            </span> 
+        </a>
+
+       
+        <div id="my-main" class="w3-container" >
+            <h2>Post</h2>
+            <section id="content">
+<div class="w3-container w3-card-8 w3-padding-large w3-margin">
+    <header>
+        <h2><a class="my-no-dec" href="http://csmojo.com/posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html" rel="bookmark" title="Permalink to How to minimally install Debian 8 in VM VirtualBox"><b>How to minimally install Debian 8 in VM VirtualBox</b></a></h2>
+    </header>
+  
+    <div class="w3-medium">
+        <div>
+            Category: <a href="http://csmojo.com/category/linux.html">Linux</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;Tag:
+                <a href="http://csmojo.com/tag/debian.html">Debian</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/linux.html">Linux</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/virtualbox.html">VirtualBox</a>&nbsp;&nbsp;
+        </div>
+        <div> 
+            By:
+                <a href="http://csmojo.com/author/david.html">David</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;On:
+            <span datetime="2015-07-27T20:00:00-07:00"> Mon 27 July 2015 </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Pageviews: 
+        </div>
+    </div>
+    
+    <div> <p>Debian without a desktop environment is simple, clean and full of potential.
+It is the ideal set up for installing your own choice of desktop environment that doesn't come with the Debian installer, or for setting up a Debian server.<br/>
+<img alt="Alt Text" src="http://csmojo.com/images/img20150001.png" style="width: 641px; height: auto; max-width: 100%;"/></p>
+<h3>Software</h3>
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/Downloads">VM VirtualBox 4.3.30</a></li>
+<li><a href="https://www.debian.org/distrib/">Debian 8.1.0 amd64</a></li>
+</ul>
+<h3>Reading</h3>
+<ul>
+<li><a href="https://www.debian.org/releases/stable/amd64/">Debian GNU/Linux Installation Guide</a></li>
+</ul>
+<h3>Prerequisites</h3>
+<ul>
+<li>0.1 Comfortable using Linux without a desktop environment</li>
+</ul>
+<h3>1. Start the virtual machine</h3>
+<p>Create a new virtual machine for Debian and start it with the Debian .iso</p>
+<p><img alt="Alt Text" src="http://csmojo.com/images/img20150002.png" style="width: 497px; height: auto; max-width: 100%;"/></p>
+<h3>2. Choose Install</h3>
+<p>Install and Graphical install is pretty much the same</p>
+<h3>3. Configure settings to your liking</h3>
+<ul>
+<li>language</li>
+<li>location</li>
+<li>keyboard</li>
+<li>hostname</li>
+<li>domain name (leave it blank if you don't have one)</li>
+<li>Users</li>
+<li>Time zone</li>
+<li>Partition disks (strongly recommend partitioning if it will be used as a server )</li>
+<li>mirror (you can leave the proxy setting blank)</li>
+<li>package usage survey</li>
+</ul>
+<h3>4. Software selection</h3>
+<p>First Thing to note is that if you regret not installing anything here, later after Debian is installed and running, you can always run:</p>
+<div class="highlight"><pre><span></span>tasksel
+</pre></div>
+<p>to install or uninstall anything you missed (except "standard system utilities" is replace by "laptop"; they are not the same; read more: <a href="https://wiki.debian.org/tasksel">tasksel</a>)</p>
+<p><img alt="Alt Text" src="http://csmojo.com/images/img20150006.png" style="width: 634px; height: auto; max-width: 100%;"/></p>
+<p>What each package includes:</p>
+<ul>
+<li>web server: Apache2</li>
+<li>print server: CUPS (you can deselect it if printing is not needed)</li>
+<li>SSH server: openssh</li>
+<li>standard system utilities: What Debian's "standard system utilities" include</li>
+</ul>
+<p>4.1. For a bare bone installation with only Debian core:</p>
+<ul>
+<li>Don't check anything</li>
+</ul>
+<p>4.2. For a minimal installation (Recommended):</p>
+<ul>
+<li>standard system utilities (as this provides Python, whois, ftp, telnet, aptitude and other goodies)</li>
+</ul>
+<p>4.3. For a server:</p>
+<ul>
+<li>SSH server</li>
+<li>standard system utilities </li>
+</ul>
+<p><img alt="Alt Text" src="http://csmojo.com/images/img20150003.png" style="width: 758px; height: auto; max-width: 100%;"/></p>
+<h3>5. Grub</h3>
+<p>Select /dev/sda</p>
+<p><img alt="Alt Text" src="http://csmojo.com/images/img20150004.png" style="width: 760px; height: auto; max-width: 100%;"/></p>
+<h3>6. Finish the installation and reboot</h3>
+<p>VirtualBox will remove the installation .iso for you</p>
+<p><img alt="Alt Text" src="http://csmojo.com/images/img20150005.png" style="width: 744px; height: auto; max-width: 100%;"/></p>
+<h3>7. Update and upgrade</h3>
+<p>After logging in, update your package list:</p>
+<div class="highlight"><pre><span></span>apt-get update
+</pre></div>
+<p>upgrade the packages:</p>
+<div class="highlight"><pre><span></span>apt-get upgrade
+</pre></div>
+<h3>Conclusion</h3>
+<p>Fully utilize VirtualBox's snapshots to save whatever you are doing</p> </div></div>            </section><!-- /#content -->
+        </div><!-- end of my-main -->
+        
+
+        <footer id="my-footer" class="w3-container w3-padding-8 my-light-blue w3-medium" >
+            &copy; <script>document.write(new Date().getFullYear());</script> csmojo.com&nbsp;&nbsp;
+            Powered by <a href="http://getpelican.com/">Pelican</a> <a href="https://pages.github.com/">Github Pages</a> <a href="http://www.w3schools.com/w3css/">w3.css</a> <a href="http://fontawesome.io/">Font Awesome</a> <a href="https://analytics.google.com/analytics/web/">Google Analytics</a> <a href="http://pygments.org/">pygments</a>
+        </footer><!-- /#contentinfo -->
+        
+
+        
+    </div><!-- end of my-all -->
+
+    
+    <script src="/theme/js/script.js"></script>
+</body>
+
+
+</html>

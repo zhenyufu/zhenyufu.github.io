@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo - Cloud</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/cloud.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2015-08-24T21:13:56-07:00</updated><entry><title>What are cloud computing service models SaaS, PaaS, IaaS</title><link href="http://csmojo.com/posts/what-are-cloud-computing-service-models-saas-paas-iaas.html" rel="alternate"></link><published>2015-08-24T21:13:56-07:00</published><updated>2015-08-24T21:13:56-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-08-24:/posts/what-are-cloud-computing-service-models-saas-paas-iaas.html</id><summary type="html">The meanings of SaaS, PaaS, IaaS cloud service models</summary><content type="html">&lt;p&gt;The meanings of SaaS, PaaS, IaaS cloud service models&lt;/p&gt;
+&lt;h3&gt;Reading&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/16820336/what-is-saas-paas-and-iaas-with-examples"&gt;What is SaaS, PaaS and IaaS? With examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Saas (Software as a Service)&lt;/h3&gt;
+&lt;p&gt;Provides software that is reachable as long s there is internet.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;e-mail &lt;/li&gt;
+&lt;li&gt;virtual desktop &lt;/li&gt;
+&lt;li&gt;Google Apps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;PaaS (Platform as a Service)&lt;/h3&gt;
+&lt;p&gt;Provides apps run time environment, development environment, and  software platform.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;webserver&lt;/li&gt;
+&lt;li&gt;database&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;IaaS (Infrastructure as a Service)&lt;/h3&gt;
+&lt;p&gt;Provides cloud computing and storage.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;virtual local area networks&lt;/li&gt;
+&lt;li&gt;virtual machines&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;IaaS is the basic layer, while SaaS is the top lyer.&lt;/p&gt;</content><category term="Cloud"></category></entry></feed>

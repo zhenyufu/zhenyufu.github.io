@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+        <title>csmojo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/theme/css/w3.css"/>
+    <link rel="stylesheet" type="text/css" href="/theme/font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css"/>
+    <!--
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css"/>
+    -->
+    <link rel="stylesheet" type="text/css" href="/theme/css/style.css"/>
+        
+    
+    <link href="http://csmojo.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Full Atom Feed" />
+    <link href="http://csmojo.com/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
+
+        <meta name="description" content="Set up a Server in your VirtualBox in a few simple steps so you can fire it up whenever you need it, or simply use it as a playground for your VPS. A Nginx server is small, efficient, and easy to use." />
+        <meta name="keywords" content="Debian" />
+        <meta name="keywords" content="Linux" />
+        <meta name="keywords" content="Commands" />
+        <meta name="keywords" content="MySQL" />
+        <meta name="keywords" content="Network" />
+        <meta name="keywords" content="Nginx" />
+        <meta name="keywords" content="PHP" />
+        <meta name="keywords" content="Server" />
+        <meta name="keywords" content="VirtualBox" />
+</head>
+
+
+<body id="index">
+    <nav class="w3-sidenav w3-collapse w3-light-grey w3-card-2" id="my-side-text">
+        <div class="w3-center">
+            <a class="my-norm" href="http://csmojo.com/"><img id="my-avatar" src="http://csmojo.com/images/img00000000.png"></a>
+            <a class="my-norm" href="mailto:david@csmojo.com"><i class="fa fa-envelope-o w3-xxlarge"></i></a>
+            <a class="my-norm" href="https://github.com/zhenyufu"><i class="fa fa-github w3-xxlarge"></i></a>
+            <a class="my-norm" href="https://play.google.com/store/apps/developer?id=csmojo"><i class="fa fa-android w3-xxlarge"></i></a>
+        </div>
+        
+        <ul>
+                <h4><b>Pages</b></h4>
+                <li><a href="http://csmojo.com/">Home</a></li>
+                <li><a href="http://csmojo.com/pages/about.html">About</a></li>
+                <li><a href="http://csmojo.com/pages/comments.html">Comments</a></li>
+                <h4><b><a href="http://csmojo.com/pages/projects.html" class="my-no-pad">Projects</a></b></h4>
+                    <div class="w3-accordion"> 
+                        <a onclick="myAccordion('accordion-a')" href="javascript:void(0)">Web <i class="fa fa-caret-down"></i></a>
+                        <div id="accordion-a" class="w3-accordion-content w3-animate-left w3-padding">
+                                    <li><a href="http://csmojo.com/pages/learn-huge.html">Learn Huge</a></li>
+                                    <li><a href="http://csmojo.com/pages/libto.html">LibTo</a></li>
+                                    <li><a href="http://csmojo.com/pages/pentesting-lab.html">Pentesting Lab</a></li>
+                        </div>
+                    </div>
+                    <div class="w3-accordion">
+                        <a onclick="myAccordion('accordion-b')" href="javascript:void(0)">Mobile <i class="fa fa-caret-down"></i></a>
+                        <div id="accordion-b" class="w3-accordion-content w3-animate-left w3-padding">
+                                    <li><a href="http://csmojo.com/pages/move-tiles.html">Move Tiles</a></li>
+                                    <li><a href="http://csmojo.com/pages/velocity-ruler.html">Velocity Ruler</a></li>
+                                    <li><a href="http://csmojo.com/pages/workaholic.html">Workaholic</a></li>
+                                    <li><a href="http://csmojo.com/pages/zombie-crush.html">Zombie Crush</a></li>
+                        </div>
+                    </div>
+
+                    
+                <h4><b>Categories</b></h4>
+                    <li><a href="http://csmojo.com/category/algorithm.html">Algorithm</a></li>
+                    <li><a href="http://csmojo.com/category/android.html">Android</a></li>
+                    <li><a href="http://csmojo.com/category/cloud.html">Cloud</a></li>
+                    <li><a href="http://csmojo.com/category/gdal.html">GDAL</a></li>
+                    <li><a href="http://csmojo.com/category/git.html">Git</a></li>
+                    <li class="active"><a href="http://csmojo.com/category/linux.html">Linux</a></li>
+                    <li><a href="http://csmojo.com/category/machine-learning.html">Machine Learning</a></li>
+                    <li><a href="http://csmojo.com/category/math.html">Math</a></li>
+                    <li><a href="http://csmojo.com/category/mobile.html">Mobile</a></li>
+                    <li><a href="http://csmojo.com/category/network.html">Network</a></li>
+                    <li><a href="http://csmojo.com/category/pelican.html">Pelican</a></li>
+                    <li><a href="http://csmojo.com/category/python.html">Python</a></li>
+                    <li><a href="http://csmojo.com/category/r.html">R</a></li>
+                    <li><a href="http://csmojo.com/category/web.html">Web</a></li>
+            </ul>
+    </nav>
+
+
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" id="my-overlay"></div>
+
+
+    <div id="my-all" class="w3-main">
+        <div id="my-top" class="w3-top w3-container w3-padding-16 w3-theme w3-large">
+            <i id="my-side-button" class="fa fa-bars w3-opennav w3-hide-large w3-xxlarge w3-container w3-card-4 w3-light-blue" onclick="w3_open()"></i>
+        </div>
+
+        <div class="w3-container w3-padding-32 my-light-blue my-padleft-32">
+            <h1 class="w3-xxxlarge w3-padding-16 "><b>Computer Science Mojo</b></h1>
+            <span class="w3-medium w3-text-grey"><b>  ~ David's Notes on coding, software and computer science</b></span> 
+        </div>
+
+        <a href="/">
+            <span id="my-clouds">     
+                <marquee behavior="scroll" direction="right" scrollamount="10"><i class="fa fa-cloud w3-animate-top w3-text-white w3-xxlarge"></i></marquee>
+                <br><br><br><br>
+                <marquee behavior="scroll" direction="right" scrollamount="5"><i class="fa fa-cloud w3-animate-top w3-text-white w3-xxxlarge"></i></marquee>
+            </span> 
+        </a>
+
+       
+        <div id="my-main" class="w3-container" >
+            <h2>Post</h2>
+            <section id="content">
+<div class="w3-container w3-card-8 w3-padding-large w3-margin">
+    <header>
+        <h2><a class="my-no-dec" href="http://csmojo.com/posts/how-to-set-up-debian-server-with-nginx-php5-and-mysql-in-vm-virtualbox.html" rel="bookmark" title="Permalink to How to set up Debian server with nginx, php5 and MySQL in VM VirtualBox"><b>How to set up Debian server with nginx, php5 and MySQL in VM VirtualBox</b></a></h2>
+    </header>
+  
+    <div class="w3-medium">
+        <div>
+            Category: <a href="http://csmojo.com/category/linux.html">Linux</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;Tag:
+                <a href="http://csmojo.com/tag/debian.html">Debian</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/linux.html">Linux</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/commands.html">Commands</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/mysql.html">MySQL</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/network.html">Network</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/nginx.html">Nginx</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/php.html">PHP</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/server.html">Server</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/virtualbox.html">VirtualBox</a>&nbsp;&nbsp;
+        </div>
+        <div> 
+            By:
+                <a href="http://csmojo.com/author/david.html">David</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;On:
+            <span datetime="2015-07-31T20:16:23-07:00"> Fri 31 July 2015 </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Pageviews: 
+        </div>
+    </div>
+    
+    <div> <p>Set up a Server in your VirtualBox in a few simple steps so you can fire it up whenever you need it, 
+or simply use it as a playground for your VPS. A Nginx server is small, efficient, and easy to use.<br/>
+<img alt="Alt Text" src="http://csmojo.com/images/img20150033.png" style="width: 590px; height: auto; max-width: 100%;"/></p>
+<h3>Software</h3>
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox 4.3.28</a></li>
+<li><a href="https://www.debian.org/distrib/">Debian 8.1.0 amd64</a></li>
+<li><a href="http://nginx.org/">Nginx 1.6.2</a></li>
+<li><a href="http://php.net/">PHP 5.6.9</a></li>
+<li><a href="https://www.mysql.com/">Mysql-server 5.5.44</a></li>
+</ul>
+<h3>Prerequisites</h3>
+<ul>
+<li>0.1 <a href="http://csmojo.com/posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html">How to minimally install Debian 8 in VM VirtualBox</a></li>
+<li>0.2 Set VM to Bridged Adapter: <a href="http://csmojo.com/posts/how-to-choose-vm-virtualbox-networking.html">How to choose VM VirtualBox networking</a></li>
+</ul>
+<h3>1. Install Nginx</h3>
+<p>update package list</p>
+<div class="highlight"><pre><span></span>apt-get update
+</pre></div>
+<p>install Nginx</p>
+<div class="highlight"><pre><span></span>apt-get install nginx
+</pre></div>
+<h3>2. Check ip address</h3>
+<div class="highlight"><pre><span></span>ifconfig
+</pre></div>
+<p>For the purpose of this example, we are using Bridged Adapter in VM VirtualBox and 192.168.0.16 as the server address
+Your Debian virtual machine is mostly on DHCP, and the IP might change.</p>
+<h3>3. Test Nginx</h3>
+<p>3.1. On your host machine or any other computer within the same network, go to 192.168.0.16 and the Nginx welcome page should show up:<br/>
+<img alt="Alt Text" src="http://csmojo.com/images/img20150022.png" style="width: 892px; height: auto; max-width: 100%;"/></p>
+<p>3.2. Back to the Debian server, go to the default root folder of the Nginx server /var/www/html, 
+and use nano to open the "index.nginx-debian.html" file. This is the html of the welcome page in 3.1. <br/>
+<img alt="Alt Text" src="http://csmojo.com/images/img20150023.png" style="width: 775px; height: auto; max-width: 100%;"/></p>
+<p>3.3. Here we edit it by adding a "Hello World!"; back in the browser, the change would have registered
+<img alt="Alt Text" src="http://csmojo.com/images/img20150024.png" style="width: 1041px; height: auto; max-width: 100%;"/><br/>
+<img alt="Alt Text" src="http://csmojo.com/images/img20150025.png" style="width: 896px; height: auto; max-width: 100%;"/></p>
+<p>Up to here, you have yourself a functional Nginx server displaying html pages.</p>
+<ol>
+<li>Intall and configure php
+4.1. run:</li>
+</ol>
+<div class="highlight"><pre><span></span>apt-get install php5-fpm
+</pre></div>
+<p>4.2. Configure security - change "cgi.fix_pathinfo"</p>
+<div class="highlight"><pre><span></span>nano /etc/php5/fpm/php.ini
+</pre></div>
+<p>and change "cgi.fix_pathinfo=1" to "cgi.fix_pathinfo=0"
+The above is more of the "conservative" method. Discussion on this matter is old: <a href="http://cnedelcu.blogspot.com/2010/05/nginx-php-via-fastcgi-important.html">Nginx &amp; PHP via FastCGI important security issue</a>
+Nginx wiki's alternative: <a href="http://wiki.nginx.org/PHPFcgiExample">FastCGI Example</a></p>
+<p>4.3. Configure Nginx to use php</p>
+<div class="highlight"><pre><span></span>nano /etc/nginx/sites-available/default
+</pre></div>
+<p>and add "index.php" to the list<br/>
+<img alt="Alt Text" src="http://csmojo.com/images/img20150026.png" style="width: 829px; height: auto; max-width: 100%;"/></p>
+<p>also uncomment  the "location ~ .php{}" function to use  Unix sockets<br/>
+<img alt="Alt Text" src="http://csmojo.com/images/img20150027.png" style="width: 936px; height: auto; max-width: 100%;"/></p>
+<p>Some tutorials suggest editing the following file to enable sockets, but the above is sufficient<br/>
+<img alt="Alt Text" src="http://csmojo.com/images/img20150028.png" style="width: 390px; height: auto; max-width: 100%;"/></p>
+<h3>5. Test php</h3>
+<p>5.1. In the server's root directory, remove "index.nginx-debian.html" and create "index.php" with the following:</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+  <span class="nb">phpinfo</span><span class="p">();</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+<p>5.2. Restart nginx and php</p>
+<div class="highlight"><pre><span></span>service php5-fpm restart
+</pre></div>
+<div class="highlight"><pre><span></span>service nginx restart
+</pre></div>
+<p>5.3. Again go to 192.168.0.16 in your browser to see the following page:<br/>
+<img alt="Alt Text" src="http://csmojo.com/images/img20150029.png" style="width: 962px; height: auto; max-width: 100%;"/></p>
+<p>Your Nginx server now can show php and html pages.</p>
+<h3>6. Install and config MySQL</h3>
+<p>6.1. Install MySQL
+the server:</p>
+<div class="highlight"><pre><span></span>apt-get install mysql-server
+</pre></div>
+<p>the php5-mysql package:</p>
+<div class="highlight"><pre><span></span>apt-get install php5-mysql
+</pre></div>
+<p>6.2. Run initialization</p>
+<div class="highlight"><pre><span></span>mysql_install_db
+</pre></div>
+<p>6.3. Run Security improvement script</p>
+<div class="highlight"><pre><span></span>mysql_secure_installation
+</pre></div>
+<h3>7. Test everything at once</h3>
+<p>modify "index.php" as follows:</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$servername</span> <span class="o">=</span> <span class="s2">"localhost"</span><span class="p">;</span>
+<span class="nv">$username</span> <span class="o">=</span> <span class="s2">"root"</span><span class="p">;</span>
+<span class="nv">$password</span> <span class="o">=</span> <span class="s2">"yourpassword"</span><span class="p">;</span>
+
+<span class="c1">//new connection</span>
+<span class="nv">$conn</span> <span class="o">=</span> <span class="nb">mysqli_connect</span><span class="p">(</span><span class="nv">$servername</span><span class="p">,</span> <span class="nv">$username</span><span class="p">,</span> <span class="nv">$password</span><span class="p">);</span>
+
+<span class="c1">//check connection</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$conn</span><span class="p">){</span>
+  <span class="k">die</span><span class="p">(</span><span class="s2">"connection failed: "</span> <span class="o">.</span> <span class="nv">$conn</span><span class="o">-&gt;</span><span class="na">connect_error</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">echo</span> <span class="s2">"connection ok"</span><span class="p">;</span>
+
+<span class="c1">//php info</span>
+<span class="nb">phpinfo</span><span class="p">();</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+<p>Use "mysqli_" as "mysql_" functions are deprecated.
+This will test the connection with the MySQL server, and show "connection ok" if connected successfully:<br/>
+<img alt="Alt Text" src="http://csmojo.com/images/img20150032.png" style="width: 1829px; height: auto; max-width: 100%;"/></p> </div></div>            </section><!-- /#content -->
+        </div><!-- end of my-main -->
+        
+
+        <footer id="my-footer" class="w3-container w3-padding-8 my-light-blue w3-medium" >
+            &copy; <script>document.write(new Date().getFullYear());</script> csmojo.com&nbsp;&nbsp;
+            Powered by <a href="http://getpelican.com/">Pelican</a> <a href="https://pages.github.com/">Github Pages</a> <a href="http://www.w3schools.com/w3css/">w3.css</a> <a href="http://fontawesome.io/">Font Awesome</a> <a href="https://analytics.google.com/analytics/web/">Google Analytics</a> <a href="http://pygments.org/">pygments</a>
+        </footer><!-- /#contentinfo -->
+        
+
+        
+    </div><!-- end of my-all -->
+
+    
+    <script src="/theme/js/script.js"></script>
+</body>
+
+
+</html>
