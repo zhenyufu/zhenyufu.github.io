@@ -136,36 +136,36 @@
 <ul>
 <li>Install some necessary packages</li>
 </ul>
-<div class="highlight"><pre><span></span>apt-get install build-essential libssl-dev curl
+<div class="highlight"><pre><span></span><span class="err">apt-get install build-essential libssl-dev curl</span>
 </pre></div>
 <ul>
 <li>nvm global install</li>
 </ul>
-<div class="highlight"><pre><span></span>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.3/install.sh | NVM_DIR=/usr/local/nvm bash
+<div class="highlight"><pre><span></span><span class="err">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.3/install.sh | NVM_DIR=/usr/local/nvm bash</span>
 </pre></div>
 <ul>
 <li>To enable it for all user: cut and paste the following from <code>~/.bashrc</code> to <code>/etc/bash.bashrc</code></li>
 </ul>
-<div class="highlight"><pre><span></span>export NVM_DIR="/usr/local/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; . "$NVM_DIR/nvm.sh"  # This loads nvm
+<div class="highlight"><pre><span></span><span class="err">export NVM_DIR="/usr/local/nvm"</span>
+<span class="err">[ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; . "$NVM_DIR/nvm.sh"  # This loads nvm</span>
 </pre></div>
 <ul>
 <li>nvm install latest node.js</li>
 </ul>
-<div class="highlight"><pre><span></span>nvm install node
+<div class="highlight"><pre><span></span><span class="err">nvm install node</span>
 </pre></div>
 <ul>
 <li>nvm install node.js 4.4.7</li>
 </ul>
-<div class="highlight"><pre><span></span>nvm install 4.4.7
+<div class="highlight"><pre><span></span><span class="err">nvm install 4.4.7</span>
 </pre></div>
 <h3>Install cordova and ionic</h3>
-<div class="highlight"><pre><span></span>npm install -g cordova ionic
+<div class="highlight"><pre><span></span><span class="err">npm install -g cordova ionic</span>
 </pre></div>
 <ul>
 <li>Set default node.js version for terminal</li>
 </ul>
-<div class="highlight"><pre><span></span>nvm alias default 4.4.7
+<div class="highlight"><pre><span></span><span class="err">nvm alias default 4.4.7</span>
 </pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         

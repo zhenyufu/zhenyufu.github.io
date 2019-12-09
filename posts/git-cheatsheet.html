@@ -18,9 +18,9 @@
     <link href="http://csmojo.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Full Atom Feed" />
     <link href="http://csmojo.com/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
 
-        <meta name="description" content="Going through all the directories to find the path of a specific type of file is easy in Python. This helps with mass processing files." />
-        <meta name="keywords" content="Linux" />
-        <meta name="keywords" content="Python" />
+        <meta name="description" content="Some Git commands" />
+        <meta name="keywords" content="Git" />
+        <meta name="keywords" content="Web" />
 </head>
 
 
@@ -63,14 +63,14 @@
                     <li><a href="http://csmojo.com/category/android.html">Android</a></li>
                     <li><a href="http://csmojo.com/category/cloud.html">Cloud</a></li>
                     <li><a href="http://csmojo.com/category/gdal.html">GDAL</a></li>
-                    <li><a href="http://csmojo.com/category/git.html">Git</a></li>
+                    <li class="active"><a href="http://csmojo.com/category/git.html">Git</a></li>
                     <li><a href="http://csmojo.com/category/linux.html">Linux</a></li>
                     <li><a href="http://csmojo.com/category/machine-learning.html">Machine Learning</a></li>
                     <li><a href="http://csmojo.com/category/math.html">Math</a></li>
                     <li><a href="http://csmojo.com/category/mobile.html">Mobile</a></li>
                     <li><a href="http://csmojo.com/category/network.html">Network</a></li>
                     <li><a href="http://csmojo.com/category/pelican.html">Pelican</a></li>
-                    <li class="active"><a href="http://csmojo.com/category/python.html">Python</a></li>
+                    <li><a href="http://csmojo.com/category/python.html">Python</a></li>
                     <li><a href="http://csmojo.com/category/r.html">R</a></li>
                     <li><a href="http://csmojo.com/category/web.html">Web</a></li>
             </ul>
@@ -104,47 +104,70 @@
             <section id="content">
 <div class="w3-container w3-card-8 w3-padding-large w3-margin">
     <header>
-        <h2><a class="my-no-dec" href="http://csmojo.com/posts/how-to-check-all-files-and-find-a-file-type-in-all-directories-in-python.html" rel="bookmark" title="Permalink to How to check all files and find a file type in all directories in Python"><b>How to check all files and find a file type in all directories in Python</b></a></h2>
+        <h2><a class="my-no-dec" href="http://csmojo.com/posts/git-cheatsheet.html" rel="bookmark" title="Permalink to Git Cheatsheet"><b>Git Cheatsheet</b></a></h2>
     </header>
   
     <div class="w3-medium">
         <div>
-            Category: <a href="http://csmojo.com/category/python.html">Python</a>
+            Category: <a href="http://csmojo.com/category/git.html">Git</a>
             &nbsp;&nbsp;&nbsp;&nbsp;Tag:
-                <a href="http://csmojo.com/tag/linux.html">Linux</a>&nbsp;&nbsp;
-                <a href="http://csmojo.com/tag/python.html">Python</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/git.html">Git</a>&nbsp;&nbsp;
+                <a href="http://csmojo.com/tag/web.html">Web</a>&nbsp;&nbsp;
         </div>
         <div> 
             By:
                 <a href="http://csmojo.com/author/david.html">David</a>
             &nbsp;&nbsp;&nbsp;&nbsp;On:
-            <span datetime="2015-08-06T20:54:59-07:00"> Thu 06 August 2015 </span>
+            <span datetime="2019-07-28T22:11:47-07:00"> Sun 28 July 2019 </span>
             &nbsp;&nbsp;&nbsp;&nbsp;
         </div>
     </div>
     
-    <div> <p>Going through all the directories to find the path of a specific type of file is easy in Python. This helps with mass processing files.</p>
-<h3>Software</h3>
+    <div> <p>Some Git commands </p>
+<h3>Shorthands</h3>
 <ul>
-<li><a href="https://www.python.org/download/releases/2.7/">Python 2.7</a></li>
+<li><code>HEAD</code> Latest commit </li>
+<li><code>HEAD^</code> OR <code>HEAD~1</code> commit before latest commit </li>
 </ul>
-<h3>Reading</h3>
+<h3>Branching</h3>
 <ul>
-<li><a href="https://docs.python.org/2/library/os.html#os.walk">os.walk</a></li>
+<li><code>git mergetool</code> use the installed mergetool to resolve conflicts </li>
+<li><code>git cherry-pick -n HASH</code> checrry-pick a single commit <code>-n</code> prevents it auto adding a commit </li>
 </ul>
-<h3>Find files</h3>
-<p>For this example, we have a folder called "messyFolder" which has all kinds of files and subdirectories inside. 
-We are to locate the path of all ".tiff" and ".png" files.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">os.path</span>
-<span class="n">path</span> <span class="o">=</span> <span class="s2">"messyFolder/"</span>
-<span class="k">for</span> <span class="n">dirpath</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">,</span> <span class="n">filenames</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">".tiff"</span><span class="p">,</span> <span class="s2">".png"</span><span class="p">)):</span>
-            <span class="nb">print</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> 
-            <span class="c1"># the path starting at "messyFolder/"</span>
-            <span class="nb">print</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span> 
-            <span class="c1"># the absolute path starting with "/home/" in Linux</span>
-</pre></div> </div></div>            </section><!-- /#content -->
+<h3>History</h3>
+<ul>
+<li><code>git log --oneline</code> gives a one log history </li>
+</ul>
+<h3>Diff</h3>
+<h3>Revert</h3>
+<ul>
+<li><code>git revert -n HEAD</code> revert the last commit  - always revert backwards </li>
+</ul>
+<h3>Reset</h3>
+<ul>
+<li><code>git reset --hard HEAD</code></li>
+</ul>
+<h3>Tagging</h3>
+<ul>
+<li><code>git tag</code></li>
+</ul>
+<h3>Submodules</h3>
+<ul>
+<li><code>git submodule add GITURL REPO</code></li>
+<li><code>git submodule init REPO</code></li>
+<li><code>git submodule update REPO</code></li>
+</ul>
+<h3>Reflog</h3>
+<ul>
+<li><code>git reflog</code></li>
+</ul>
+<h3>Bisect</h3>
+<h4>bisects the commit to find where the bug was addeded in</h4>
+<ul>
+<li><code>git bisect start</code></li>
+<li><code>git bisect bad</code></li>
+<li><code>git bisect good</code></li>
+</ul> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 

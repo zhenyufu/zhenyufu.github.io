@@ -131,21 +131,21 @@
 <p>Encountered this problem when making <a href="http://csmojo.com/pages/learn-huge.html">Learn Huge</a> : <br/>
 "e.targetTouches[0].pageX" is Android specific, so to ensure cross platform compatibility:</p>
 <h3>1. Check if it's Android or not:</h3>
-<div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">isAndroid</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="n">isAndroid</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
-<span class="k">if</span><span class="o">(</span> <span class="o">(</span><span class="n">navigator</span><span class="o">.</span><span class="na">userAgent</span> <span class="o">||</span> <span class="n">navigator</span><span class="o">.</span><span class="na">vendor</span> <span class="o">||</span> <span class="n">window</span><span class="o">.</span><span class="na">opera</span><span class="o">).</span><span class="na">match</span><span class="o">(</span> <span class="o">/</span><span class="n">Android</span><span class="o">/</span><span class="n">i</span> <span class="o">)</span> <span class="o">){</span>
-    <span class="n">isAndroid</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-<span class="o">}</span>
+<span class="k">if</span><span class="p">(</span> <span class="p">(</span><span class="n">navigator</span><span class="p">.</span><span class="na">userAgent</span> <span class="o">||</span> <span class="n">navigator</span><span class="p">.</span><span class="na">vendor</span> <span class="o">||</span> <span class="n">window</span><span class="p">.</span><span class="na">opera</span><span class="p">).</span><span class="na">match</span><span class="p">(</span> <span class="o">/</span><span class="n">Android</span><span class="o">/</span><span class="n">i</span> <span class="p">)</span> <span class="p">){</span>
+    <span class="n">isAndroid</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 <h3>2. Use the correct one depending on platform:</h3>
-<div class="highlight"><pre><span></span><span class="k">if</span><span class="o">(</span><span class="n">isAndroid</span><span class="o">){</span>
-    <span class="n">nowX</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">targetTouches</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">pageX</span> <span class="o">-</span> <span class="k">this</span><span class="o">.</span><span class="na">offsetLeft</span><span class="o">;</span>
-    <span class="n">nowY</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">targetTouches</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">pageY</span> <span class="o">-</span> <span class="k">this</span><span class="o">.</span><span class="na">offsetTop</span><span class="o">;</span>
-<span class="o">}</span>
-<span class="k">else</span><span class="o">{</span>
-    <span class="n">nowX</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">pageX</span> <span class="o">-</span> <span class="k">this</span><span class="o">.</span><span class="na">offsetLeft</span><span class="o">;</span>
-    <span class="n">nowY</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">pageY</span> <span class="o">-</span> <span class="k">this</span><span class="o">.</span><span class="na">offsetTop</span><span class="o">;</span>
-<span class="o">}</span> 
+<div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">isAndroid</span><span class="p">){</span>
+    <span class="n">nowX</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="na">targetTouches</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">pageX</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="na">offsetLeft</span><span class="p">;</span>
+    <span class="n">nowY</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="na">targetTouches</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">pageY</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="na">offsetTop</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+    <span class="n">nowX</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="na">pageX</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="na">offsetLeft</span><span class="p">;</span>
+    <span class="n">nowY</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="na">pageY</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="na">offsetTop</span><span class="p">;</span>
+<span class="p">}</span> 
 </pre></div>
 <p>After changing to "e.targetTouches[0].pageX", Android Chrome takes the code happily.</p> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->

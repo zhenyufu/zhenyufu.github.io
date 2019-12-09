@@ -166,7 +166,7 @@
 &lt;td&gt;p&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</content><category term="Discrete Math"></category><category term="Proofs"></category></entry><entry><title>What are the diffrent ways of saying proposition p → q</title><link href="http://csmojo.com/posts/what-are-the-diffrent-ways-of-saying-proposition-p-q.html" rel="alternate"></link><published>2015-08-29T21:34:08-07:00</published><updated>2015-08-29T21:34:08-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-08-29:/posts/what-are-the-diffrent-ways-of-saying-proposition-p-q.html</id><summary type="html">The simple statement p → q in discrete mathematics gets confusing when put into English. 
+&lt;/table&gt;</content><category term="Math"></category><category term="Discrete Math"></category><category term="Proofs"></category></entry><entry><title>What are the diffrent ways of saying proposition p → q</title><link href="http://csmojo.com/posts/what-are-the-diffrent-ways-of-saying-proposition-p-q.html" rel="alternate"></link><published>2015-08-29T21:34:08-07:00</published><updated>2015-08-29T21:34:08-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-08-29:/posts/what-are-the-diffrent-ways-of-saying-proposition-p-q.html</id><summary type="html">The simple statement p → q in discrete mathematics gets confusing when put into English. 
 Here is a table of the common ways of saying  p → q:</summary><content type="html">&lt;p&gt;The simple statement p → q in discrete mathematics gets confusing when put into English. 
 Here is a table of the common ways of saying  p → q:&lt;/p&gt;
 &lt;h3&gt;Reading&lt;/h3&gt;
@@ -219,4 +219,4 @@ Here is a table of the common ways of saying  p → q:&lt;/p&gt;
 &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Discrete Math"></category></entry></feed>
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Math"></category><category term="Discrete Math"></category></entry></feed>

@@ -7,7 +7,7 @@ It is a brave new world !  &lt;/p&gt;
 &lt;li&gt;&lt;code&gt;make serve&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make html&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make publish&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Misc"></category><category term="Pelican"></category><category term="Blogger"></category></entry><entry><title>A Example</title><link href="http://csmojo.com/posts/a-example.html" rel="alternate"></link><published>2016-07-01T20:41:15-07:00</published><updated>2016-07-01T20:41:15-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2016-07-01:/posts/a-example.html</id><summary type="html">My Short cheat sheet for Markdown  </summary><content type="html">&lt;p&gt;My Short cheat sheet for Markdown  &lt;/p&gt;
+&lt;/ul&gt;</content><category term="Pelican"></category><category term="Misc"></category><category term="Pelican"></category><category term="Blogger"></category></entry><entry><title>A Example</title><link href="http://csmojo.com/posts/a-example.html" rel="alternate"></link><published>2016-07-01T20:41:15-07:00</published><updated>2016-07-01T20:41:15-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2016-07-01:/posts/a-example.html</id><summary type="html">My Short cheat sheet for Markdown  </summary><content type="html">&lt;p&gt;My Short cheat sheet for Markdown  &lt;/p&gt;
 &lt;h3&gt;Headers&lt;/h3&gt;
 &lt;h1&gt;H1&lt;/h1&gt;
 &lt;h2&gt;H2&lt;/h2&gt;
@@ -83,7 +83,7 @@ haha there we go for the image:&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://csmojo.com"&gt;link to home page&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Pygments Code highlighter&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://pygments.org/languages/"&gt;Pygments supported languages&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;"Hello World"&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;"Hello World"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="n"&gt;Short&lt;/span&gt; &lt;span class="n"&gt;cheat&lt;/span&gt; &lt;span class="n"&gt;sheet&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;Markdown&lt;/span&gt;  
 
@@ -132,7 +132,7 @@ haha there we go for the image:&lt;/p&gt;
 &lt;span class="n"&gt;two&lt;/span&gt; &lt;span class="n"&gt;spaces&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;Enter&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;second&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;  
 &lt;span class="n"&gt;haha&lt;/span&gt; &lt;span class="n"&gt;there&lt;/span&gt; &lt;span class="n"&gt;we&lt;/span&gt; &lt;span class="n"&gt;go&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="nl"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 
-&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Alt&lt;/span&gt; &lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;]({&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;images&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;img00000000&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;png&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Alt&lt;/span&gt; &lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;]({&lt;/span&gt;&lt;span class="k"&gt;static&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;images&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;img00000000&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;png&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;italics&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;
 &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;bold&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;
@@ -149,4 +149,4 @@ haha there we go for the image:&lt;/p&gt;
 
 &lt;span class="cp"&gt;### Pygments Code highlighter&lt;/span&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Pygments&lt;/span&gt; &lt;span class="n"&gt;supported&lt;/span&gt; &lt;span class="n"&gt;languages&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="nl"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//pygments.org/languages/)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Markdown"></category><category term="Syntax"></category></entry></feed>
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Pelican"></category><category term="Markdown"></category><category term="Syntax"></category></entry></feed>

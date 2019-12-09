@@ -145,49 +145,49 @@
 <li>0.1 <a href="http://csmojo.com/posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html">How to minimally install Debian 8 in VM VirtualBox</a></li>
 </ul>
 <h3>1. Install i3 and xorg</h3>
-<div class="highlight"><pre><span></span>apt-get install i3
-apt-get install xorg
+<div class="highlight"><pre><span></span><span class="err">apt-get install i3</span>
+<span class="err">apt-get install xorg</span>
 </pre></div>
 <h3>2. Create xorg config file</h3>
-<div class="highlight"><pre><span></span>Xorg -configure
+<div class="highlight"><pre><span></span><span class="err">Xorg -configure</span>
 </pre></div>
 <p>(X is upper case)
 if you get hardware errors, it may be VirtualBox specific and can be ignored<br/>
 <img alt="Alt Text" src="http://csmojo.com/images/img20150034.png" style="width: 529px; height: auto; max-width: 100%;"/></p>
 <p>move it to the right place:</p>
-<div class="highlight"><pre><span></span>cp xorg.conf.new /etc/X11/xorg.conf
+<div class="highlight"><pre><span></span><span class="err">cp xorg.conf.new /etc/X11/xorg.conf</span>
 </pre></div>
 <ol>
 <li>Set "startx" to run after login
 in root do</li>
 </ol>
-<div class="highlight"><pre><span></span>ls -a
+<div class="highlight"><pre><span></span><span class="err">ls -a</span>
 </pre></div>
 <p><img alt="Alt Text" src="http://csmojo.com/images/img20150035.png" style="width: 497px; height: auto; max-width: 100%;"/></p>
 <p>and there is a ".profile" file, nano open it and add to the end:</p>
-<div class="highlight"><pre><span></span>if [ -z "$DISPLAY" ] &amp;&amp; [ $(tty) == /dev/tty1 ]; then
-  startx
-fi
+<div class="highlight"><pre><span></span><span class="err">if [ -z "$DISPLAY" ] &amp;&amp; [ $(tty) == /dev/tty1 ]; then</span>
+<span class="err">  startx</span>
+<span class="err">fi</span>
 </pre></div>
 <p>Some people suggest adding the above commands to ".bashrc" instead, the difference between the two: <a href="http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html">.bash_profile vs .bashrc</a></p>
 <h3>4. Change xorg screen resolution (solution from <a href="https://forums.virtualbox.org/viewtopic.php?f=2&amp;t=18377">VirtualBo's Forum</a>)</h3>
 <p>For this example, we will be setting the resolution to "1920x1080"
 4.1. edit /etc/X11/xorg.conf
 In section "Monitor" add</p>
-<div class="highlight"><pre><span></span>HorizSync 31-80   
-VertRefresh 30-100
+<div class="highlight"><pre><span></span><span class="err">HorizSync 31-80   </span>
+<span class="err">VertRefresh 30-100</span>
 </pre></div>
 <p><img alt="Alt Text" src="http://csmojo.com/images/img20150036.png" style="width: 384px; height: auto; max-width: 100%;"/></p>
 <p>In section "Screen" add</p>
-<div class="highlight"><pre><span></span>DefaultDepth 16
+<div class="highlight"><pre><span></span><span class="err">DefaultDepth 16</span>
 </pre></div>
 <p><img alt="Alt Text" src="http://csmojo.com/images/img20150039.png" style="width: 285px; height: auto; max-width: 100%;"/></p>
 <p>Scroll down to "Display" with Depth 16 and add</p>
-<div class="highlight"><pre><span></span>Modes "1920x1080"
+<div class="highlight"><pre><span></span><span class="err">Modes "1920x1080"</span>
 </pre></div>
 <p><img alt="Alt Text" src="http://csmojo.com/images/img20150038.png" style="width: 252px; height: auto; max-width: 100%;"/></p>
 <p>4.2. Power off the virtual machine and in your host machine use "VBoxManager" to run:</p>
-<div class="highlight"><pre><span></span>VBoxManage setextradata Debian CustomVideoMode1 1920x1080x16
+<div class="highlight"><pre><span></span><span class="err">VBoxManage setextradata Debian CustomVideoMode1 1920x1080x16</span>
 </pre></div>
 <p>where Debian is the name of the guest machine<br/>
 <img alt="Alt Text" src="http://csmojo.com/images/img20150037.png" style="width: 810px; height: auto; max-width: 100%;"/></p>

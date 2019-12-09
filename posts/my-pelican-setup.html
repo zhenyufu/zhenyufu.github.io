@@ -143,7 +143,7 @@ Might be helpful for newcomers ;)</p>
 <h3>Clear content and Github hosting</h3>
 <p>Setting <code>DELETE_OUTPUT_DIRECTORY = True</code> helps clean the folder of any old unused posts or images,
 but if the output folder is a git repo, add <code>".git"</code> to <code>OUTPUT_RETENTION</code></p>
-<div class="highlight"><pre><span></span><span class="n">DELETE_OUTPUT_DIRECTORY</span> <span class="o">=</span> <span class="bp">True</span>
+<div class="highlight"><pre><span></span><span class="n">DELETE_OUTPUT_DIRECTORY</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">OUTPUT_RETENTION</span> <span class="o">=</span> <span class="p">[</span><span class="s2">".git"</span><span class="p">,</span><span class="s2">"CNAME"</span><span class="p">,</span><span class="s2">"README.md"</span><span class="p">,</span><span class="s2">"favicon.ico"</span><span class="p">,</span><span class="s2">"robots.txt"</span><span class="p">]</span>
 </pre></div>
 <h3>Makfile</h3>
@@ -229,16 +229,16 @@ In my case 'yuicompressor' and 'ga_page_view'</p>
 <li>for <code>pelicanconf.py</code> </li>
 </ul>
 <div class="highlight"><pre><span></span><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'summary'</span><span class="p">,</span> <span class="s1">'better_figures_and_images'</span><span class="p">,</span> <span class="s1">'pelican_javascript'</span><span class="p">]</span>
-<span class="n">SUMMARY_USE_FIRST_PARAGRAPH</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">RESPONSIVE_IMAGES</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">GOOGLE_ANALYTICS_BOOL</span> <span class="o">=</span> <span class="bp">False</span> <span class="c1"># True in publish</span>
+<span class="n">SUMMARY_USE_FIRST_PARAGRAPH</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">RESPONSIVE_IMAGES</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">GOOGLE_ANALYTICS_BOOL</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># True in publish</span>
 </pre></div>
 <ul>
 <li>for <code>publishconf.py</code></li>
 </ul>
 <div class="highlight"><pre><span></span><span class="n">PLUGINS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'yuicompressor'</span><span class="p">)</span>
 <span class="n">PLUGINS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'ga_page_view'</span><span class="p">)</span>
-<span class="n">GOOGLE_ANALYTICS_BOOL</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">GOOGLE_ANALYTICS_BOOL</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 <h4>ga_page_view Plugin</h4>
 <p>First and foremost - Great plugin ! Some notes below:<br/>
@@ -264,7 +264,7 @@ Both are solved by switching the oauth2client version:  </p>
     <span class="kn">from</span> <span class="nn">oauth2client.service_account</span> <span class="kn">import</span> <span class="n">ServiceAccountCredentials</span>
 <span class="ne">ImportError</span><span class="p">:</span> <span class="n">cannot</span> <span class="kn">import</span> <span class="nn">name</span> <span class="nn">ServiceAccountCredentials</span>
 </pre></div>
-<div class="highlight"><pre><span></span>pip install oauth2client==2.2.0
+<div class="highlight"><pre><span></span><span class="err">pip install oauth2client==2.2.0</span>
 </pre></div>
 <ul>
 <li>For error </li>
@@ -272,7 +272,7 @@ Both are solved by switching the oauth2client version:  </p>
 <div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">:</span> <span class="n">Cannot</span> <span class="n">load</span> <span class="n">plugin</span> <span class="sb">`ga_page_view`</span>
   <span class="o">|</span> <span class="ne">ImportError</span><span class="p">:</span> <span class="n">cannot</span> <span class="kn">import</span> <span class="nn">name</span> <span class="nn">SignedJwtAssertionCredentials</span>
 </pre></div>
-<div class="highlight"><pre><span></span>pip install oauth2client==1.5.2
+<div class="highlight"><pre><span></span><span class="err">pip install oauth2client==1.5.2</span>
 </pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
