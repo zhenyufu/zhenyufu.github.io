@@ -6,8 +6,13 @@ table tr:nth-child(odd){background-color:#fff}
 table tr:nth-child(even){background-color:#f1f1f1}
 h3, h4 {font-weight: bold;}
 img{margin:0px 10px;}
-code{ background: #272822 none repeat scroll 0% 0%;color: #F8F8F2;padding: 0px 4px;}
-
+code{ 
+    background-color: black;
+    color: white;
+    font-size: 85%;
+    padding: .2em .4em;
+    font-family: SFMono-Regular, monospace;
+}
 
 /*my id*/
 #my-clouds{
@@ -34,6 +39,10 @@ code{ background: #272822 none repeat scroll 0% 0%;color: #F8F8F2;padding: 0px 4
     font-size: 16px;
     z-index:3;
     width:250px;
+}
+
+#my-side-text li {
+    list-style-type: none;    
 }
 
 #my-overlay{
@@ -94,7 +103,8 @@ code{ background: #272822 none repeat scroll 0% 0%;color: #F8F8F2;padding: 0px 4
 
 .my-light-blue {
     color: #000 !important;
-    background-color: #C0D5F5 !important;
+    /* background-color: #C0D5F5 !important; */
+    background-color: #C0DDFF !important;
 }
 
 .my-margin-18 {
