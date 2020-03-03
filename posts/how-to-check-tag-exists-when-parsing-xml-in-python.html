@@ -139,16 +139,16 @@ An easy fix is to check the size of "doc.getElementsByTagName".<br/>
 <li><a href="https://docs.python.org/3.4/library/xml.dom.minidom.html">xml.dom.minidom</a></li>
 </ul>
 <h3>Parse the XML file "websites.xml" :</h3>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;website&gt;</span>
   <span class="nt">&lt;title&gt;</span>csmojo<span class="nt">&lt;/title&gt;</span>
   <span class="nt">&lt;description&gt;</span>computer science mojo<span class="nt">&lt;/description&gt;</span>
 <span class="nt">&lt;/website&gt;</span>
-</pre></div>
+</code></pre></div>
 <ul>
 <li>Python parsing code without size check:</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xml.dom</span> <span class="kn">import</span> <span class="n">minidom</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">xml.dom</span> <span class="kn">import</span> <span class="n">minidom</span>
 <span class="n">doc</span> <span class="o">=</span> <span class="n">minidom</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">"websites.xml"</span><span class="p">)</span>
 
 <span class="n">title</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s2">"title"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -158,13 +158,13 @@ An easy fix is to check the size of "doc.getElementsByTagName".<br/>
 <span class="n">idTag</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s2">"id"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">idData</span> <span class="o">=</span> <span class="n">idTag</span><span class="o">.</span><span class="n">firstChild</span><span class="o">.</span><span class="n">data</span>
 <span class="nb">print</span> <span class="n">idData</span>
-</pre></div>
+</code></pre></div>
 <p>this prints:<br/>
 <img alt="Alt Text" src="http://csmojo.com/images/img20150011.png" style="width: 460px; height: auto; max-width: 100%;"/></p>
 <ul>
 <li>Python parsing code with size check:</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xml.dom</span> <span class="kn">import</span> <span class="n">minidom</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">xml.dom</span> <span class="kn">import</span> <span class="n">minidom</span>
 <span class="n">doc</span> <span class="o">=</span> <span class="n">minidom</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">"websites.xml"</span><span class="p">)</span>
 <span class="n">titleData</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">idData</span> <span class="o">=</span> <span class="kc">None</span>
@@ -182,7 +182,7 @@ An easy fix is to check the size of "doc.getElementsByTagName".<br/>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">idData</span> <span class="o">=</span> <span class="s2">"None"</span>
 <span class="nb">print</span> <span class="n">idData</span>
-</pre></div>
+</code></pre></div>
 <p>this prints:<br/>
 <img alt="Alt Text" src="http://csmojo.com/images/img20150012.png" style="width: 446px; height: auto; max-width: 100%;"/></p> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->

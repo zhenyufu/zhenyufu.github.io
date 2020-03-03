@@ -128,7 +128,7 @@
 </ul>
 <h3>Source Code</h3>
 <p>In theme's functions.php:</p>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="k">function</span> <span class="nf">mytheme_cleanup</span><span class="p">(){</span>
     <span class="c1">// remove header emoji</span>
     <span class="nx">remove_action</span><span class="p">(</span><span class="s1">'wp_head'</span><span class="p">,</span> <span class="s1">'print_emoji_detection_script'</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
@@ -147,7 +147,7 @@
 <span class="p">}</span>
 <span class="nx">add_action</span><span class="p">(</span><span class="s1">'after_setup_theme'</span><span class="p">,</span> <span class="s1">'mytheme_cleanup'</span><span class="p">);</span>
 <span class="cp">?&gt;</span><span class="x"></span>
-</pre></div> </div></div>            </section><!-- /#content -->
+</code></pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 

@@ -139,7 +139,7 @@ In this example the writeBin() function is used to write data to binary.</p>
 R uses "Numeric" as it's default type for numbers, which has double-precision. 
 This can bring surprises. From inside-r.org <a href="http://www.inside-r.org/r-doc/base/as.numeric">R numeric</a> : 
 "is.numeric returns TRUE if its argument is of mode "numeric" (type "double" or type "integer") and not a factor" : </p>
-<div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="m">3</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="m">3</span>
 <span class="o">&gt;</span> <span class="nf">class</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="n">[1]</span> <span class="s">"numeric"</span>
 <span class="o">&gt;</span> <span class="nf">mode</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -157,18 +157,18 @@ This can bring surprises. From inside-r.org <a href="http://www.inside-r.org/r-d
 <span class="n">[1]</span> <span class="kc">FALSE</span>
 <span class="o">&gt;</span> <span class="nf">is.integer</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="n">[1]</span> <span class="kc">TRUE</span>
-</pre></div>
+</code></pre></div>
 <h3>writeBin()</h3>
 <p>The type of the number is important when using the function writeBin() to write data to binary, 
 and passing that file to a different program or programming language. 
 One should be careful to convert the data to the wanted type before running writeBin(): </p>
-<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nf">as.integer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="nf">as.integer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">con</span> <span class="o">=</span> <span class="nf">file</span><span class="p">(</span><span class="s">"a"</span><span class="p">,</span><span class="s">"wb"</span><span class="p">)</span>
 <span class="nf">writeBin</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">con</span><span class="p">)</span>
 <span class="nf">close</span><span class="p">(</span><span class="n">con</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 <p>As writBin() does not have a parameter to specify the type you want (setting <code>size = 4</code> for integer will not convert the type): </p>
-<div class="highlight"><pre><span></span><span class="c1">#yes : gives [1] 1 2 3</span>
+<div class="highlight"><pre><span></span><code><span class="c1">#yes : gives [1] 1 2 3</span>
 <span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="nf">as.integer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">con</span> <span class="o">=</span> <span class="nf">file</span><span class="p">(</span><span class="s">"x"</span><span class="p">,</span><span class="s">"wb"</span><span class="p">)</span>
@@ -181,10 +181,10 @@ One should be careful to convert the data to the wanted type before running writ
 <span class="nf">writeBin</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">con</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
 <span class="nf">close</span><span class="p">(</span><span class="n">con</span><span class="p">)</span>
 <span class="nf">readBin</span><span class="p">(</span><span class="s">"x"</span><span class="p">,</span> <span class="n">what</span> <span class="o">=</span> <span class="s">"integer"</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 <p>You also need to specify the correct type when calling readBin() to read the data back into R</p>
-<div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">readBin</span><span class="p">(</span><span class="nf">file</span><span class="p">(</span><span class="s">"x"</span><span class="p">,</span> <span class="s">"rb"</span><span class="p">),</span> <span class="n">what</span> <span class="o">=</span> <span class="s">"integer"</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="m">10</span><span class="p">))</span>
-</pre></div> </div></div>            </section><!-- /#content -->
+<div class="highlight"><pre><span></span><code><span class="nf">print</span><span class="p">(</span><span class="nf">readBin</span><span class="p">(</span><span class="nf">file</span><span class="p">(</span><span class="s">"x"</span><span class="p">,</span> <span class="s">"rb"</span><span class="p">),</span> <span class="n">what</span> <span class="o">=</span> <span class="s">"integer"</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="m">10</span><span class="p">))</span>
+</code></pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 

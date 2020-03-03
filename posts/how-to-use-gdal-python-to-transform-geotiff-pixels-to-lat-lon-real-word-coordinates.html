@@ -137,27 +137,27 @@
 </ul>
 <h3>1. In terminal</h3>
 <p>Running the following in the terminal will give you the (lon, lat) coordinate of (12, 6) pixel (12th column and 6th row) of "myImage.tiff" :</p>
-<div class="highlight"><pre><span></span><span class="err">gdaltransform myImage.tiff</span>
+<div class="highlight"><pre><span></span><code><span class="err">gdaltransform myImage.tiff</span>
 <span class="err">12 6</span>
-</pre></div>
+</code></pre></div>
 <p>this returns (lon, lat, z value) :</p>
-<div class="highlight"><pre><span></span><span class="err">85.1234567890123 27.1234567890123 0</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">85.1234567890123 27.1234567890123 0</span>
+</code></pre></div>
 <h3>2. In Python Script</h3>
 <p>To achieve this through a python script and therefore transform an lot of pixels at once, you will have to first write the pixels to a file "pix.txt" and then run:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">"gdaltransform "</span> <span class="o">+</span> <span class="n">imagePath</span> <span class="o">+</span> <span class="s2">" &lt;pix.txt "</span><span class="o">+</span> <span class="s2">"&gt;cor.txt"</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 <p>This will produce "cor.txt" containing the (lon, lat, z value)</p>
 <p>Example "pix.txt" and "cor.txt":
 pix.txt:</p>
-<div class="highlight"><pre><span></span><span class="err">12 6</span>
+<div class="highlight"><pre><span></span><code><span class="err">12 6</span>
 <span class="err">24 9</span>
-</pre></div>
+</code></pre></div>
 <p>cor.txt:</p>
-<div class="highlight"><pre><span></span><span class="err">85.1234567890123 27.1234567890123 0</span>
+<div class="highlight"><pre><span></span><code><span class="err">85.1234567890123 27.1234567890123 0</span>
 <span class="err">86.3234565432233 26.9876543345677 0</span>
-</pre></div> </div></div>            </section><!-- /#content -->
+</code></pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 

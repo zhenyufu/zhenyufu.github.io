@@ -135,7 +135,7 @@
 <h3>Find files</h3>
 <p>For this example, we have a folder called "messyFolder" which has all kinds of files and subdirectories inside. 
 We are to locate the path of all ".tiff" and ".png" files.</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">os.path</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">os.path</span>
 <span class="n">path</span> <span class="o">=</span> <span class="s2">"messyFolder/"</span>
 <span class="k">for</span> <span class="n">dirpath</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">,</span> <span class="n">filenames</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
@@ -144,7 +144,7 @@ We are to locate the path of all ".tiff" and ".png" files.</p>
             <span class="c1"># the path starting at "messyFolder/"</span>
             <span class="nb">print</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span> 
             <span class="c1"># the absolute path starting with "/home/" in Linux</span>
-</pre></div> </div></div>            </section><!-- /#content -->
+</code></pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 

@@ -132,24 +132,24 @@
 </ul>
 <h3>1. Clone repo</h3>
 <h3>2. Create gh-pages branch</h3>
-<div class="highlight"><pre><span></span><span class="err">git checkout --orphan gh-pages</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">git checkout --orphan gh-pages</span>
+</code></pre></div>
 <h3>3. Remove the previous stuff</h3>
 <p>might not need to if it's a new repo</p>
-<div class="highlight"><pre><span></span><span class="err">git rm -rf .</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">git rm -rf .</span>
+</code></pre></div>
 <h3>4. Push</h3>
-<div class="highlight"><pre><span></span><span class="err">git push --set-upstream origin gh-pages</span>
+<div class="highlight"><pre><span></span><code><span class="err">git push --set-upstream origin gh-pages</span>
 <span class="err">git push origin gh-pages</span>
-</pre></div>
+</code></pre></div>
 <h3>5. Custom domain example.com</h3>
 <h4>5.1 CNAME file in repo</h4>
 <p>in the repo, gh-pages branch, create a file named "CNAME" with a simgle line of your custom domain name "example.com"</p>
 <h4>5.2 DNS settings at your DNS provider</h4>
 <p>For apex domain example.com, create A records:</p>
-<div class="highlight"><pre><span></span><span class="err">@ 192.30.252.153</span>
+<div class="highlight"><pre><span></span><code><span class="err">@ 192.30.252.153</span>
 <span class="err">@ 192.30.252.154</span>
-</pre></div>
+</code></pre></div>
 <p>Or  </p>
 <p>For subdomain abc.example.com, simply create a cname file pointing to username.github.io</p> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->

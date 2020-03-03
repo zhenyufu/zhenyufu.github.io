@@ -83,9 +83,9 @@ haha there we go for the image:&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://csmojo.com"&gt;link to home page&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Pygments Code highlighter&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://pygments.org/languages/"&gt;Pygments supported languages&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;"Hello World"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="n"&gt;Short&lt;/span&gt; &lt;span class="n"&gt;cheat&lt;/span&gt; &lt;span class="n"&gt;sheet&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;Markdown&lt;/span&gt;  
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;"Hello World"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;My&lt;/span&gt; &lt;span class="n"&gt;Short&lt;/span&gt; &lt;span class="n"&gt;cheat&lt;/span&gt; &lt;span class="n"&gt;sheet&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;Markdown&lt;/span&gt;  
 
 
 &lt;span class="cp"&gt;### Headers&lt;/span&gt;
@@ -149,4 +149,4 @@ haha there we go for the image:&lt;/p&gt;
 
 &lt;span class="cp"&gt;### Pygments Code highlighter&lt;/span&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Pygments&lt;/span&gt; &lt;span class="n"&gt;supported&lt;/span&gt; &lt;span class="n"&gt;languages&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="nl"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//pygments.org/languages/)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Pelican"></category><category term="Markdown"></category><category term="Syntax"></category></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Pelican"></category><category term="Markdown"></category><category term="Syntax"></category></entry></feed>

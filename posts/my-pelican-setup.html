@@ -143,9 +143,9 @@ Might be helpful for newcomers ;)</p>
 <h3>Clear content and Github hosting</h3>
 <p>Setting <code>DELETE_OUTPUT_DIRECTORY = True</code> helps clean the folder of any old unused posts or images,
 but if the output folder is a git repo, add <code>".git"</code> to <code>OUTPUT_RETENTION</code></p>
-<div class="highlight"><pre><span></span><span class="n">DELETE_OUTPUT_DIRECTORY</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="highlight"><pre><span></span><code><span class="n">DELETE_OUTPUT_DIRECTORY</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">OUTPUT_RETENTION</span> <span class="o">=</span> <span class="p">[</span><span class="s2">".git"</span><span class="p">,</span><span class="s2">"CNAME"</span><span class="p">,</span><span class="s2">"README.md"</span><span class="p">,</span><span class="s2">"favicon.ico"</span><span class="p">,</span><span class="s2">"robots.txt"</span><span class="p">]</span>
-</pre></div>
+</code></pre></div>
 <h3>Makfile</h3>
 <p>Slight modifications from <a href="https://github.com/getpelican/pelican/wiki/Tips-n-Tricks">Tips n Tricks</a>:</p>
 <ul>
@@ -153,7 +153,7 @@ but if the output folder is a git repo, add <code>".git"</code> to <code>OUTPUT_
 <li>Removed edit post / page</li>
 <li>Added an if statement to check if file exits and abort if it exists</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="c"># my add stuff #######</span>
+<div class="highlight"><pre><span></span><code><span class="c"># my add stuff #######</span>
 <span class="nv">POSTSDIR</span><span class="o">=</span><span class="k">$(</span>INPUTDIR<span class="k">)</span>/posts
 <span class="nv">PAGESDIR</span><span class="o">=</span><span class="k">$(</span>INPUTDIR<span class="k">)</span>/pages
 <span class="nv">DATE</span> <span class="o">:=</span> <span class="k">$(</span>shell date +<span class="s1">'%Y-%m-%d %H:%M:%S'</span><span class="k">)</span>
@@ -204,11 +204,11 @@ but if the output folder is a git repo, add <code>".git"</code> to <code>OUTPUT_
     @echo <span class="s1">'Variable NAME is not defined.'</span>
     @echo <span class="s1">'Do make newpage NAME='</span><span class="s2">"'"</span><span class="s1">'Page Name'</span><span class="s2">"'"</span>
 <span class="cp">endif</span>
-</pre></div>
+</code></pre></div>
 <h3>TEMPLATE_PAGES</h3>
 <p>For the comment page and the 404 page, I created them based on the base template and wanted them to be copied over to output</p>
-<div class="highlight"><pre><span></span><span class="n">TEMPLATE_PAGES</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'inc/comments.html'</span><span class="p">:</span> <span class="s1">'pages/comments.html'</span><span class="p">,</span> <span class="s1">'inc/404.html'</span><span class="p">:</span> <span class="s1">'404.html'</span><span class="p">}</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">TEMPLATE_PAGES</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'inc/comments.html'</span><span class="p">:</span> <span class="s1">'pages/comments.html'</span><span class="p">,</span> <span class="s1">'inc/404.html'</span><span class="p">:</span> <span class="s1">'404.html'</span><span class="p">}</span>
+</code></pre></div>
 <h3>Plugins</h3>
 <ul>
 <li>
@@ -219,27 +219,27 @@ In my case 'yuicompressor' and 'ga_page_view'</p>
 <p>Created a GOOGLE_ANALYTICS_BOOL to be only enabled in <code>publishconf.py</code></p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span>{% if GOOGLE_ANALYTICS_BOOL %}
+<div class="highlight"><pre><span></span><code>{% if GOOGLE_ANALYTICS_BOOL %}
     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/javascript"</span><span class="p">&gt;</span>
         <span class="c">&lt;!--</span> <span class="nx">tracking</span> <span class="nx">code</span> <span class="o">--&gt;</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 {% endif %}
-</pre></div>
+</code></pre></div>
 <ul>
 <li>for <code>pelicanconf.py</code> </li>
 </ul>
-<div class="highlight"><pre><span></span><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'summary'</span><span class="p">,</span> <span class="s1">'better_figures_and_images'</span><span class="p">,</span> <span class="s1">'pelican_javascript'</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'summary'</span><span class="p">,</span> <span class="s1">'better_figures_and_images'</span><span class="p">,</span> <span class="s1">'pelican_javascript'</span><span class="p">]</span>
 <span class="n">SUMMARY_USE_FIRST_PARAGRAPH</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">RESPONSIVE_IMAGES</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">GOOGLE_ANALYTICS_BOOL</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># True in publish</span>
-</pre></div>
+</code></pre></div>
 <ul>
 <li>for <code>publishconf.py</code></li>
 </ul>
-<div class="highlight"><pre><span></span><span class="n">PLUGINS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'yuicompressor'</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">PLUGINS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'yuicompressor'</span><span class="p">)</span>
 <span class="n">PLUGINS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'ga_page_view'</span><span class="p">)</span>
 <span class="n">GOOGLE_ANALYTICS_BOOL</span> <span class="o">=</span> <span class="kc">True</span>
-</pre></div>
+</code></pre></div>
 <h4>ga_page_view Plugin</h4>
 <p>First and foremost - Great plugin ! Some notes below:<br/>
 * The plugin does the same thing as <code>HelloAnalytics.py</code> from Google Analytics 
@@ -259,21 +259,21 @@ Both are solved by switching the oauth2client version:  </p>
 <p>For error </p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="s2">"HelloAnalytics.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">6</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
     <span class="kn">from</span> <span class="nn">oauth2client.service_account</span> <span class="kn">import</span> <span class="n">ServiceAccountCredentials</span>
 <span class="ne">ImportError</span><span class="p">:</span> <span class="n">cannot</span> <span class="kn">import</span> <span class="nn">name</span> <span class="nn">ServiceAccountCredentials</span>
-</pre></div>
-<div class="highlight"><pre><span></span><span class="err">pip install oauth2client==2.2.0</span>
-</pre></div>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">pip install oauth2client==2.2.0</span>
+</code></pre></div>
 <ul>
 <li>For error </li>
 </ul>
-<div class="highlight"><pre><span></span><span class="n">ERROR</span><span class="p">:</span> <span class="n">Cannot</span> <span class="n">load</span> <span class="n">plugin</span> <span class="sb">`ga_page_view`</span>
+<div class="highlight"><pre><span></span><code><span class="n">ERROR</span><span class="p">:</span> <span class="n">Cannot</span> <span class="n">load</span> <span class="n">plugin</span> <span class="sb">`ga_page_view`</span>
   <span class="o">|</span> <span class="ne">ImportError</span><span class="p">:</span> <span class="n">cannot</span> <span class="kn">import</span> <span class="nn">name</span> <span class="nn">SignedJwtAssertionCredentials</span>
-</pre></div>
-<div class="highlight"><pre><span></span><span class="err">pip install oauth2client==1.5.2</span>
-</pre></div> </div></div>            </section><!-- /#content -->
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">pip install oauth2client==1.5.2</span>
+</code></pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 
