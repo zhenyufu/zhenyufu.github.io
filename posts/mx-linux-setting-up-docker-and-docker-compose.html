@@ -127,13 +127,13 @@
 <li>install docker using the debian repos: https://docs.docker.com/install/linux/docker-ce/debian/</li>
 <li>add users to the docker group, and logout and back in: https://docs.docker.com/install/linux/linux-postinstall/  </li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="err">sudo groupadd docker</span>
-<span class="err">sudo usermod -aG docker $USER</span>
+<div class="highlight"><pre><span></span><code>sudo groupadd docker
+sudo usermod -aG docker <span class="nv">$USER</span>
 </code></pre></div>
 <ol>
 <li>start docker </li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="err">sudo service docker start</span>
+<div class="highlight"><pre><span></span><code>sudo service docker start
 </code></pre></div>
 <h3>docker-compose installation</h3>
 <ul>

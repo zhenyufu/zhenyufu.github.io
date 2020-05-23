@@ -5,13 +5,13 @@
 &lt;li&gt;install docker using the debian repos: https://docs.docker.com/install/linux/docker-ce/debian/&lt;/li&gt;
 &lt;li&gt;add users to the docker group, and logout and back in: https://docs.docker.com/install/linux/linux-postinstall/  &lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo groupadd docker&lt;/span&gt;
-&lt;span class="err"&gt;sudo usermod -aG docker $USER&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo groupadd docker
+sudo usermod -aG docker &lt;span class="nv"&gt;$USER&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ol&gt;
 &lt;li&gt;start docker &lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo service docker start&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo service docker start
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;docker-compose installation&lt;/h3&gt;
 &lt;ul&gt;
