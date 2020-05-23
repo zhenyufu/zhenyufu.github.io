@@ -7,7 +7,7 @@ table tr:nth-child(even){background-color:#f1f1f1}
 h3, h4 {font-weight: bold;}
 img{margin:0px 10px;}
 code{ 
-    background-color: black;
+    background-color: #272822;
     color: white;
     font-size: 85%;
     padding: .2em .4em;
