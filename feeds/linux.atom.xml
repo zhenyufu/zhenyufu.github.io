@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo - Linux</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/linux.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2020-02-22T13:45:49-08:00</updated><entry><title>MX Linux setting up docker and docker-compose</title><link href="http://csmojo.com/posts/mx-linux-setting-up-docker-and-docker-compose.html" rel="alternate"></link><published>2020-02-22T13:45:49-08:00</published><updated>2020-02-22T13:45:49-08:00</updated><author><name>David</name></author><id>tag:csmojo.com,2020-02-22:/posts/mx-linux-setting-up-docker-and-docker-compose.html</id><summary type="html">Steps to set up docker and docker-compose on MX Linux</summary><content type="html">&lt;p&gt;Steps to set up docker and docker-compose on MX Linux&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo - Linux</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/linux.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2020-05-22T20:00:00-07:00</updated><entry><title>How to add a desktop notification when switching XFCE workspace</title><link href="http://csmojo.com/posts/how-to-add-a-desktop-notification-when-switching-xfce-workspace.html" rel="alternate"></link><published>2020-05-22T20:00:00-07:00</published><updated>2020-05-22T20:00:00-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2020-05-22:/posts/how-to-add-a-desktop-notification-when-switching-xfce-workspace.html</id><summary type="html">When switching XFCE workspaces, theres no default notification that tells you which workspace you are on. I have a little script to get around it using &lt;code&gt;wmctrl&lt;/code&gt; and &lt;code&gt;notify-send&lt;/code&gt;.</summary><content type="html">&lt;p&gt;When switching XFCE workspaces, theres no default notification that tells you which workspace you are on. I have a little script to get around it using &lt;code&gt;wmctrl&lt;/code&gt; and &lt;code&gt;notify-send&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Script&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Hook the script up with whatever event triggers swithing workspaces: eg. hot keys to go to the left or right workspace (do this manually)&lt;/li&gt;
+&lt;li&gt;The bash script takes either "left" or right" and would calculate what the next workspace would be when moving in that direction.&lt;/li&gt;
+&lt;li&gt;It Uses &lt;code&gt;notify-send&lt;/code&gt; to pop a small message on the upper right of the screen: 
+&lt;img alt="Alt Text" src="http://csmojo.com/images/img20200001.png" style="width: 140px; height: auto; max-width: 100%;"/&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://github.com/zhenyufu/you-are-a-toolbox-harry/blob/master/config/scripts/harry-xfce-workspace-switcher"&gt;link to script&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 0. add this file to /usr/local/bin/harry-xfce-workspace-switcher&lt;/span&gt;
+&lt;span class="c1"&gt;# &lt;/span&gt;
+&lt;span class="c1"&gt;# * Gesture switching using libinput&lt;/span&gt;
+&lt;span class="c1"&gt;# 1. edit: ~/.config/libinput-gestures.conf&lt;/span&gt;
+&lt;span class="c1"&gt;#   # Move between workspaces wrapped - left and right flipped for natural scrolling &lt;/span&gt;
+&lt;span class="c1"&gt;#   gesture swipe right 3 harry-xfce-workspace-switcher left &lt;/span&gt;
+&lt;span class="c1"&gt;#   gesture swipe left  3 harry-xfce-workspace-switcher right &lt;/span&gt;
+&lt;span class="c1"&gt;# &lt;/span&gt;
+&lt;span class="c1"&gt;# * Keyboard switching with the hotkeys &lt;/span&gt;
+&lt;span class="c1"&gt;# 1. Go to Window Manager and disable the hot key switch &lt;/span&gt;
+&lt;span class="c1"&gt;# 2. Go to Keyboard and set up Application Shortcuts &lt;/span&gt;
+&lt;span class="c1"&gt;#   harry-libinput-workspace-switcher left&lt;/span&gt;
+&lt;span class="c1"&gt;#   harry-libinput-workspace-switcher right&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Linux"></category><category term="XFCE"></category></entry><entry><title>MX Linux setting up docker and docker-compose</title><link href="http://csmojo.com/posts/mx-linux-setting-up-docker-and-docker-compose.html" rel="alternate"></link><published>2020-02-22T13:45:49-08:00</published><updated>2020-02-22T13:45:49-08:00</updated><author><name>David</name></author><id>tag:csmojo.com,2020-02-22:/posts/mx-linux-setting-up-docker-and-docker-compose.html</id><summary type="html">Steps to set up docker and docker-compose on MX Linux</summary><content type="html">&lt;p&gt;Steps to set up docker and docker-compose on MX Linux&lt;/p&gt;
 &lt;h3&gt;docker installation&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;install docker using the debian repos: https://docs.docker.com/install/linux/docker-ce/debian/&lt;/li&gt;
