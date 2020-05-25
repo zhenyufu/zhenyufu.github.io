@@ -4,7 +4,7 @@
 &lt;ul&gt;
 &lt;li&gt;Hook the script up with whatever event triggers swithing workspaces: eg. hot keys to go to the left or right workspace (do this manually)&lt;/li&gt;
 &lt;li&gt;The bash script takes either "left" or right" and would calculate what the next workspace would be when moving in that direction.&lt;/li&gt;
-&lt;li&gt;It Uses &lt;code&gt;notify-send&lt;/code&gt; to pop a small message on the upper right of the screen: 
+&lt;li&gt;It Uses &lt;code&gt;notify-send&lt;/code&gt; to send a small message to the upper right of the screen: 
 &lt;img alt="Alt Text" src="http://csmojo.com/images/img20200001.png" style="width: 140px; height: auto; max-width: 100%;"/&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href="https://github.com/zhenyufu/you-are-a-toolbox-harry/blob/master/config/scripts/harry-xfce-workspace-switcher"&gt;link to script&lt;/a&gt;&lt;/p&gt;
