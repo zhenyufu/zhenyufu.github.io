@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>csmojo</title>
+        <title>csmojo</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/theme/css/w3.css"/>
@@ -16,6 +16,9 @@
         
     
     <link href="http://csmojo.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Full Atom Feed" />
+    <link href="http://csmojo.com/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
+
+        <meta name="description" content="Good Book on System Design. To be updated." />
 </head>
 
 
@@ -67,7 +70,7 @@
                     <li><a href="http://csmojo.com/category/pelican.html">Pelican</a></li>
                     <li><a href="http://csmojo.com/category/python.html">Python</a></li>
                     <li><a href="http://csmojo.com/category/r.html">R</a></li>
-                    <li><a href="http://csmojo.com/category/system-design.html">System Design</a></li>
+                    <li class="active"><a href="http://csmojo.com/category/system-design.html">System Design</a></li>
                     <li><a href="http://csmojo.com/category/web.html">Web</a></li>
             </ul>
     </nav>
@@ -96,33 +99,92 @@
 
        
         <div id="my-main" class="w3-container" >
-            <h2>Tag: Android</h2>
+            <h2>Post</h2>
             <section id="content">
 <div class="w3-container w3-card-2 w3-padding-large w3-margin">
     <header>
-        <h2><a class="my-no-dec" href="http://csmojo.com/posts/how-to-fix-javascript-e-pagex-returning-nan-on-android.html" rel="bookmark" title="Permalink to How to fix JavaScript 'e.pageX' returning 'nan' on Android"><b>How to fix JavaScript 'e.pageX' returning 'nan' on Android</b></a></h2>
+        <h2><a class="my-no-dec" href="http://csmojo.com/posts/book-notes-designing-data-intensive-applications.html" rel="bookmark" title="Permalink to Book Notes : Designing Data-Intensive Applications"><b>Book Notes : Designing Data-Intensive Applications</b></a></h2>
     </header>
   
     <div class="w3-medium">
         <div>
-            Category: <a href="http://csmojo.com/category/android.html">Android</a>
+            Category: <a href="http://csmojo.com/category/system-design.html">System Design</a>
             &nbsp;&nbsp;&nbsp;&nbsp;Tag:
-                <a href="http://csmojo.com/tag/android.html">Android</a>&nbsp;&nbsp;
-                <a href="http://csmojo.com/tag/javascript.html">JavaScript</a>&nbsp;&nbsp;
-                <a href="http://csmojo.com/tag/web.html">Web</a>&nbsp;&nbsp;
-                <a href="http://csmojo.com/tag/mobile.html">Mobile</a>&nbsp;&nbsp;
         </div>
         <div> 
             By:
                 <a href="http://csmojo.com/author/david.html">David</a>
             &nbsp;&nbsp;&nbsp;&nbsp;On:
-            <span datetime="2015-09-05T21:49:16-07:00"> Sat 05 September 2015 </span>
+            <span datetime="2021-02-20T16:38:13-08:00"> Sat 20 February 2021 </span>
             &nbsp;&nbsp;&nbsp;&nbsp;
         </div>
     </div>
     
-    <div class="my-margin-18"> If your JavaScript touch code works perfectly on ios but does nothing on Android, "e.pageX" might be the problem. "e.pageX" simple does not work on Android and returns "not a number", though it works fine both on desktop browsers and ios Safari. Use "e.targetTouches[0].pageX" for Android to fix this problem. </div> <!-- 18 margin to match geerated post margin -->
-<p><a href="http://csmojo.com/posts/how-to-fix-javascript-e-pagex-returning-nan-on-android.html">Continue reading &raquo;</a></p></div>            </section><!-- /#content -->
+    <div> <p>Good Book on System Design. To be updated.</p>
+<h4>Notes</h4>
+<ul>
+<li>Part 1. Basics <ul>
+<li>1 Core ideas <ul>
+<li>three main concerns of software systems  <ul>
+<li>Reliability: The system should continue to work correctly <ul>
+<li>Good fault tolerance as it is impossible to reduce fault to zero</li>
+<li>Deliberately inducing faults to test the system</li>
+</ul>
+</li>
+<li>Scalability: The system's ability to cope with increased load<ul>
+<li>The system can grow and scale with easy</li>
+<li>eg. Designing Twitter: use a hybrid approach for common users and celebrities</li>
+<li>Scaling<ul>
+<li>vertical scaling: making the machine more powerful</li>
+<li>horizontal scaling: distributing the load across multiple machines </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Maintainability: Different people can work on the system productively <ul>
+<li>Design principles <ul>
+<li>Operability: make it easy for the ops team to keep it running</li>
+<li>Simplicity: keeping it as simple and avoid complexity. make it easy for new engineers to onboard </li>
+<li>Evolvability: make it easy for changes into the future</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2 DB: Data models and query <ul>
+<li>relational document and graph</li>
+<li>Object-Relational Mismatch (impedance mistmatch): db is relational while app code is object oriented </li>
+</ul>
+</li>
+<li>3 DB: Data storage <ul>
+<li>storage engines: log structured, page oriented </li>
+<li>increasing db index speeds up reads, but slows down writes </li>
+<li>SSTable (sorted string table): key value storage -&gt; LSM-tree </li>
+<li>B-tree: self-balancing tree that maintains sorted data </li>
+<li>Column Oriented Storage </li>
+</ul>
+</li>
+<li>4 Encoding </li>
+</ul>
+</li>
+<li>Part 2. Distributed <ul>
+<li>5 replication </li>
+<li>6 Partitioning/Sharding </li>
+<li>7 Transactions </li>
+<li>8 Failovers </li>
+<li>9 Consistency</li>
+</ul>
+</li>
+<li>Part 3. Processing Data <ul>
+<li>10 Batch</li>
+<li>11 Stream</li>
+<li>12 Future </li>
+</ul>
+</li>
+</ul> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
 
