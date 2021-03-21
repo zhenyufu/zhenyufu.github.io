@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo - Pelican</title><link href="http://csmojo.com/" rel="alternate"></link><link href="http://csmojo.com/feeds/pelican.atom.xml" rel="self"></link><id>http://csmojo.com/</id><updated>2016-07-01T20:42:23-07:00</updated><entry><title>Hello New World</title><link href="http://csmojo.com/posts/hello-new-world.html" rel="alternate"></link><published>2016-07-01T20:42:23-07:00</published><updated>2016-07-01T20:42:23-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2016-07-01:/posts/hello-new-world.html</id><summary type="html">Moving from Blogger to Pelican&lt;br/&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>csmojo - Pelican</title><link href="https://csmojo.com/" rel="alternate"></link><link href="https://csmojo.com/feeds/pelican.atom.xml" rel="self"></link><id>https://csmojo.com/</id><updated>2016-07-01T20:42:23-07:00</updated><entry><title>Hello New World</title><link href="https://csmojo.com/posts/hello-new-world.html" rel="alternate"></link><published>2016-07-01T20:42:23-07:00</published><updated>2016-07-01T20:42:23-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2016-07-01:/posts/hello-new-world.html</id><summary type="html">Moving from Blogger to Pelican&lt;br/&gt;
 It is a brave new world !  </summary><content type="html">&lt;p&gt;Moving from Blogger to Pelican&lt;br/&gt;
 It is a brave new world !  &lt;/p&gt;
 &lt;h3&gt;Useful Pelican commands&lt;/h3&gt;
@@ -7,7 +7,7 @@ It is a brave new world !  &lt;/p&gt;
 &lt;li&gt;&lt;code&gt;make serve&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make html&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make publish&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Pelican"></category><category term="Misc"></category><category term="Pelican"></category><category term="Blogger"></category></entry><entry><title>A Example</title><link href="http://csmojo.com/posts/a-example.html" rel="alternate"></link><published>2016-07-01T20:41:15-07:00</published><updated>2016-07-01T20:41:15-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2016-07-01:/posts/a-example.html</id><summary type="html">My Short cheat sheet for Markdown  </summary><content type="html">&lt;p&gt;My Short cheat sheet for Markdown  &lt;/p&gt;
+&lt;/ul&gt;</content><category term="Pelican"></category><category term="Misc"></category><category term="Pelican"></category><category term="Blogger"></category></entry><entry><title>A Example</title><link href="https://csmojo.com/posts/a-example.html" rel="alternate"></link><published>2016-07-01T20:41:15-07:00</published><updated>2016-07-01T20:41:15-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2016-07-01:/posts/a-example.html</id><summary type="html">My Short cheat sheet for Markdown  </summary><content type="html">&lt;p&gt;My Short cheat sheet for Markdown  &lt;/p&gt;
 &lt;h3&gt;Headers&lt;/h3&gt;
 &lt;h1&gt;H1&lt;/h1&gt;
 &lt;h2&gt;H2&lt;/h2&gt;
@@ -73,7 +73,7 @@ It is a brave new world !  &lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;two spaces and Enter for second line&lt;br/&gt;
 haha there we go for the image:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="http://csmojo.com/images/img00000000.png" style="width: 512px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img00000000.png" style="width: 512px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;italics&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;bold&lt;/strong&gt;&lt;/li&gt;
