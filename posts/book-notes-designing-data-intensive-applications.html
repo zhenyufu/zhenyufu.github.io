@@ -167,7 +167,49 @@
 <li>Column Oriented Storage </li>
 </ul>
 </li>
-<li>4 Encoding </li>
+<li>4 Encoding <ul>
+<li>changes happen to requirements, application code, and data -&gt; compatibility<ul>
+<li>backward compatibility: newer code can read data that was written by older code </li>
+<li>forward compatibility : older code can read data that was written by newer code</li>
+</ul>
+</li>
+<li>Formats (need encoding and decoding between the two) <ul>
+<li>in memory: objects and data structures (decoding: parsing, deserialization, unmarshalling)</li>
+<li>on disk/over network: encoded (encoding: serialization, marshalling) </li>
+</ul>
+</li>
+<li>encodings<ul>
+<li>JSON, XML, CSV<ul>
+<li>problems<ul>
+<li>ambiguity around encoding of numbers. precision ? </li>
+<li>No binary string support </li>
+<li>Optional schema support for XML and JSON, none for CSV</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>binary encoding: more compact <ul>
+<li>binary encoding libraries: Protocol Buffers, Apache Thrift</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>schema evolution<ul>
+<li>adding a field: <ul>
+<li>backward: can't make it required, must be optional or have a default value</li>
+<li>forward: adding new field is fine, as long as it is a new tag number</li>
+</ul>
+</li>
+<li>removing a field: <ul>
+<li>backward: can only remove a field that is optional  </li>
+<li>forward: can never use the same tag number again</li>
+</ul>
+</li>
+<li>renaming a field: is like removing and adding at the same time: do this with caution</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Part 2. Distributed <ul>
