@@ -46,13 +46,13 @@
 &lt;/ul&gt;</content><category term="Git"></category><category term="Git"></category><category term="Web"></category></entry><entry><title>How to turn existing folder into Git repo</title><link href="https://csmojo.com/posts/how-to-turn-existing-folder-into-git-repo.html" rel="alternate"></link><published>2016-07-22T15:16:41-07:00</published><updated>2016-07-22T15:16:41-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2016-07-22:/posts/how-to-turn-existing-folder-into-git-repo.html</id><summary type="html">Have a directory that you want to be linked to a Git repo ?</summary><content type="html">&lt;p&gt;Have a directory that you want to be linked to a Git repo ?&lt;/p&gt;
 &lt;h3&gt;Code&lt;/h3&gt;
 &lt;p&gt;Replace &lt;code&gt;https://github.com/zhenyufu/zhenyufu.github.io.git&lt;/code&gt; with your repo url:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;remote&lt;/span&gt; &lt;span class="k"&gt;add&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;zhenyufu&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;zhenyufu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;pull&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git init
+git remote add origin https://github.com/zhenyufu/zhenyufu.github.io.git
+git pull origin master
 
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="k"&gt;add&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="k"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="s1"&gt;'added files'&lt;/span&gt;
-&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+git add .
+git commit -m 'added files'
+git push origin master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Git"></category><category term="Git"></category></entry><entry><title>How to host Project Website on GitHub Pages</title><link href="https://csmojo.com/posts/how-to-host-project-website-on-github-pages.html" rel="alternate"></link><published>2015-09-07T22:17:11-07:00</published><updated>2015-09-07T22:17:11-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-09-07:/posts/how-to-host-project-website-on-github-pages.html</id><summary type="html">You can host static websites freely on GitHub Pages. They are awesome!</summary><content type="html">&lt;p&gt;You can host static websites freely on GitHub Pages. They are awesome!&lt;/p&gt;
 &lt;h3&gt;Reading&lt;/h3&gt;
 &lt;ul&gt;
@@ -62,23 +62,23 @@
 &lt;/ul&gt;
 &lt;h3&gt;1. Clone repo&lt;/h3&gt;
 &lt;h3&gt;2. Create gh-pages branch&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;git checkout --orphan gh-pages&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git checkout --orphan gh-pages
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;3. Remove the previous stuff&lt;/h3&gt;
 &lt;p&gt;might not need to if it's a new repo&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;git rm -rf .&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git rm -rf .
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;4. Push&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;git push --set-upstream origin gh-pages&lt;/span&gt;
-&lt;span class="err"&gt;git push origin gh-pages&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git push --set-upstream origin gh-pages
+git push origin gh-pages
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;5. Custom domain example.com&lt;/h3&gt;
 &lt;h4&gt;5.1 CNAME file in repo&lt;/h4&gt;
 &lt;p&gt;in the repo, gh-pages branch, create a file named "CNAME" with a simgle line of your custom domain name "example.com"&lt;/p&gt;
 &lt;h4&gt;5.2 DNS settings at your DNS provider&lt;/h4&gt;
 &lt;p&gt;For apex domain example.com, create A records:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;@ 192.30.252.153&lt;/span&gt;
-&lt;span class="err"&gt;@ 192.30.252.154&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;@ 192.30.252.153
+@ 192.30.252.154
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Or  &lt;/p&gt;
 &lt;p&gt;For subdomain abc.example.com, simply create a cname file pointing to username.github.io&lt;/p&gt;</content><category term="Git"></category><category term="GitHub"></category><category term="Web"></category></entry></feed>

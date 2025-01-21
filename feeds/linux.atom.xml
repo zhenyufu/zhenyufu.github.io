@@ -5,7 +5,7 @@
 &lt;li&gt;Hook the script up with whatever event triggers swithing workspaces: eg. hot keys to go to the left or right workspace (do this manually)&lt;/li&gt;
 &lt;li&gt;The bash script takes either "left" or right" and would calculate what the next workspace would be when moving in that direction.&lt;/li&gt;
 &lt;li&gt;It Uses &lt;code&gt;notify-send&lt;/code&gt; to send a small message to the upper right of the screen: 
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20200001.png" style="width: 140px; height: auto; max-width: 100%;"/&gt;&lt;/li&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20200001.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href="https://github.com/zhenyufu/you-are-a-toolbox-harry/blob/master/config/scripts/harry-xfce-workspace-switcher"&gt;link to script&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Usage&lt;/h3&gt;
@@ -43,32 +43,32 @@ sudo usermod -aG docker &lt;span class="nv"&gt;$USER&lt;/span&gt;
 &lt;/ul&gt;</content><category term="Linux"></category><category term="docker"></category></entry><entry><title>How to enable extra monitors for Debian xfce in VirtualBox</title><link href="https://csmojo.com/posts/how-to-enable-extra-monitors-for-debian-xfce-in-virtualbox.html" rel="alternate"></link><published>2016-07-12T13:27:35-07:00</published><updated>2016-07-12T13:27:35-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2016-07-12:/posts/how-to-enable-extra-monitors-for-debian-xfce-in-virtualbox.html</id><summary type="html">Enable extra monitors or dual screens for Debian xfce in VirtualBox</summary><content type="html">&lt;p&gt;Enable extra monitors or dual screens for Debian xfce in VirtualBox&lt;/p&gt;
 &lt;h3&gt;1. Enable extra monitors in VirtualBox settings&lt;/h3&gt;
 &lt;p&gt;Change the monitor count  &lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20160008.png" style="width: 519px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20160008.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;2. Enable Virtual Screen&lt;/h3&gt;
 &lt;p&gt;After running the vitural machine, enable the second screen  &lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20160009.png" style="width: 498px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20160009.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;3. Enalbe xfce display settings&lt;/h3&gt;
 &lt;p&gt;Go to display and click "Use this output"  &lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20160010.png" style="width: 494px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20160010.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;4. Change duplicate to extend using xrandr&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;The defualt is duplicate screens&lt;/li&gt;
 &lt;li&gt;To change to extend, run &lt;code&gt;xrandr&lt;/code&gt; to list the two monitors&lt;/li&gt;
 &lt;li&gt;Run the following with the monitor names and position flag&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;xrandr --output VGA-0 --left-of VGA-1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;xrandr --output VGA-0 --left-of VGA-1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;Position flags from &lt;code&gt;man xrandr&lt;/code&gt;:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;--left-of, --right-of, --above, --below, --same-as another-output&lt;/span&gt;
-&lt;span class="err"&gt;      Use one of these options to position the output relative to the  position  of&lt;/span&gt;
-&lt;span class="err"&gt;      another  output.  This allows convenient tiling of outputs within the screen.&lt;/span&gt;
-&lt;span class="err"&gt;      The position is always computed relative to the new  position  of  the  other&lt;/span&gt;
-&lt;span class="err"&gt;      output, so it is not valid to say --output a --left-of b --output b --left-of&lt;/span&gt;
-&lt;span class="err"&gt;      a.&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;--left-of, --right-of, --above, --below, --same-as another-output
+      Use one of these options to position the output relative to the  position  of
+      another  output.  This allows convenient tiling of outputs within the screen.
+      The position is always computed relative to the new  position  of  the  other
+      output, so it is not valid to say --output a --left-of b --output b --left-of
+      a.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Linux"></category><category term="Linux"></category><category term="xfce"></category><category term="VirtualBox"></category><category term="xrandr"></category></entry><entry><title>How to show file size in Linux terminal</title><link href="https://csmojo.com/posts/how-to-show-file-size-in-linux-terminal.html" rel="alternate"></link><published>2016-07-09T20:22:01-07:00</published><updated>2016-07-09T20:22:01-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2016-07-09:/posts/how-to-show-file-size-in-linux-terminal.html</id><summary type="html">To list the file size of all the files in the current directory, use the &lt;code&gt;du&lt;/code&gt; command</summary><content type="html">&lt;p&gt;To list the file size of all the files in the current directory, use the &lt;code&gt;du&lt;/code&gt; command&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;du -sh *&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;du -sh *
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;-s&lt;/code&gt; is for summarize so it gives a total size for a directory &lt;/li&gt;
@@ -76,11 +76,11 @@ sudo usermod -aG docker &lt;span class="nv"&gt;$USER&lt;/span&gt;
 &lt;li&gt;&lt;code&gt;*&lt;/code&gt; is for all files. One can change it to a filename to see the size of only that file&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Linux"></category><category term="Linux"></category><category term="Commands"></category></entry><entry><title>How to solve Chrome flickering in VirtualBox</title><link href="https://csmojo.com/posts/how-to-solve-chrome-flickering-in-virtualbox.html" rel="alternate"></link><published>2015-08-06T20:50:17-07:00</published><updated>2015-08-06T20:50:17-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-08-06:/posts/how-to-solve-chrome-flickering-in-virtualbox.html</id><summary type="html">If you enabled 3D acceleration for a VirtualBox guest, and Chrome starts flickering in that guest.
 Go into Chrome's Advanced settings and disable "Use hardware acceleration when available" to solve the problem&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150041.png" style="width: 534px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;If you enabled 3D acceleration for a VirtualBox guest, and Chrome starts flickering in that guest.
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150041.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;If you enabled 3D acceleration for a VirtualBox guest, and Chrome starts flickering in that guest.
 Go into Chrome's Advanced settings and disable "Use hardware acceleration when available" to solve the problem&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150041.png" style="width: 534px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;</content><category term="Linux"></category><category term="VirtualBox"></category><category term="Chrome"></category><category term="Errors"></category></entry><entry><title>How to install i3 on Debian 8 in VM VirtualBox</title><link href="https://csmojo.com/posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html" rel="alternate"></link><published>2015-08-03T20:39:18-07:00</published><updated>2015-08-03T20:39:18-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-08-03:/posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html</id><summary type="html">Forget about fancy desktop environments and do a clean install of the awesome windows manager i3 on Debian 8.&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150040.png" style="width: 1829px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;Forget about fancy desktop environments and do a clean install of the awesome windows manager i3 on Debian 8.&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150040.png" style="width: 1829px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150041.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;</content><category term="Linux"></category><category term="VirtualBox"></category><category term="Chrome"></category><category term="Errors"></category></entry><entry><title>How to install i3 on Debian 8 in VM VirtualBox</title><link href="https://csmojo.com/posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html" rel="alternate"></link><published>2015-08-03T20:39:18-07:00</published><updated>2015-08-03T20:39:18-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-08-03:/posts/how-to-install-i3-on-debian-8-in-vm-virtualbox.html</id><summary type="html">Forget about fancy desktop environments and do a clean install of the awesome windows manager i3 on Debian 8.&lt;br/&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150040.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;Forget about fancy desktop environments and do a clean install of the awesome windows manager i3 on Debian 8.&lt;br/&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150040.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;Software&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.virtualbox.org/wiki/Downloads"&gt;VirtualBox 4.3.28&lt;/a&gt;&lt;/li&gt;
@@ -97,57 +97,57 @@ Go into Chrome's Advanced settings and disable "Use hardware acceleration when a
 &lt;li&gt;0.1 &lt;a href="https://csmojo.com/posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html"&gt;How to minimally install Debian 8 in VM VirtualBox&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;1. Install i3 and xorg&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;apt-get install i3&lt;/span&gt;
-&lt;span class="err"&gt;apt-get install xorg&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install i3
+apt-get install xorg
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;2. Create xorg config file&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Xorg -configure&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Xorg -configure
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;(X is upper case)
 if you get hardware errors, it may be VirtualBox specific and can be ignored&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150034.png" style="width: 529px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150034.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;move it to the right place:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;cp xorg.conf.new /etc/X11/xorg.conf&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cp xorg.conf.new /etc/X11/xorg.conf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ol&gt;
 &lt;li&gt;Set "startx" to run after login
 in root do&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;ls -a&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ls -a
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150035.png" style="width: 497px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150035.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;and there is a ".profile" file, nano open it and add to the end:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;if [ -z "$DISPLAY" ] &amp;amp;&amp;amp; [ $(tty) == /dev/tty1 ]; then&lt;/span&gt;
-&lt;span class="err"&gt;  startx&lt;/span&gt;
-&lt;span class="err"&gt;fi&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; [ &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;z&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="s"&gt;$DISPLAY&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; ] &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; [ $&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;tty&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;tty1&lt;/span&gt; ]&lt;span class="c1"&gt;; then&lt;/span&gt;
+  &lt;span class="nv"&gt;startx&lt;/span&gt;
+&lt;span class="nv"&gt;fi&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Some people suggest adding the above commands to ".bashrc" instead, the difference between the two: &lt;a href="http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html"&gt;.bash_profile vs .bashrc&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;4. Change xorg screen resolution (solution from &lt;a href="https://forums.virtualbox.org/viewtopic.php?f=2&amp;amp;t=18377"&gt;VirtualBo's Forum&lt;/a&gt;)&lt;/h3&gt;
 &lt;p&gt;For this example, we will be setting the resolution to "1920x1080"
 4.1. edit /etc/X11/xorg.conf
 In section "Monitor" add&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;HorizSync 31-80   &lt;/span&gt;
-&lt;span class="err"&gt;VertRefresh 30-100&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;HorizSync 31-80   
+VertRefresh 30-100
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150036.png" style="width: 384px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150036.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;In section "Screen" add&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;DefaultDepth 16&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;DefaultDepth 16
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150039.png" style="width: 285px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150039.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;Scroll down to "Display" with Depth 16 and add&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Modes "1920x1080"&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Modes "1920x1080"
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150038.png" style="width: 252px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150038.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;4.2. Power off the virtual machine and in your host machine use "VBoxManager" to run:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;VBoxManage setextradata Debian CustomVideoMode1 1920x1080x16&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;VBoxManage setextradata Debian CustomVideoMode1 1920x1080x16
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;where Debian is the name of the guest machine&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150037.png" style="width: 810px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150037.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;5. Restart the virtual machine and enjoy i3 on Debian&lt;/h3&gt;</content><category term="Linux"></category><category term="Debian"></category><category term="i3"></category><category term="Linux"></category><category term="VirtualBox"></category></entry><entry><title>How to set up Debian server with nginx, php5 and MySQL in VM VirtualBox</title><link href="https://csmojo.com/posts/how-to-set-up-debian-server-with-nginx-php5-and-mysql-in-vm-virtualbox.html" rel="alternate"></link><published>2015-07-31T20:16:23-07:00</published><updated>2015-07-31T20:16:23-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-07-31:/posts/how-to-set-up-debian-server-with-nginx-php5-and-mysql-in-vm-virtualbox.html</id><summary type="html">Set up a Server in your VirtualBox in a few simple steps so you can fire it up whenever you need it, 
 or simply use it as a playground for your VPS. A Nginx server is small, efficient, and easy to use.&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150033.png" style="width: 590px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;Set up a Server in your VirtualBox in a few simple steps so you can fire it up whenever you need it, 
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150033.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;Set up a Server in your VirtualBox in a few simple steps so you can fire it up whenever you need it, 
 or simply use it as a playground for your VPS. A Nginx server is small, efficient, and easy to use.&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150033.png" style="width: 590px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150033.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;Software&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.virtualbox.org/wiki/Downloads"&gt;VirtualBox 4.3.28&lt;/a&gt;&lt;/li&gt;
@@ -163,47 +163,47 @@ or simply use it as a playground for your VPS. A Nginx server is small, efficien
 &lt;/ul&gt;
 &lt;h3&gt;1. Install Nginx&lt;/h3&gt;
 &lt;p&gt;update package list&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;apt-get update&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get update
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;install Nginx&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;apt-get install nginx&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install nginx
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;2. Check ip address&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;ifconfig&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ifconfig
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;For the purpose of this example, we are using Bridged Adapter in VM VirtualBox and 192.168.0.16 as the server address
 Your Debian virtual machine is mostly on DHCP, and the IP might change.&lt;/p&gt;
 &lt;h3&gt;3. Test Nginx&lt;/h3&gt;
 &lt;p&gt;3.1. On your host machine or any other computer within the same network, go to 192.168.0.16 and the Nginx welcome page should show up:&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150022.png" style="width: 892px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150022.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;3.2. Back to the Debian server, go to the default root folder of the Nginx server /var/www/html, 
 and use nano to open the "index.nginx-debian.html" file. This is the html of the welcome page in 3.1. &lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150023.png" style="width: 775px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150023.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;3.3. Here we edit it by adding a "Hello World!"; back in the browser, the change would have registered
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150024.png" style="width: 1041px; height: auto; max-width: 100%;"/&gt;&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150025.png" style="width: 896px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150024.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;br/&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150025.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;Up to here, you have yourself a functional Nginx server displaying html pages.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Intall and configure php
 4.1. run:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;apt-get install php5-fpm&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install php5-fpm
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;4.2. Configure security - change "cgi.fix_pathinfo"&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;nano /etc/php5/fpm/php.ini&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nano /etc/php5/fpm/php.ini
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;and change "cgi.fix_pathinfo=1" to "cgi.fix_pathinfo=0"
 The above is more of the "conservative" method. Discussion on this matter is old: &lt;a href="http://cnedelcu.blogspot.com/2010/05/nginx-php-via-fastcgi-important.html"&gt;Nginx &amp;amp; PHP via FastCGI important security issue&lt;/a&gt;
 Nginx wiki's alternative: &lt;a href="http://wiki.nginx.org/PHPFcgiExample"&gt;FastCGI Example&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;4.3. Configure Nginx to use php&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;nano /etc/nginx/sites-available/default&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nano /etc/nginx/sites-available/default
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;and add "index.php" to the list&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150026.png" style="width: 829px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150026.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;also uncomment  the "location ~ .php{}" function to use  Unix sockets&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150027.png" style="width: 936px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150027.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;Some tutorials suggest editing the following file to enable sockets, but the above is sufficient&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150028.png" style="width: 390px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150028.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;5. Test php&lt;/h3&gt;
 &lt;p&gt;5.1. In the server's root directory, remove "index.nginx-debian.html" and create "index.php" with the following:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
@@ -211,26 +211,26 @@ Nginx wiki's alternative: &lt;a href="http://wiki.nginx.org/PHPFcgiExample"&gt;F
 &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;5.2. Restart nginx and php&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;service php5-fpm restart&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;service php5-fpm restart
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;service nginx restart&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;service nginx restart
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;5.3. Again go to 192.168.0.16 in your browser to see the following page:&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150029.png" style="width: 962px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150029.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;Your Nginx server now can show php and html pages.&lt;/p&gt;
 &lt;h3&gt;6. Install and config MySQL&lt;/h3&gt;
 &lt;p&gt;6.1. Install MySQL
 the server:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;apt-get install mysql-server&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install mysql-server
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;the php5-mysql package:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;apt-get install php5-mysql&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install php5-mysql
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;6.2. Run initialization&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;mysql_install_db&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mysql_install_db
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;6.3. Run Security improvement script&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;mysql_secure_installation&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mysql_secure_installation
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;7. Test everything at once&lt;/h3&gt;
 &lt;p&gt;modify "index.php" as follows:&lt;/p&gt;
@@ -254,7 +254,7 @@ the server:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Use "mysqli_" as "mysql_" functions are deprecated.
 This will test the connection with the MySQL server, and show "connection ok" if connected successfully:&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150032.png" style="width: 1829px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;</content><category term="Linux"></category><category term="Debian"></category><category term="Linux"></category><category term="Commands"></category><category term="MySQL"></category><category term="Network"></category><category term="Nginx"></category><category term="PHP"></category><category term="Server"></category><category term="VirtualBox"></category></entry><entry><title>How to install Debian Guest Additions in VM VirtualBox</title><link href="https://csmojo.com/posts/how-to-install-debian-guest-additions-in-vm-virtualbox.html" rel="alternate"></link><published>2015-07-29T20:12:47-07:00</published><updated>2015-07-29T20:12:47-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-07-29:/posts/how-to-install-debian-guest-additions-in-vm-virtualbox.html</id><summary type="html">Install Guest Additions for Debian to enable full screen display and more.</summary><content type="html">&lt;p&gt;Install Guest Additions for Debian to enable full screen display and more.&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150032.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;</content><category term="Linux"></category><category term="Debian"></category><category term="Linux"></category><category term="Commands"></category><category term="MySQL"></category><category term="Network"></category><category term="Nginx"></category><category term="PHP"></category><category term="Server"></category><category term="VirtualBox"></category></entry><entry><title>How to install Debian Guest Additions in VM VirtualBox</title><link href="https://csmojo.com/posts/how-to-install-debian-guest-additions-in-vm-virtualbox.html" rel="alternate"></link><published>2015-07-29T20:12:47-07:00</published><updated>2015-07-29T20:12:47-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-07-29:/posts/how-to-install-debian-guest-additions-in-vm-virtualbox.html</id><summary type="html">Install Guest Additions for Debian to enable full screen display and more.</summary><content type="html">&lt;p&gt;Install Guest Additions for Debian to enable full screen display and more.&lt;/p&gt;
 &lt;h3&gt;Software&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.virtualbox.org/wiki/Downloads"&gt;VM VirtualBox 4.3.30&lt;/a&gt;&lt;/li&gt;
@@ -265,28 +265,28 @@ This will test the connection with the MySQL server, and show "connection ok" if
 &lt;li&gt;&lt;a href="https://www.virtualbox.org/manual/ch04.html#idp96235792"&gt;Guest Additions&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;1. Install dkms&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;apt-get install dkms&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install dkms
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;2. Insert Guest Additions CD image&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150021.png" style="width: 403px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150021.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;3. cd to location of the CD image in /media&lt;/h3&gt;
 &lt;p&gt;run:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sh ./VBoxLinuxAdditions.run&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sh ./VBoxLinuxAdditions.run
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;If the above fails, check you have the following packages installed:
 * make
 * gcc
 * linux-headers (run "uname -a" to check kernel version)&lt;/p&gt;</content><category term="Linux"></category><category term="Debian"></category><category term="Linux"></category><category term="VirtualBox"></category></entry><entry><title>How to fix Cinnamon running without video hardware acceleration issue in VM VirtualBox</title><link href="https://csmojo.com/posts/how-to-fix-cinnamon-running-without-video-hardware-acceleration-issue-in-vm-virtualbox.html" rel="alternate"></link><published>2015-07-29T20:00:00-07:00</published><updated>2015-07-29T20:00:00-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-07-29:/posts/how-to-fix-cinnamon-running-without-video-hardware-acceleration-issue-in-vm-virtualbox.html</id><summary type="html">Upon initial installation of Cinnamon in VM VirtualBox, 
 you might encounter the pop up window "Cinnamon running without video hardware acceleration"&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150016.png" style="width: 447px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;Upon initial installation of Cinnamon in VM VirtualBox, 
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150016.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;Upon initial installation of Cinnamon in VM VirtualBox, 
 you might encounter the pop up window "Cinnamon running without video hardware acceleration"&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150016.png" style="width: 447px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150016.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;To fix this, simply check "Enable 3D Acceleration" in the VM settings&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150017.png" style="width: 675px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;</content><category term="Linux"></category><category term="Linux"></category><category term="VirtualBox"></category></entry><entry><title>How to fully enable Xfce windows snapping</title><link href="https://csmojo.com/posts/how-to-fully-enable-xfce-windows-snapping.html" rel="alternate"></link><published>2015-07-29T20:00:00-07:00</published><updated>2015-07-29T20:00:00-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-07-29:/posts/how-to-fully-enable-xfce-windows-snapping.html</id><summary type="html">For any excessively tidy people, windows snapping is a must; Xfce is a great desktop environment that provides such features. 
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150017.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;</content><category term="Linux"></category><category term="Linux"></category><category term="VirtualBox"></category></entry><entry><title>How to fully enable Xfce windows snapping</title><link href="https://csmojo.com/posts/how-to-fully-enable-xfce-windows-snapping.html" rel="alternate"></link><published>2015-07-29T20:00:00-07:00</published><updated>2015-07-29T20:00:00-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-07-29:/posts/how-to-fully-enable-xfce-windows-snapping.html</id><summary type="html">For any excessively tidy people, windows snapping is a must; Xfce is a great desktop environment that provides such features. 
 By default though, it seems that only horizontal snapping works and you'd have to tweak the settings a bit to make vertical snapping function as well.&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150018.png" style="width: 1826px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;For any excessively tidy people, windows snapping is a must; Xfce is a great desktop environment that provides such features. 
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150018.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;For any excessively tidy people, windows snapping is a must; Xfce is a great desktop environment that provides such features. 
 By default though, it seems that only horizontal snapping works and you'd have to tweak the settings a bit to make vertical snapping function as well.&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150018.png" style="width: 1826px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150018.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;Software&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.xfce.org/"&gt;Xfce 4.10&lt;/a&gt;&lt;/li&gt;
@@ -295,16 +295,16 @@ By default though, it seems that only horizontal snapping works and you'd have t
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Go to Settings &amp;gt; Window Manager &amp;gt; Advanced
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150019.png" style="width: 551px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150019.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;and uncheck "Wrap workspaces when dragging a window off the screen"
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150020.png" style="width: 607px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150020.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Happy snapping!&lt;/p&gt;</content><category term="Linux"></category><category term="Linux"></category><category term="Xfce"></category></entry><entry><title>How to search in nano editor</title><link href="https://csmojo.com/posts/how-to-search-in-nano-editor.html" rel="alternate"></link><published>2015-07-28T20:00:00-07:00</published><updated>2015-07-28T20:00:00-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-07-28:/posts/how-to-search-in-nano-editor.html</id><summary type="html">nano's search uses Ctrl + w which acts like Ctrl + f in other common editors&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150007.png" style="width: 156px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;nano's search uses Ctrl + w which acts like Ctrl + f in other common editors&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150007.png" style="width: 156px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150007.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;nano's search uses Ctrl + w which acts like Ctrl + f in other common editors&lt;br/&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150007.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;Software&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.nano-editor.org/"&gt;GNU nano version 2.2.6&lt;/a&gt;&lt;/li&gt;
@@ -317,16 +317,16 @@ By default though, it seems that only horizontal snapping works and you'd have t
 &lt;ul&gt;
 &lt;li&gt;Search a string:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Ctrl + w&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Ctrl + w
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150008.png" style="width: 1042px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150008.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Search the next string:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Alt + w&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Alt + w
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Linux"></category><category term="GNU"></category><category term="Nano"></category></entry><entry><title>What Debian standard system utilities include</title><link href="https://csmojo.com/posts/what-debian-standard-system-utilities-include.html" rel="alternate"></link><published>2015-07-28T20:00:00-07:00</published><updated>2015-07-28T20:00:00-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-07-28:/posts/what-debian-standard-system-utilities-include.html</id><summary type="html">When installing Debian 8, there is a software selection page where "standard system utilities" is preselected for you. Ever wondered what that package includes? Use tasksel to find out.&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150009.png" style="width: 755px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;When installing Debian 8, there is a software selection page where "standard system utilities" is preselected for you. Ever wondered what that package includes? Use tasksel to find out.&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150009.png" style="width: 755px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150009.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;When installing Debian 8, there is a software selection page where "standard system utilities" is preselected for you. Ever wondered what that package includes? Use tasksel to find out.&lt;br/&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150009.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;Software&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.debian.org/distrib/"&gt;Debian 8.1.0 amd64&lt;/a&gt;&lt;/li&gt;
@@ -336,7 +336,7 @@ By default though, it seems that only horizontal snapping works and you'd have t
 &lt;li&gt;&lt;a href="https://wiki.debian.org/tasksel"&gt;tasksel&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;In Debian terminal, run&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;tasksel --task-packages standard&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;tasksel --task-packages standard
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This command seems to only work if  "standard system utilities" was not installed during Debian installation. It will list what is included in "standard system utilities":&lt;/p&gt;
 &lt;ul&gt;
@@ -392,9 +392,9 @@ By default though, it seems that only horizontal snapping works and you'd have t
 &lt;li&gt;doc-debian&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Linux"></category><category term="Debian"></category><category term="Linux"></category><category term="Commands"></category></entry><entry><title>How to minimally install Debian 8 in VM VirtualBox</title><link href="https://csmojo.com/posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html" rel="alternate"></link><published>2015-07-27T20:00:00-07:00</published><updated>2015-07-27T20:00:00-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-07-27:/posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html</id><summary type="html">Debian without a desktop environment is simple, clean and full of potential.
 It is the ideal set up for installing your own choice of desktop environment that doesn't come with the Debian installer, or for setting up a Debian server.&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150001.png" style="width: 641px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;Debian without a desktop environment is simple, clean and full of potential.
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150001.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;</summary><content type="html">&lt;p&gt;Debian without a desktop environment is simple, clean and full of potential.
 It is the ideal set up for installing your own choice of desktop environment that doesn't come with the Debian installer, or for setting up a Debian server.&lt;br/&gt;
-&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150001.png" style="width: 641px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150001.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;Software&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.virtualbox.org/wiki/Downloads"&gt;VM VirtualBox 4.3.30&lt;/a&gt;&lt;/li&gt;
@@ -410,7 +410,7 @@ It is the ideal set up for installing your own choice of desktop environment tha
 &lt;/ul&gt;
 &lt;h3&gt;1. Start the virtual machine&lt;/h3&gt;
 &lt;p&gt;Create a new virtual machine for Debian and start it with the Debian .iso&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150002.png" style="width: 497px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150002.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;2. Choose Install&lt;/h3&gt;
 &lt;p&gt;Install and Graphical install is pretty much the same&lt;/p&gt;
 &lt;h3&gt;3. Configure settings to your liking&lt;/h3&gt;
@@ -428,10 +428,10 @@ It is the ideal set up for installing your own choice of desktop environment tha
 &lt;/ul&gt;
 &lt;h3&gt;4. Software selection&lt;/h3&gt;
 &lt;p&gt;First Thing to note is that if you regret not installing anything here, later after Debian is installed and running, you can always run:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;tasksel&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;tasksel
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;to install or uninstall anything you missed (except "standard system utilities" is replace by "laptop"; they are not the same; read more: &lt;a href="https://wiki.debian.org/tasksel"&gt;tasksel&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150006.png" style="width: 634px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150006.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;p&gt;What each package includes:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;web server: Apache2&lt;/li&gt;
@@ -452,19 +452,19 @@ It is the ideal set up for installing your own choice of desktop environment tha
 &lt;li&gt;SSH server&lt;/li&gt;
 &lt;li&gt;standard system utilities &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150003.png" style="width: 758px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150003.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;5. Grub&lt;/h3&gt;
 &lt;p&gt;Select /dev/sda&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150004.png" style="width: 760px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150004.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;6. Finish the installation and reboot&lt;/h3&gt;
 &lt;p&gt;VirtualBox will remove the installation .iso for you&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150005.png" style="width: 744px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="https://csmojo.com/images/img20150005.png" style="width: 200px; height: auto; max-width: 100%;"/&gt;&lt;/p&gt;
 &lt;h3&gt;7. Update and upgrade&lt;/h3&gt;
 &lt;p&gt;After logging in, update your package list:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;apt-get update&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get update
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;upgrade the packages:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;apt-get upgrade&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get upgrade
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;Fully utilize VirtualBox's snapshots to save whatever you are doing&lt;/p&gt;</content><category term="Linux"></category><category term="Debian"></category><category term="Linux"></category><category term="VirtualBox"></category></entry><entry><title>How to create a symbolic link in Linux</title><link href="https://csmojo.com/posts/how-to-create-a-symbolic-link-in-linux.html" rel="alternate"></link><published>2015-07-03T20:36:16-07:00</published><updated>2015-07-03T20:36:16-07:00</updated><author><name>David</name></author><id>tag:csmojo.com,2015-07-03:/posts/how-to-create-a-symbolic-link-in-linux.html</id><summary type="html">Symbolic link or Symlink is a file that contains a link to another actual file path. It acts as a pointer and will always point to the "actualFilepath".</summary><content type="html">&lt;p&gt;Symbolic link or Symlink is a file that contains a link to another actual file path. It acts as a pointer and will always point to the "actualFilepath".&lt;/p&gt;
@@ -474,7 +474,7 @@ It is the ideal set up for installing your own choice of desktop environment tha
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Symbolic_link"&gt;Wikipedia: symbolic link&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;run&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;ln -s actualFilePath linkFilePath&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ln -s actualFilePath linkFilePath
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;A Symbolic link links to wherever actualFilePath is; if the original actualFile is deleted and a new file is created with the same name, the Symlink will link to the new file as it still has the same path&lt;/li&gt;

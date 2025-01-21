@@ -137,11 +137,11 @@
 </ul>
 <h3>1. In terminal</h3>
 <p>Running the following in the terminal will give you the (lon, lat) coordinate of (12, 6) pixel (12th column and 6th row) of "myImage.tiff" :</p>
-<div class="highlight"><pre><span></span><code><span class="err">gdaltransform myImage.tiff</span>
-<span class="err">12 6</span>
+<div class="highlight"><pre><span></span><code>gdaltransform myImage.tiff
+12 6
 </code></pre></div>
 <p>this returns (lon, lat, z value) :</p>
-<div class="highlight"><pre><span></span><code><span class="err">85.1234567890123 27.1234567890123 0</span>
+<div class="highlight"><pre><span></span><code><span class="mf">85.1234567890123</span><span class="w"> </span><span class="mf">27.1234567890123</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
 </code></pre></div>
 <h3>2. In Python Script</h3>
 <p>To achieve this through a python script and therefore transform an lot of pixels at once, you will have to first write the pixels to a file "pix.txt" and then run:</p>
@@ -151,12 +151,12 @@
 <p>This will produce "cor.txt" containing the (lon, lat, z value)</p>
 <p>Example "pix.txt" and "cor.txt":
 pix.txt:</p>
-<div class="highlight"><pre><span></span><code><span class="err">12 6</span>
-<span class="err">24 9</span>
+<div class="highlight"><pre><span></span><code><span class="mf">12</span><span class="w"> </span><span class="mf">6</span><span class="w"></span>
+<span class="mf">24</span><span class="w"> </span><span class="mf">9</span><span class="w"></span>
 </code></pre></div>
 <p>cor.txt:</p>
-<div class="highlight"><pre><span></span><code><span class="err">85.1234567890123 27.1234567890123 0</span>
-<span class="err">86.3234565432233 26.9876543345677 0</span>
+<div class="highlight"><pre><span></span><code><span class="mf">85.1234567890123</span><span class="w"> </span><span class="mf">27.1234567890123</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
+<span class="mf">86.3234565432233</span><span class="w"> </span><span class="mf">26.9876543345677</span><span class="w"> </span><span class="mf">0</span><span class="w"></span>
 </code></pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         

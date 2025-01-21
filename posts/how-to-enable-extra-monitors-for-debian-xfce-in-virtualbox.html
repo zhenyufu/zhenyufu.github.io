@@ -130,30 +130,30 @@
     <div> <p>Enable extra monitors or dual screens for Debian xfce in VirtualBox</p>
 <h3>1. Enable extra monitors in VirtualBox settings</h3>
 <p>Change the monitor count  </p>
-<p><img alt="Alt Text" src="https://csmojo.com/images/img20160008.png" style="width: 519px; height: auto; max-width: 100%;"/></p>
+<p><img alt="Alt Text" src="https://csmojo.com/images/img20160008.png" style="width: 200px; height: auto; max-width: 100%;"/></p>
 <h3>2. Enable Virtual Screen</h3>
 <p>After running the vitural machine, enable the second screen  </p>
-<p><img alt="Alt Text" src="https://csmojo.com/images/img20160009.png" style="width: 498px; height: auto; max-width: 100%;"/></p>
+<p><img alt="Alt Text" src="https://csmojo.com/images/img20160009.png" style="width: 200px; height: auto; max-width: 100%;"/></p>
 <h3>3. Enalbe xfce display settings</h3>
 <p>Go to display and click "Use this output"  </p>
-<p><img alt="Alt Text" src="https://csmojo.com/images/img20160010.png" style="width: 494px; height: auto; max-width: 100%;"/></p>
+<p><img alt="Alt Text" src="https://csmojo.com/images/img20160010.png" style="width: 200px; height: auto; max-width: 100%;"/></p>
 <h3>4. Change duplicate to extend using xrandr</h3>
 <ul>
 <li>The defualt is duplicate screens</li>
 <li>To change to extend, run <code>xrandr</code> to list the two monitors</li>
 <li>Run the following with the monitor names and position flag</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="err">xrandr --output VGA-0 --left-of VGA-1</span>
+<div class="highlight"><pre><span></span><code>xrandr --output VGA-0 --left-of VGA-1
 </code></pre></div>
 <ul>
 <li>Position flags from <code>man xrandr</code>:</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="err">--left-of, --right-of, --above, --below, --same-as another-output</span>
-<span class="err">      Use one of these options to position the output relative to the  position  of</span>
-<span class="err">      another  output.  This allows convenient tiling of outputs within the screen.</span>
-<span class="err">      The position is always computed relative to the new  position  of  the  other</span>
-<span class="err">      output, so it is not valid to say --output a --left-of b --output b --left-of</span>
-<span class="err">      a.</span>
+<div class="highlight"><pre><span></span><code>--left-of, --right-of, --above, --below, --same-as another-output
+      Use one of these options to position the output relative to the  position  of
+      another  output.  This allows convenient tiling of outputs within the screen.
+      The position is always computed relative to the new  position  of  the  other
+      output, so it is not valid to say --output a --left-of b --output b --left-of
+      a.
 </code></pre></div> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         

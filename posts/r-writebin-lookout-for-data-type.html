@@ -141,22 +141,22 @@ This can bring surprises. From inside-r.org <a href="http://www.inside-r.org/r-d
 "is.numeric returns TRUE if its argument is of mode "numeric" (type "double" or type "integer") and not a factor" : </p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="m">3</span>
 <span class="o">&gt;</span> <span class="nf">class</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">[1]</span> <span class="s">"numeric"</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">"numeric"</span>
 <span class="o">&gt;</span> <span class="nf">mode</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">[1]</span> <span class="s">"numeric"</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">"numeric"</span>
 <span class="o">&gt;</span> <span class="nf">is.numeric</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">[1]</span> <span class="kc">TRUE</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">TRUE</span>
 <span class="o">&gt;</span> <span class="nf">is.double</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">[1]</span> <span class="kc">TRUE</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">TRUE</span>
 <span class="o">&gt;</span> <span class="nf">is.integer</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">[1]</span> <span class="kc">FALSE</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">FALSE</span>
 <span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nf">as.integer</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> 
 <span class="o">&gt;</span> <span class="nf">is.numeric</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">[1]</span> <span class="kc">TRUE</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">TRUE</span>
 <span class="o">&gt;</span> <span class="nf">is.double</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">[1]</span> <span class="kc">FALSE</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">FALSE</span>
 <span class="o">&gt;</span> <span class="nf">is.integer</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">[1]</span> <span class="kc">TRUE</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">TRUE</span>
 </code></pre></div>
 <h3>writeBin()</h3>
 <p>The type of the number is important when using the function writeBin() to write data to binary, 

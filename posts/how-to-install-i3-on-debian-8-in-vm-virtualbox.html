@@ -128,7 +128,7 @@
     </div>
     
     <div> <p>Forget about fancy desktop environments and do a clean install of the awesome windows manager i3 on Debian 8.<br/>
-<img alt="Alt Text" src="https://csmojo.com/images/img20150040.png" style="width: 1829px; height: auto; max-width: 100%;"/></p>
+<img alt="Alt Text" src="https://csmojo.com/images/img20150040.png" style="width: 200px; height: auto; max-width: 100%;"/></p>
 <h3>Software</h3>
 <ul>
 <li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox 4.3.28</a></li>
@@ -145,52 +145,52 @@
 <li>0.1 <a href="https://csmojo.com/posts/how-to-minimally-install-debian-8-in-vm-virtualbox.html">How to minimally install Debian 8 in VM VirtualBox</a></li>
 </ul>
 <h3>1. Install i3 and xorg</h3>
-<div class="highlight"><pre><span></span><code><span class="err">apt-get install i3</span>
-<span class="err">apt-get install xorg</span>
+<div class="highlight"><pre><span></span><code>apt-get install i3
+apt-get install xorg
 </code></pre></div>
 <h3>2. Create xorg config file</h3>
-<div class="highlight"><pre><span></span><code><span class="err">Xorg -configure</span>
+<div class="highlight"><pre><span></span><code>Xorg -configure
 </code></pre></div>
 <p>(X is upper case)
 if you get hardware errors, it may be VirtualBox specific and can be ignored<br/>
-<img alt="Alt Text" src="https://csmojo.com/images/img20150034.png" style="width: 529px; height: auto; max-width: 100%;"/></p>
+<img alt="Alt Text" src="https://csmojo.com/images/img20150034.png" style="width: 200px; height: auto; max-width: 100%;"/></p>
 <p>move it to the right place:</p>
-<div class="highlight"><pre><span></span><code><span class="err">cp xorg.conf.new /etc/X11/xorg.conf</span>
+<div class="highlight"><pre><span></span><code>cp xorg.conf.new /etc/X11/xorg.conf
 </code></pre></div>
 <ol>
 <li>Set "startx" to run after login
 in root do</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="err">ls -a</span>
+<div class="highlight"><pre><span></span><code>ls -a
 </code></pre></div>
-<p><img alt="Alt Text" src="https://csmojo.com/images/img20150035.png" style="width: 497px; height: auto; max-width: 100%;"/></p>
+<p><img alt="Alt Text" src="https://csmojo.com/images/img20150035.png" style="width: 200px; height: auto; max-width: 100%;"/></p>
 <p>and there is a ".profile" file, nano open it and add to the end:</p>
-<div class="highlight"><pre><span></span><code><span class="err">if [ -z "$DISPLAY" ] &amp;&amp; [ $(tty) == /dev/tty1 ]; then</span>
-<span class="err">  startx</span>
-<span class="err">fi</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> [ <span class="o">-</span><span class="nv">z</span> <span class="s2">"</span><span class="s">$DISPLAY</span><span class="s2">"</span> ] <span class="o">&amp;&amp;</span> [ $<span class="ss">(</span><span class="nv">tty</span><span class="ss">)</span> <span class="o">==</span> <span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">tty1</span> ]<span class="c1">; then</span>
+  <span class="nv">startx</span>
+<span class="nv">fi</span>
 </code></pre></div>
 <p>Some people suggest adding the above commands to ".bashrc" instead, the difference between the two: <a href="http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html">.bash_profile vs .bashrc</a></p>
 <h3>4. Change xorg screen resolution (solution from <a href="https://forums.virtualbox.org/viewtopic.php?f=2&amp;t=18377">VirtualBo's Forum</a>)</h3>
 <p>For this example, we will be setting the resolution to "1920x1080"
 4.1. edit /etc/X11/xorg.conf
 In section "Monitor" add</p>
-<div class="highlight"><pre><span></span><code><span class="err">HorizSync 31-80   </span>
-<span class="err">VertRefresh 30-100</span>
+<div class="highlight"><pre><span></span><code>HorizSync 31-80   
+VertRefresh 30-100
 </code></pre></div>
-<p><img alt="Alt Text" src="https://csmojo.com/images/img20150036.png" style="width: 384px; height: auto; max-width: 100%;"/></p>
+<p><img alt="Alt Text" src="https://csmojo.com/images/img20150036.png" style="width: 200px; height: auto; max-width: 100%;"/></p>
 <p>In section "Screen" add</p>
-<div class="highlight"><pre><span></span><code><span class="err">DefaultDepth 16</span>
+<div class="highlight"><pre><span></span><code>DefaultDepth 16
 </code></pre></div>
-<p><img alt="Alt Text" src="https://csmojo.com/images/img20150039.png" style="width: 285px; height: auto; max-width: 100%;"/></p>
+<p><img alt="Alt Text" src="https://csmojo.com/images/img20150039.png" style="width: 200px; height: auto; max-width: 100%;"/></p>
 <p>Scroll down to "Display" with Depth 16 and add</p>
-<div class="highlight"><pre><span></span><code><span class="err">Modes "1920x1080"</span>
+<div class="highlight"><pre><span></span><code>Modes "1920x1080"
 </code></pre></div>
-<p><img alt="Alt Text" src="https://csmojo.com/images/img20150038.png" style="width: 252px; height: auto; max-width: 100%;"/></p>
+<p><img alt="Alt Text" src="https://csmojo.com/images/img20150038.png" style="width: 200px; height: auto; max-width: 100%;"/></p>
 <p>4.2. Power off the virtual machine and in your host machine use "VBoxManager" to run:</p>
-<div class="highlight"><pre><span></span><code><span class="err">VBoxManage setextradata Debian CustomVideoMode1 1920x1080x16</span>
+<div class="highlight"><pre><span></span><code>VBoxManage setextradata Debian CustomVideoMode1 1920x1080x16
 </code></pre></div>
 <p>where Debian is the name of the guest machine<br/>
-<img alt="Alt Text" src="https://csmojo.com/images/img20150037.png" style="width: 810px; height: auto; max-width: 100%;"/></p>
+<img alt="Alt Text" src="https://csmojo.com/images/img20150037.png" style="width: 200px; height: auto; max-width: 100%;"/></p>
 <h3>5. Restart the virtual machine and enjoy i3 on Debian</h3> </div></div>            </section><!-- /#content -->
         </div><!-- end of my-main -->
         
