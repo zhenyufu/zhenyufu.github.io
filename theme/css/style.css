@@ -159,15 +159,17 @@ code{
 
 .my-project-link {
     padding: 8px 12px;
+    border: 1px solid #d0d5da;
     border-radius: 4px;
-    background-color: #C0DDFF;
-    color: #153f63;
+    background-color: #f3f4f5;
+    color: #3f4851;
     font-weight: 600;
     text-decoration: none;
 }
 
 .my-project-link:hover {
-    background-color: #a8cefa;
+    background-color: #e5e7e9;
+    color: #252b31;
 }
 
 .my-project-grid {
@@ -218,6 +220,5 @@ code{
         grid-template-columns: 1fr;
     }
 }
-
 
 
