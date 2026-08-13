@@ -1,129 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-
 <head>
-        <title>csmojo</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/theme/css/w3.css"/>
-    <link rel="stylesheet" type="text/css" href="/theme/font-awesome-4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css"/>
-    <!--
-    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css"/>
-    -->
-    <link rel="stylesheet" type="text/css" href="/theme/css/style.css"/>
-        
-    
-    <link href="https://csmojo.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Full Atom Feed" />
-    <link href="https://csmojo.com/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="csmojo Categories Atom Feed" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="Document some of the useful changes that I made to my pelican setup. Might be helpful for newcomers ;)" />
-        <meta name="keywords" content="Pelican" />
-        <meta name="keywords" content="Python" />
+
+    <title>My pelican setup — Computer Science Mojo</title>
+    <meta name="description" content="Document some of the useful changes that I made to my pelican setup. Might be helpful for newcomers ;)">
+    <link rel="canonical" href="https://csmojo.com/posts/my-pelican-setup.html">
+
+    <meta property="og:title" content="My pelican setup — Computer Science Mojo">
+    <meta property="og:description" content="Document some of the useful changes that I made to my pelican setup. Might be helpful for newcomers ;)">
+    <meta property="og:url" content="https://csmojo.com/posts/my-pelican-setup.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Computer Science Mojo">
+
+    <link rel="icon" href="https://csmojo.com/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="https://csmojo.com/theme/css/w3.css">
+    <link rel="stylesheet" href="https://csmojo.com/theme/css/pygment.css">
+    <link rel="stylesheet" href="https://csmojo.com/theme/css/style.css">
+
+
+    <link href="https://csmojo.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Computer Science Mojo Atom feed">
+    <link href="https://csmojo.com/feeds/web.atom.xml" type="application/atom+xml" rel="alternate" title="Computer Science Mojo Web Atom feed">
 </head>
 
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-<body id="index">
-    <nav class="w3-sidenav w3-collapse w3-light-grey w3-card-2" id="my-side-text">
-        <div class="w3-center">
-            <a class="my-norm" href="https://csmojo.com/"><img id="my-avatar" src="https://csmojo.com/images/img00000000.png"></a>
-            <a class="my-norm" href="mailto:david@csmojo.com"><i class="fa fa-envelope-o w3-xxlarge"></i></a>
-            <a class="my-norm" href="https://github.com/zhenyufu"><i class="fa fa-github w3-xxlarge"></i></a>
-            <a class="my-norm" href="https://play.google.com/store/apps/developer?id=csmojo"><i class="fa fa-android w3-xxlarge"></i></a>
-        </div>
-        
-        <ul>
-                <h4><b>Pages</b></h4>
-                <li><a href="https://csmojo.com/">Home</a></li>
-                <li><a href="https://csmojo.com/pages/about.html">About</a></li>
-                <li><a href="https://csmojo.com/pages/comments.html">Comments</a></li>
-                <h4><b><a href="https://csmojo.com/pages/projects.html" class="my-no-pad">Projects</a></b></h4>
-                    <div class="w3-accordion"> 
-                        <a onclick="myAccordion('accordion-a')" href="javascript:void(0)">Web <i class="fa fa-caret-down"></i></a>
-                        <div id="accordion-a" class="w3-accordion-content w3-animate-left w3-padding">
-                                    <li><a href="https://csmojo.com/pages/learn-huge.html">Learn Huge</a></li>
-                                    <li><a href="https://csmojo.com/pages/pentesting-lab.html">Pentesting Lab</a></li>
-                        </div>
-                    </div>
-                    <div class="w3-accordion">
-                        <a onclick="myAccordion('accordion-b')" href="javascript:void(0)">Mobile <i class="fa fa-caret-down"></i></a>
-                        <div id="accordion-b" class="w3-accordion-content w3-animate-left w3-padding">
-                                    <li><a href="https://csmojo.com/pages/move-tiles.html">Move Tiles</a></li>
-                                    <li><a href="https://csmojo.com/pages/velocity-ruler.html">Velocity Ruler</a></li>
-                                    <li><a href="https://csmojo.com/pages/workaholic.html">Workaholic</a></li>
-                                    <li><a href="https://csmojo.com/pages/zombie-crush.html">Zombie Crush</a></li>
-                        </div>
-                    </div>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu
+    </button>
 
-                    
-                <h4><b>Categories</b></h4>
-                    <li><a href="https://csmojo.com/category/algorithm.html">Algorithm</a></li>
-                    <li><a href="https://csmojo.com/category/android.html">Android</a></li>
-                    <li><a href="https://csmojo.com/category/cloud.html">Cloud</a></li>
-                    <li><a href="https://csmojo.com/category/gdal.html">GDAL</a></li>
-                    <li><a href="https://csmojo.com/category/git.html">Git</a></li>
-                    <li><a href="https://csmojo.com/category/linux.html">Linux</a></li>
-                    <li><a href="https://csmojo.com/category/machine-learning.html">Machine Learning</a></li>
-                    <li><a href="https://csmojo.com/category/math.html">Math</a></li>
-                    <li><a href="https://csmojo.com/category/mobile.html">Mobile</a></li>
-                    <li><a href="https://csmojo.com/category/network.html">Network</a></li>
-                    <li><a href="https://csmojo.com/category/pelican.html">Pelican</a></li>
-                    <li><a href="https://csmojo.com/category/python.html">Python</a></li>
-                    <li><a href="https://csmojo.com/category/r.html">R</a></li>
-                    <li><a href="https://csmojo.com/category/system-design.html">System Design</a></li>
-                    <li class="active"><a href="https://csmojo.com/category/web.html">Web</a></li>
-            </ul>
-    </nav>
-
-
-    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" id="my-overlay"></div>
-
-
-    <div id="my-all" class="w3-main">
-        <div id="my-top" class="w3-top w3-container w3-padding-16 w3-theme w3-large">
-            <i id="my-side-button" class="fa fa-bars w3-opennav w3-hide-large w3-xxlarge w3-container w3-card-4 w3-light-blue" onclick="w3_open()"></i>
-        </div>
-
-        <div class="w3-container w3-padding-32 my-light-blue my-padleft-32">
-            <h1 class="w3-xxxlarge w3-padding-16 "><b>Computer Science Mojo</b></h1>
-            <span class="w3-medium w3-text-grey"><b>  ~ David's Notes on coding, software and computer science</b></span> 
-        </div>
-
-        <a href="/">
-            <span id="my-clouds">     
-                <marquee behavior="scroll" direction="right" scrollamount="10"><i class="fa fa-cloud w3-animate-top w3-text-white w3-xxlarge"></i></marquee>
-                <br><br><br><br>
-                <marquee behavior="scroll" direction="right" scrollamount="5"><i class="fa fa-cloud w3-animate-top w3-text-white w3-xxxlarge"></i></marquee>
-            </span> 
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a class="site-identity" href="https://csmojo.com/">
+            <img class="site-avatar" src="https://csmojo.com/images/img00000000.png" alt="David">
+            <span>csmojo</span>
         </a>
 
-       
-        <div id="my-main" class="w3-container" >
-            <h2>Post</h2>
-            <section id="content">
-<div class="w3-container w3-card-2 w3-padding-large w3-margin">
-    <header>
-        <h2><a class="my-no-dec" href="https://csmojo.com/posts/my-pelican-setup.html" rel="bookmark" title="Permalink to My pelican setup"><b>My pelican setup</b></a></h2>
-    </header>
-  
-    <div class="w3-medium">
-        <div>
-            Category: <a href="https://csmojo.com/category/web.html">Web</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;Tag:
-                <a href="https://csmojo.com/tag/pelican.html">Pelican</a>&nbsp;&nbsp;
-                <a href="https://csmojo.com/tag/python.html">Python</a>&nbsp;&nbsp;
+        <ul class="primary-links">
+            <li><a href="https://csmojo.com/">Posts</a></li>
+            <li><a href="https://csmojo.com/pages/projects.html">Projects</a></li>
+            <li><a href="https://csmojo.com/archives.html">Archive</a></li>
+            <li><a href="https://csmojo.com/pages/about.html">About</a></li>
+            <li><a href="https://csmojo.com/feeds/all.atom.xml">RSS</a></li>
+        </ul>
+
+        <div class="contact-links" aria-label="Contact links">
+            <a href="mailto:david@csmojo.com">Email</a>
+            <a href="https://github.com/zhenyufu">GitHub</a>
+            <a href="https://play.google.com/store/apps/developer?id=csmojo">Google Play</a>
         </div>
-        <div> 
-            By:
-                <a href="https://csmojo.com/author/david.html">David</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;On:
-            <span datetime="2016-07-09T21:09:01-07:00"> Sat 09 July 2016 </span>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
-    </div>
-    
-    <div> <p>Document some of the useful changes that I made to my pelican setup.
+    </nav>
+
+    <button class="nav-overlay" id="nav-overlay" type="button" aria-label="Close menu" hidden></button>
+
+    <div class="site-page">
+        <header class="site-hero">
+            <a class="site-title" href="https://csmojo.com/">Computer Science Mojo</a>
+            <p>David's notes on coding, software, and computer science.</p>
+        </header>
+
+        <main class="main-content" id="main-content">
+
+
+            <section class="content">
+<article class="post-card">
+    <header class="post-header">
+        <h1 class="post-title">
+            <a href="https://csmojo.com/posts/my-pelican-setup.html" rel="bookmark">My pelican setup</a>
+        </h1>
+
+        <p class="post-meta">
+            <time datetime="2016-07-09T21:09:01-07:00">Sat 09 July 2016</time>
+                <span aria-hidden="true">·</span>
+                <a href="https://csmojo.com/category/web.html">Web</a>
+                <span aria-hidden="true">·</span>
+                <span class="tag-list">
+                        <a href="https://csmojo.com/tag/pelican.html">Pelican</a>,                         <a href="https://csmojo.com/tag/python.html">Python</a>                </span>
+        </p>
+    </header>    <div class="post-content"><p>Document some of the useful changes that I made to my pelican setup.
 Might be helpful for newcomers ;)</p>
 <h3>Reading</h3>
 <ul>
@@ -156,53 +112,53 @@ but if the output folder is a git repo, add <code>".git"</code> to <code>OUTPUT_
 <div class="highlight"><pre><span></span><code><span class="c"># my add stuff #######</span>
 <span class="nv">POSTSDIR</span><span class="o">=</span><span class="k">$(</span>INPUTDIR<span class="k">)</span>/posts
 <span class="nv">PAGESDIR</span><span class="o">=</span><span class="k">$(</span>INPUTDIR<span class="k">)</span>/pages
-<span class="nv">DATE</span> <span class="o">:=</span> <span class="k">$(</span>shell date +<span class="s1">'%Y-%m-%d %H:%M:%S'</span><span class="k">)</span>
-<span class="nv">SLUG</span> <span class="o">:=</span> <span class="k">$(</span>shell <span class="nb">echo</span> <span class="s1">'${NAME}'</span> <span class="p">|</span> sed -e <span class="s1">'s/[^[:alnum:]]/-/g'</span> <span class="p">|</span> tr -s <span class="s1">'-'</span> <span class="p">|</span> tr A-Z a-z<span class="k">)</span>
-<span class="nv">EXT</span> <span class="o">:=</span> md
-<span class="nv">EDITOR</span> <span class="o">=</span> medit 
+<span class="nv">DATE</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>date<span class="w"> </span>+<span class="s1">'%Y-%m-%d %H:%M:%S'</span><span class="k">)</span>
+<span class="nv">SLUG</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'${NAME}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-e<span class="w"> </span><span class="s1">'s/[^[:alnum:]]/-/g'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>-s<span class="w"> </span><span class="s1">'-'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span>A-Z<span class="w"> </span>a-z<span class="k">)</span>
+<span class="nv">EXT</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>md
+<span class="nv">EDITOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>medit<span class="w"> </span>
 
 <span class="nf">newpost</span><span class="o">:</span>
 <span class="cp">ifeq ($(wildcard $(POSTSDIR)/$(SLUG).$(EXT)),) </span>
 <span class="cp">else</span>
-    @echo <span class="s1">'File exists'</span>
-    <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s1">'File exists'</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span>
 <span class="cp">endif</span>
 <span class="cp">ifdef NAME</span>
-    <span class="nb">echo</span> <span class="s2">"Title: </span><span class="k">$(</span>NAME<span class="k">)</span><span class="s2">"</span> &gt;  <span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">"Slug: </span><span class="k">$(</span>SLUG<span class="k">)</span><span class="s2">"</span> &gt;&gt; <span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">"Status: published"</span> &gt;&gt; <span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">"Date: </span><span class="k">$(</span>DATE<span class="k">)</span><span class="s2">"</span> &gt;&gt; <span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">"Category: "</span> &gt;&gt; <span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">"Tags: "</span> &gt;&gt; <span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">"Author: David"</span> &gt;&gt; <span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">""</span>              &gt;&gt; <span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">""</span>              &gt;&gt; <span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="si">${</span><span class="nv">EDITOR</span><span class="si">}</span> <span class="si">${</span><span class="nv">POSTSDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">SLUG</span><span class="si">}</span>.<span class="si">${</span><span class="nv">EXT</span><span class="si">}</span> <span class="p">&amp;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Title: </span><span class="k">$(</span>NAME<span class="k">)</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w">  </span><span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Slug: </span><span class="k">$(</span>SLUG<span class="k">)</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Status: published"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Date: </span><span class="k">$(</span>DATE<span class="k">)</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Category: "</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Tags: "</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Author: David"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span><span class="w">              </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span><span class="w">              </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>POSTSDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="si">${</span><span class="nv">EDITOR</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">POSTSDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">SLUG</span><span class="si">}</span>.<span class="si">${</span><span class="nv">EXT</span><span class="si">}</span><span class="w"> </span><span class="p">&amp;</span>
 <span class="cp">else</span>
-    @echo <span class="s1">'Variable NAME is not defined.'</span>
-    @echo <span class="s1">'Do make newpost NAME='</span><span class="s2">"'"</span><span class="s1">'Post Name'</span><span class="s2">"'"</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s1">'Variable NAME is not defined.'</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s1">'Do make newpost NAME='</span><span class="s2">"'"</span><span class="s1">'Post Name'</span><span class="s2">"'"</span>
 <span class="cp">endif</span>
 
 
 <span class="nf">newpage</span><span class="o">:</span>
 <span class="cp">ifeq ($(wildcard $(PAGESDIR)/$(SLUG).$(EXT)),) </span>
 <span class="cp">else</span>
-    @echo <span class="s1">'File exists'</span>
-    <span class="nb">exit</span> <span class="m">1</span><span class="p">;</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s1">'File exists'</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span>
 <span class="cp">endif</span>
 <span class="cp">ifdef NAME</span>
-    <span class="nb">echo</span> <span class="s2">"Title: </span><span class="k">$(</span>NAME<span class="k">)</span><span class="s2">"</span> &gt;  <span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">"Slug: </span><span class="k">$(</span>SLUG<span class="k">)</span><span class="s2">"</span> &gt;&gt; <span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">"Status: published"</span> &gt;&gt; <span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">"Date: </span><span class="k">$(</span>DATE<span class="k">)</span><span class="s2">"</span> &gt;&gt; <span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">"Tags: "</span> &gt;&gt; <span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">"Author: David"</span> &gt;&gt; <span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">""</span>              &gt;&gt; <span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="nb">echo</span> <span class="s2">""</span>              &gt;&gt; <span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
-    <span class="si">${</span><span class="nv">EDITOR</span><span class="si">}</span> <span class="si">${</span><span class="nv">PAGESDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">SLUG</span><span class="si">}</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Title: </span><span class="k">$(</span>NAME<span class="k">)</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w">  </span><span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Slug: </span><span class="k">$(</span>SLUG<span class="k">)</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Status: published"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Date: </span><span class="k">$(</span>DATE<span class="k">)</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Tags: "</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Author: David"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span><span class="w">              </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span><span class="w">              </span>&gt;&gt;<span class="w"> </span><span class="k">$(</span>PAGESDIR<span class="k">)</span>/<span class="k">$(</span>SLUG<span class="k">)</span>.<span class="k">$(</span>EXT<span class="k">)</span>
+<span class="w">    </span><span class="si">${</span><span class="nv">EDITOR</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">PAGESDIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">SLUG</span><span class="si">}</span>.<span class="k">$(</span>EXT<span class="k">)</span>
 <span class="cp">else</span>
-    @echo <span class="s1">'Variable NAME is not defined.'</span>
-    @echo <span class="s1">'Do make newpage NAME='</span><span class="s2">"'"</span><span class="s1">'Page Name'</span><span class="s2">"'"</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s1">'Variable NAME is not defined.'</span>
+<span class="w">    </span>@echo<span class="w"> </span><span class="s1">'Do make newpage NAME='</span><span class="s2">"'"</span><span class="s1">'Page Name'</span><span class="s2">"'"</span>
 <span class="cp">endif</span>
 </code></pre></div>
 <h3>TEMPLATE_PAGES</h3>
@@ -221,8 +177,8 @@ In my case 'yuicompressor' and 'ga_page_view'</p>
 </ul>
 <div class="highlight"><pre><span></span><code>{% if GOOGLE_ANALYTICS_BOOL %}
     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/javascript"</span><span class="p">&gt;</span>
-        <span class="c">&lt;!--</span> <span class="nx">tracking</span> <span class="nx">code</span> <span class="o">--&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="c">&lt;!--</span><span class="w"> </span><span class="nx">tracking</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="o">--&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 {% endif %}
 </code></pre></div>
 <ul>
@@ -261,8 +217,8 @@ Both are solved by switching the oauth2client version:  </p>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="s2">"HelloAnalytics.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">6</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="kn">from</span> <span class="nn">oauth2client.service_account</span> <span class="kn">import</span> <span class="n">ServiceAccountCredentials</span>
-<span class="ne">ImportError</span><span class="p">:</span> <span class="n">cannot</span> <span class="kn">import</span> <span class="nn">name</span> <span class="n">ServiceAccountCredentials</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">oauth2client.service_account</span><span class="w"> </span><span class="kn">import</span> <span class="n">ServiceAccountCredentials</span>
+<span class="ne">ImportError</span><span class="p">:</span> <span class="n">cannot</span> <span class="kn">import</span><span class="w"> </span><span class="nn">name</span> <span class="n">ServiceAccountCredentials</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>pip install oauth2client==2.2.0
 </code></pre></div>
@@ -270,25 +226,19 @@ Both are solved by switching the oauth2client version:  </p>
 <li>For error </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="n">ERROR</span><span class="p">:</span> <span class="n">Cannot</span> <span class="n">load</span> <span class="n">plugin</span> <span class="err">`</span><span class="n">ga_page_view</span><span class="err">`</span>
-  <span class="o">|</span> <span class="ne">ImportError</span><span class="p">:</span> <span class="n">cannot</span> <span class="kn">import</span> <span class="nn">name</span> <span class="n">SignedJwtAssertionCredentials</span>
+  <span class="o">|</span> <span class="ne">ImportError</span><span class="p">:</span> <span class="n">cannot</span> <span class="kn">import</span><span class="w"> </span><span class="nn">name</span> <span class="n">SignedJwtAssertionCredentials</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>pip install oauth2client==1.5.2
-</code></pre></div> </div></div>            </section><!-- /#content -->
-        </div><!-- end of my-main -->
-        
+</code></pre></div></div></article>            </section>
+        </main>
 
-        <footer id="my-footer" class="w3-container w3-padding-8 my-light-blue w3-medium" >
-            &copy; <script>document.write(new Date().getFullYear());</script> csmojo.com&nbsp;&nbsp;
-            Powered by <a href="http://getpelican.com/">Pelican</a> <a href="https://pages.github.com/">Github Pages</a> <a href="http://www.w3schools.com/w3css/">w3.css</a> <a href="http://fontawesome.io/">Font Awesome</a> <a href="https://analytics.google.com/analytics/web/">Google Analytics</a> <a href="http://pygments.org/">pygments</a>
-        </footer><!-- /#contentinfo -->
-        
+        <footer class="site-footer">
+            <span>&copy; csmojo.com</span>
+            <span>Built with <a href="https://getpelican.com/">Pelican</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.</span>
+        </footer>
+    </div>
 
-        
-    </div><!-- end of my-all -->
 
-    
-    <script src="/theme/js/script.js"></script>
+    <script src="https://csmojo.com/theme/js/script.js" defer></script>
 </body>
-
-
 </html>

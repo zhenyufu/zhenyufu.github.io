@@ -1,24 +1,43 @@
-// Open and close the sidenav on medium and small screens
-function w3_open() {
-    document.getElementById("my-side-text").style.display = "block";
-    document.getElementById("my-overlay").style.display = "block";
-}
-function w3_close() {
-    document.getElementById("my-side-text").style.display = "none";
-    document.getElementById("my-overlay").style.display = "none";
-}
+(() => {
+    const toggle = document.getElementById("menu-toggle");
+    const navigation = document.getElementById("site-nav");
+    const overlay = document.getElementById("nav-overlay");
 
-
-// Accordions
-function myAccordion(id) {
-    var x = document.getElementById(id);
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        x.previousElementSibling.className += " w3-theme";
-    } else { 
-        x.className = x.className.replace("w3-show", "");
-        x.previousElementSibling.className = 
-        x.previousElementSibling.className.replace(" w3-theme", "");
+    if (!toggle || !navigation || !overlay) {
+        return;
     }
-}
 
+    const setMenuOpen = (isOpen, restoreFocus = false) => {
+        navigation.classList.toggle("is-open", isOpen);
+        toggle.setAttribute("aria-expanded", String(isOpen));
+        overlay.hidden = !isOpen;
+        document.body.classList.toggle("menu-open", isOpen);
+
+        if (!isOpen && restoreFocus) {
+            toggle.focus();
+        }
+    };
+
+    toggle.addEventListener("click", () => {
+        setMenuOpen(toggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    overlay.addEventListener("click", () => setMenuOpen(false, true));
+
+    navigation.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setMenuOpen(false));
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+            setMenuOpen(false, true);
+        }
+    });
+
+    const desktopView = window.matchMedia("(min-width: 901px)");
+    desktopView.addEventListener("change", (event) => {
+        if (event.matches) {
+            setMenuOpen(false);
+        }
+    });
+})();
